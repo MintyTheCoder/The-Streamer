@@ -3,50 +3,50 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Unity.VisualScripting; 
 
 public class ChatManager : MonoBehaviour
 {
-    Vector3[] chatPositions;
-    GameObject chatMessage;
-    public static string[] userNames = { "ty", "monty", "will" };
-    string[] chatMessages = { "Hi", "Hello", "Good Evening" };
-    ChatMessage[] allMessages = new ChatMessage[userNames.Length];
-    ChatMessage[] currentChatMessages = new ChatMessage[10];
-    
+    public TextAsset jsonFile;
+    Vector3[] chatPositions = new Vector3[10];
 
-    // Start is called before the first frame update
-    void Start()
-    {   
-        for (int i =0; i < allMessages.Length; i++)
-        {
-            allMessages[i] = new ChatMessage(GetRandomUsername(), GetRandomMessage());
-        }
+    float i = 0f;
+    public GameObject chatMessagePrefab;
+    public Transform chatPanel; // The parent transform for chat messages
+
+    private void Start()
+    {
+        userNames = JsonUtility.FromJson(jsonFile.text);
+        AddChatMessage(GetRandomUsername(), GetRandomMessage());
+    }
+    public void AddChatMessage(string username, string message)
+    {
+        GameObject newMessage = Instantiate(chatMessagePrefab, chatPanel.transform.position + new Vector3(0,i,0) , Quaternion.identity, chatPanel);
+        TextMeshProUGUI usernameText = newMessage.transform.Find("Username").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
+
+        usernameText.text = username + ": ";
+        messageText.text = username + ": " + message;
+
+        Debug.Log("Test");
+
+        i += 20f;
+
+        // Optionally, you can add animation logic here
+
+        // You may want to limit the number of messages displayed
+        // and remove older ones if the chat panel becomes too crowded
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
 
-    void SpawnChatMessage()
-    {
-        Destroy(currentChatMessages[0]);
-        for (int i = 0; i < currentChatMessages.Length; i++) 
-        {
-            if (i == chatMessages.Length - 1)
-            {
-                currentChatMessages[i - 1] = currentChatMessages[i];
-               //Avoid the error from index 29 trying to access index 30 which doesnt exist
-            }
-
-            else
-            {
-                currentChatMessages[i] = currentChatMessages[i + 1];
-            }
-        }
-
-        currentChatMessages[currentChatMessages.Length - 1] = allMessages[Random.Range(0, allMessages.Length)];
+    public void storeChatPositions()
+    { 
     }
 
     string GetRandomUsername()
@@ -58,7 +58,7 @@ public class ChatManager : MonoBehaviour
 
     string GetRandomMessage()
     {
-        string message = chatMessages[Random.Range(0, userNames.Length)];
+        string message = chatMessages[Random.Range(0, chatMessages.Length)];
 
         return message;
     }
