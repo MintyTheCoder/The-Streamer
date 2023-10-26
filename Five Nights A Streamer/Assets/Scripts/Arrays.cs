@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrays
+public class Arrays: MonoBehaviour
 {
     public string[] userNames = 
         

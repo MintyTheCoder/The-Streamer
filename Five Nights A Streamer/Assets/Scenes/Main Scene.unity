@@ -797,12 +797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e8c6a8ab0144249944726b4ad13ec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allMessages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   chatMessagePrefab: {fileID: 3455182494044548177, guid: 34ffaba4e6e8b024b82f58fc4228a9c8, type: 3}
   chatPanel: {fileID: 795895357}
+  arrayScript: {fileID: 774617595}
+  chatMessageList: []
 --- !u!1 &543087833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,6 +1185,258 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &774617593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 774617594}
+  - component: {fileID: 774617595}
+  m_Layer: 0
+  m_Name: Arrays
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &774617594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774617593}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -43.319195, y: -56.517212, z: -6.002548}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &774617595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774617593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6845ab6074da92544887cdab27b617ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userNames:
+  - StreamerMaster
+  - GamingGuru
+  - ProGamer123
+  - LuckyLurker007
+  - ViewerChampion
+  - SpeedyStreamer
+  - ChatModExpert
+  - StreamNinja
+  - GamerGuy55
+  - GamerGeek
+  - LurkAndLearn
+  - StreamerProMax
+  - NoobCrusher
+  - ProViewer1234
+  - GamingLegend
+  - StreamerDude
+  - TwitchQueen123
+  - CoolStreamer42
+  - AwesomeStreamer007
+  - LuckyViewer777
+  - CasualGamer
+  - ProGamer99
+  - StreamerExtraordinaire
+  - EpicGamer23
+  - ProViewer55
+  - TwitchAddict
+  - GamingGoddess
+  - NewbieViewer
+  - ViewersChoice
+  - StreamerNation
+  - GamerProdigy
+  - TwitchWizard
+  - ViewerWarrior
+  - GameOnStreamer
+  - RetroGamer
+  - StreamerGigabyte
+  - ProNoob123
+  - UltimateStreamer
+  - TwitchLurkerX
+  - MasterOfGames
+  - StreamSorcerer
+  - GamerHero
+  - StreamProdigy
+  - LurkingLegend
+  - ChatModChampion
+  - LoyalViewer101
+  - GamingMaestro
+  - TwitchSavant
+  - StreamerSupreme
+  - GamerCrusader
+  - ViewerVoyager
+  - GamingArchitect
+  - StreamSensei
+  - ProLurkerX
+  - UltimateViewing
+  - TwitchTrailblazer
+  - StreamingLegend
+  - GamerKingpin
+  - ViewerSorcerer
+  - StreamerChampion
+  - TwitchGenius
+  - GamingVirtuoso
+  - NoobCrusherX
+  - StreamPhenomenon
+  - ChatModMaster
+  - StreamSensation
+  - TwitchSorceress
+  - ProViewerX
+  - ViewerVirtuoso
+  - StreamerMaverick
+  - GamingGenius
+  - TwitchSultan
+  - GamingCrusader
+  - LuckyLurker123
+  - StreamWarlord
+  - GamerVirtuoso
+  - TwitchSorcery
+  - UltimateViewers
+  - ProStreamerX
+  - ViewerElite
+  - StreamerProMax
+  - GamingProdigy
+  - GamingXpert
+  - LoyalLurker
+  - StreamSenseiX
+  - TwitchSavvyX
+  - StreamerSupremacy
+  - GamerXperience
+  - ViewerValhalla
+  - StreamerEnigma
+  - GamingProX
+  - StreamSorceressX
+  - ChatModGuru
+  - TwitchVoyager
+  - StreamerSeraph
+  - UltimateStreamers
+  - ViewerVortex
+  - GamingGalacticX
+  - StreamWarlock
+  - GamerLegends
+  - TwitchEnigmaX
+  - GamingVoyager
+  - LuckyLurkerX
+  - StreamChampion
+  - StreamerSanctuary
+  - GamerProdigyX
+  - TwitchGeniusX
+  - UltimateLurker
+  - ViewerMystic
+  - StreamerSiren
+  - GameOnMaster
+  - StreamerXperts
+  - TwitchWiz
+  - LoyalLurkerX
+  - StreamMysticX
+  - GamerSupreme
+  - ProStreamers
+  - TwitchSorceryX
+  - GamingWiz
+  - ViewerMaster
+  - StreamSorcererX
+  - ChatModExpertX
+  - TwitchSavvyXX
+  - LuckyLurkerXX
+  - StreamerKingpin
+  - ProNoobX
+  - GamerChampion
+  - ViewerChampionX
+  - TwitchCrusader
+  - GamingPhenom
+  - StreamMaverick
+  - UltimateGamerX
+  - ProStreamWizard
+  - TwitchProdigyX
+  - GamerGoddess
+  - LoyalStreamer
+  - StreamMastermind
+  - StreamerProX
+  - TwitchVoyagerX
+  - GamingWarlord
+  - ChatModHero
+  - GamerXpertX
+  - TwitchVirtuoso
+  - StreamingMaverick
+  - LuckyStreamers
+  - ProGamerXperience
+  - StreamerArchitect
+  - GamerWizard
+  - ViewerSorcererX
+  - UltimateViewersX
+  - StreamWarriorX
+  - TwitchGeniusXX
+  - GamingVirtuosoX
+  - LoyalCrusader
+  - GamerProdigyXX
+  - StreamerSavant
+  - TwitchSorceressX
+  - ProViewerGuru
+  - StreamerEnigmaX
+  - GamingProXpert
+  - StreamSorceressX
+  - UltimateGamerXX
+  - ViewerVirtuosoX
+  - TwitchSultanX
+  - GamingCrusaderX
+  - LuckyLurker123X
+  - StreamerWarlordX
+  - GamerVirtuosoX
+  - TwitchSorceryX
+  - UltimateViewersXX
+  - ProStreamerXpert
+  - ViewerEliteX
+  - StreamerProXpert
+  - GamingProdigyXpert
+  - GamingXpertX
+  - LoyalLurkerXpert
+  - StreamSenseiXpert
+  - TwitchSavvyXpert
+  - StreamerSupremacyX
+  - GamerXperienceX
+  - ViewerValhallaXpert
+  - StreamerEnigmaXpert
+  - GamingProXpertX
+  - StreamSorceressXpert
+  - ChatModGuruX
+  - TwitchVoyagerXpert
+  - StreamerSeraphX
+  - UltimateStreamersX
+  - ViewerVortexX
+  - GamingGalacticXpert
+  - StreamWarlockX
+  - GamerLegendsX
+  - TwitchEnigmaXpertX
+  - GamingVoyagerXpert
+  - LuckyLurkerXpertX
+  - StreamChampionX
+  - StreamerSanctuaryX
+  - GamerProdigyXpertX
+  - TwitchGeniusXpertX
+  - UltimateLurkerXpert
+  - ViewerMysticXpert
+  - StreamerSirenX
+  - GameOnMasterX
+  chatMessages:
+  - Hi
+  - Hello
+  - Good Evening
 --- !u!1 &795895356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1475,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 12.412766, y: -5.9412513}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 192, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &795895358
 MonoBehaviour:
@@ -1344,7 +1594,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 192, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &855681353
 MonoBehaviour:
@@ -2182,3 +2432,4 @@ SceneRoots:
   - {fileID: 1316474332}
   - {fileID: 512544008}
   - {fileID: 543087836}
+  - {fileID: 774617594}
