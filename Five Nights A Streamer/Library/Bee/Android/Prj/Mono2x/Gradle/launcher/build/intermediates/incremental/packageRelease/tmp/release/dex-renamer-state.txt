@@ -1,0 +1,4 @@
+#Fri Oct 27 13:15:35 EDT 2023
+base.0=D\:\\GitHub\\The-Streamer\\Five Nights A Streamer\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

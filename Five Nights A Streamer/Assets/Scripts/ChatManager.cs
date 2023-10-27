@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor.VersionControl;
+//using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -13,7 +13,7 @@ public class ChatManager : MonoBehaviour
     public Transform chatPanel; // The parent transform for chat messages
     Arrays arrayScript;
 
-    Vector3 spawnPosition = new Vector3(0, -67, 0);
+    Vector3 spawnPosition = new Vector3(0, -275, -50);
 
     string[] userNames;
     string[] chatMessages;
@@ -72,7 +72,7 @@ public class ChatManager : MonoBehaviour
     {
         foreach(GameObject message in GameObject.FindGameObjectsWithTag("Message"))
         {
-            message.transform.position += new Vector3(0, 5, 0);
+            message.transform.position += new Vector3(0, 15, 0);
         }
 
         GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
