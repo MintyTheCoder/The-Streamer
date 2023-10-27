@@ -5,20 +5,19 @@ using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEngine.InputSystem.InputRemoting;
+//using static UnityEngine.InputSystem.InputRemoting;
 
 public class ChatManager : MonoBehaviour
 {
-    Vector3[] chatPositions = new Vector3[10];
-
-    float i = 0f;
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
-    public Arrays arrayScript;
+    Arrays arrayScript;
+
+    Vector3 spawnPosition = new Vector3(0, -67, 0);
 
     string[] userNames;
     string[] chatMessages;
-    public GameObject[] chatMessageList = new GameObject[20];
+    public GameObject[] chatMessageList;
 
     int chatMessagesCount = 0;
 
@@ -29,60 +28,73 @@ public class ChatManager : MonoBehaviour
         userNames = arrayScript.userNames;
         chatMessages = arrayScript.chatMessages;
 
-        StartCoroutine(DelayMessage());
+        AddChatMessage(GetRandomUsername(), GetRandomMessage());
 
     }
 
     IEnumerator DelayMessage()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(Random.Range(5,7));
+        //while (true)
+        //{
+            //yield return new WaitForSeconds(Random.Range(5,7));
+            yield return new WaitForSeconds(1.5f);
             AddChatMessage(GetRandomUsername(), GetRandomMessage());
-        }
+        //}
        
     }
 
     private void Start()
     {
-        AddChatMessage(GetRandomUsername(), GetRandomMessage());     
+        //AddChatMessage(GetRandomUsername(), GetRandomMessage());     
     }
     public void AddChatMessage(string username, string message)
     {
-        //method for moving all messages down
         MoveAllMessages();
 
-        GameObject newMessage = Instantiate(chatMessagePrefab, chatPanel.transform.position, Quaternion.identity, chatPanel);
+        GameObject newMessage = Instantiate(chatMessagePrefab, spawnPosition, Quaternion.identity, chatPanel);
         TextMeshProUGUI usernameText = newMessage.transform.Find("Username").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
 
+        usernameText.color =  new Color(Random.value, Random.value, Random.value);
         usernameText.text = username + ": ";
         messageText.text = username + ": " + message;
 
         Debug.Log("Spawned Message");
 
-        //chatMessageList[chatMessagesCount] = newMessage;
-        //chatMessagesCount++;
+        ChatDeleter(newMessage);
+        
+        chatMessagesCount++;
 
-        // Optionally, you can add animation logic here
-
-        // You may want to limit the number of messages displayed
-        // and remove older ones if the chat panel becomes too crowded
+        StartCoroutine(DelayMessage());
     }
 
     void MoveAllMessages()
     {
         foreach(GameObject message in GameObject.FindGameObjectsWithTag("Message"))
         {
-            message.transform.position -= new Vector3(0, 20, 0);
+            message.transform.position += new Vector3(0, 5, 0);
         }
 
         GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
+    }
 
-        /*for(int i; i < messages.Length - 1; i++)
+    private void ChatDeleter(GameObject newMessage)
+    {
+        if (chatMessagesCount < chatMessageList.Length)
         {
-            messages[i].transform.position -= new Vector3(0, messages[i+1], 0);
-        }*/
+            chatMessageList[chatMessagesCount] = newMessage;
+        }
+
+        else
+        {
+            Destroy(chatMessageList[0]);
+            for (int i = 0; i < chatMessageList.Length - 1; i++)
+            {
+                chatMessageList[i] = chatMessageList[i + 1];
+                Debug.Log("Object Moved Up To Index " + i);
+            }
+            chatMessageList[chatMessageList.Length - 1] = newMessage;
+        }
     }
 
     string GetRandomUsername()
