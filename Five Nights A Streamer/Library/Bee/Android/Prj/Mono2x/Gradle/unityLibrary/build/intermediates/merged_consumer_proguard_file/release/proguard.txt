@@ -18,3 +18,7 @@
 -dontwarn com.google.android.play.core.tasks.RuntimeExecutionException
 -dontwarn com.google.android.play.core.tasks.Task
 -keep class com.unity.oculus.OculusUnity { *; }
+
+-keep class com.unity.oculus.OculusUnity { *; }
+
+-keep class com.unity.oculus.OculusUnity { *; }

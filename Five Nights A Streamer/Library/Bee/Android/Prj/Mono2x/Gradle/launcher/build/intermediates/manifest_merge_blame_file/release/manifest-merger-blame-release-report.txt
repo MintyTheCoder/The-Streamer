@@ -3,7 +3,7 @@
 3    package="com.FBI.FiveNightsAStreamer"
 4    android:installLocation="preferExternal"
 5    android:versionCode="1"
-6    android:versionName="0.11" >
+6    android:versionName="0.1" >
 7
 8    <uses-sdk
 9        android:minSdkVersion="29"
