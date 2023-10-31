@@ -61,3 +61,11 @@ The following packages were updated:
   com.unity.xr.interaction.toolkit from version 2.3.2 to 2.4.1
   com.unity.xr.oculus from version 3.3.0 to 4.0.0
   com.unity.xr.openxr from version 1.7.0 to 1.8.2
+
+=== Tue Oct 31 13:05:25 2023
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.xr.interaction.toolkit from version 2.4.3 to 2.5.0

@@ -6,173 +6,173 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="29"
-8-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
+8-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
+9-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:3-65
-11-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:20-62
+11-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:3-65
+11-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:3:20-62
 12
 13    <uses-feature android:glEsVersion="0x00030000" />
-13-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:3-52
-13-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:17-49
+13-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:3-52
+13-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:4:17-49
 14    <uses-feature
-14-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:3-91
+14-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:3-91
 15        android:name="android.hardware.vulkan.version"
-15-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:17-63
+15-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:17-63
 16        android:required="false" />
-16-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:64-88
+16-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:5:64-88
 17    <uses-feature
-17-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:3-88
+17-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:3-88
 18        android:name="android.hardware.touchscreen"
-18-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:17-60
+18-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:17-60
 19        android:required="false" />
-19-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:61-85
+19-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:6:61-85
 20    <uses-feature
-20-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:3-99
+20-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:3-99
 21        android:name="android.hardware.touchscreen.multitouch"
-21-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:17-71
+21-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:17-71
 22        android:required="false" />
-22-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:72-96
+22-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:7:72-96
 23    <uses-feature
-23-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:8:3-108
+23-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:8:3-108
 24        android:name="android.hardware.touchscreen.multitouch.distinct"
-24-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:8:17-80
+24-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:8:17-80
 25        android:required="false" />
-25-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:8:81-105
+25-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:8:81-105
 26    <uses-feature
-26-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:3-111
+26-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:3-111
 27        android:name="android.hardware.vr.headtracking"
-27-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:17-64
+27-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:17-64
 28        android:required="true"
-28-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:65-88
+28-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:65-88
 29        android:version="1" />
-29-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:89-108
+29-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:32:89-108
 30
 31    <application android:extractNativeLibs="true" >
-31-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:3-31:17
-31-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:16-48
+31-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:3-31:17
+31-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:9:16-48
 32        <meta-data
-32-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:5-69
+32-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:5-69
 33            android:name="unity.splash-mode"
-33-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:16-48
+33-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:16-48
 34            android:value="0" />
-34-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:49-66
+34-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:10:49-66
 35        <meta-data
-35-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:5-74
+35-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:5-74
 36            android:name="unity.splash-enable"
-36-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:16-50
+36-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:16-50
 37            android:value="True" />
-37-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:51-71
+37-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:11:51-71
 38        <meta-data
-38-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:5-78
+38-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:5-78
 39            android:name="unity.launch-fullscreen"
-39-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:16-54
+39-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:16-54
 40            android:value="True" />
-40-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:55-75
+40-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:12:55-75
 41        <meta-data
-41-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:5-84
+41-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:5-84
 42            android:name="unity.allow-resizable-window"
-42-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:16-59
+42-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:16-59
 43            android:value="False" />
-43-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:60-81
+43-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:13:60-81
 44        <meta-data
-44-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:5-81
+44-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:5-81
 45            android:name="notch.config"
-45-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:16-43
+45-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:16-43
 46            android:value="portrait|landscape" />
-46-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:44-78
+46-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:14:44-78
 47        <meta-data
-47-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:5-84
+47-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:5-84
 48            android:name="unity.auto-report-fully-drawn"
-48-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:16-60
+48-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:16-60
 49            android:value="true" />
-49-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:61-81
+49-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:15:61-81
 50
 51        <activity
-51-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:5-25:16
+51-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:5-25:16
 52            android:name="com.unity3d.player.UnityPlayerActivity"
-52-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:15-68
+52-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:15-68
 53            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|uiMode|density"
-53-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:204-313
+53-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:204-313
 54            android:exported="true"
-54-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:385-408
+54-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:385-408
 55            android:hardwareAccelerated="false"
-55-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:349-384
+55-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:349-384
 56            android:launchMode="singleTask"
-56-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:172-203
+56-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:172-203
 57            android:resizeableActivity="false"
-57-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:314-348
+57-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:314-348
 58            android:screenOrientation="landscape"
-58-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:134-171
+58-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:134-171
 59            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
-59-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:69-133
+59-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:16:69-133
 60            <intent-filter>
-60-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:17:7-21:23
+60-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:17:7-21:23
 61                <category android:name="android.intent.category.LAUNCHER" />
-61-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:9-69
-61-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:19-66
+61-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:9-69
+61-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:18:19-66
 62
 63                <action android:name="android.intent.action.MAIN" />
-63-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:9-61
-63-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:17-58
+63-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:9-61
+63-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:19:17-58
 64
 65                <category android:name="com.oculus.intent.category.VR" />
-65-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:9-66
-65-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:19-63
+65-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:9-66
+65-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:20:19-63
 66            </intent-filter>
 67
 68            <meta-data
-68-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:7-82
+68-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:7-82
 69                android:name="unityplayer.UnityActivity"
-69-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:18-58
+69-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:18-58
 70                android:value="true" />
-70-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:59-79
+70-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:22:59-79
 71            <meta-data
-71-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:7-70
+71-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:7-70
 72                android:name="notch_support"
-72-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:18-46
+72-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:18-46
 73                android:value="true" />
-73-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:47-67
+73-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:23:47-67
 74            <meta-data
-74-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:7-81
+74-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:7-81
 75                android:name="com.oculus.vr.focusaware"
-75-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:18-57
+75-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:18-57
 76                android:value="true" />
-76-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:58-78
+76-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:24:58-78
 77        </activity>
 78
 79        <meta-data
-79-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:5-97
+79-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:5-97
 80            android:name="com.samsung.android.vr.application.mode"
-80-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:16-70
+80-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:16-70
 81            android:value="vr_only" />
-81-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:71-94
+81-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:26:71-94
 82        <meta-data
-82-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:5-91
+82-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:5-91
 83            android:name="com.unity.xr.oculus.LowOverheadMode"
-83-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:16-66
+83-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:16-66
 84            android:value="false" />
-84-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:67-88
+84-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:27:67-88
 85        <meta-data
-85-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:5-88
+85-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:5-88
 86            android:name="com.unity.xr.oculus.LateLatching"
-86-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:16-63
+86-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:16-63
 87            android:value="false" />
-87-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:64-85
+87-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:28:64-85
 88        <meta-data
-88-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:5-93
+88-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:5-93
 89            android:name="com.unity.xr.oculus.LateLatchingDebug"
-89-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:16-68
+89-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:16-68
 90            android:value="false" />
-90-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:69-90
+90-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:29:69-90
 91        <meta-data
-91-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:30:5-84
+91-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:30:5-84
 92            android:name="com.oculus.supportedDevices"
-92-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:30:16-58
+92-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:30:16-58
 93            android:value="quest2" />
-93-->D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:30:59-81
+93-->D:\Github\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\src\main\AndroidManifest.xml:30:59-81
 94    </application>
 95
 96</manifest>
