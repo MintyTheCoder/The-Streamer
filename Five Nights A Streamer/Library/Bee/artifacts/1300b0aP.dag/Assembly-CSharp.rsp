@@ -333,6 +333,7 @@
 "Assets/Scripts/Arrays.cs"
 "Assets/Scripts/ChatManager.cs"
 "Assets/Scripts/HandAnimatorController.cs"
+"Assets/Unity.VisualScripting.Generated/VisualScripting.Core/AotStubs.cs"
 -langversion:9.0
 
 /deterministic
