@@ -3,7 +3,8 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Arrays
     - ChatManager
-    - HandAnimatorController
+    - Hand
+    - HandController
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputActionReference
@@ -49,7 +50,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Rendering.Universal.UniversalProjectSettings
     Unity.RenderPipelines.Universal.Runtime.dll:
     - UnityEngine.Rendering.Universal.PostProcessData
-    - UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
     - UnityEngine.Rendering.Universal.UniversalAdditionalLightData
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineGlobalSettings
@@ -57,6 +57,8 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.XRSystemData
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.ShaderGraph.Editor.dll:
+    - UnityEditor.ShaderGraph.ShaderGraphProjectSettings
     Unity.TextMeshPro:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -80,7 +82,6 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
     - UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation.XRDeviceSimulatorSettings
     - UnityEngine.XR.Interaction.Toolkit.InteractionLayerSettings
-    - UnityEngine.XR.Interaction.Toolkit.LocomotionSystem
     - UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
     - UnityEngine.XR.Interaction.Toolkit.UI.XRUIInputModule
     - UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor
@@ -168,7 +169,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.PostProcessData/TextureResources
     - UnityEngine.Rendering.Universal.ScriptableRendererData/DebugShaderResources
     - UnityEngine.Rendering.Universal.StencilStateData
-    - UnityEngine.Rendering.Universal.TemporalAA/Settings
     - UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset/TextureResources
     - UnityEngine.Rendering.Universal.UniversalRendererData/ShaderResources
     - UnityEngine.Rendering.Universal.XRSystemData/ShaderResources
@@ -331,132 +331,132 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16878}
     - Class: 114
-      Script: {instanceID: 17374}
+      Script: {instanceID: 17368}
     - Class: 114
-      Script: {instanceID: 17612}
+      Script: {instanceID: 17604}
     - Class: 114
-      Script: {instanceID: 17996}
+      Script: {instanceID: 17980}
     - Class: 114
-      Script: {instanceID: 18300}
+      Script: {instanceID: 18294}
     - Class: 114
-      Script: {instanceID: 18312}
+      Script: {instanceID: 18472}
     - Class: 114
-      Script: {instanceID: 18492}
+      Script: {instanceID: 18540}
     - Class: 114
-      Script: {instanceID: 18560}
+      Script: {instanceID: 18684}
     - Class: 114
-      Script: {instanceID: 18704}
+      Script: {instanceID: 18954}
     - Class: 114
-      Script: {instanceID: 18978}
+      Script: {instanceID: 19256}
     - Class: 114
-      Script: {instanceID: 19290}
+      Script: {instanceID: 20038}
     - Class: 114
-      Script: {instanceID: 20074}
+      Script: {instanceID: 20084}
     - Class: 114
-      Script: {instanceID: 20120}
+      Script: {instanceID: 20148}
     - Class: 114
-      Script: {instanceID: 20184}
+      Script: {instanceID: 20216}
     - Class: 114
-      Script: {instanceID: 20252}
+      Script: {instanceID: 20398}
     - Class: 114
-      Script: {instanceID: 20438}
+      Script: {instanceID: 20416}
     - Class: 114
-      Script: {instanceID: 20456}
+      Script: {instanceID: 20882}
     - Class: 114
-      Script: {instanceID: 20924}
+      Script: {instanceID: 20890}
     - Class: 114
-      Script: {instanceID: 20932}
+      Script: {instanceID: 20952}
     - Class: 114
-      Script: {instanceID: 20996}
+      Script: {instanceID: 21066}
     - Class: 114
-      Script: {instanceID: 21110}
+      Script: {instanceID: 21134}
     - Class: 114
-      Script: {instanceID: 21178}
+      Script: {instanceID: 21512}
     - Class: 114
-      Script: {instanceID: 21558}
+      Script: {instanceID: 21524}
     - Class: 114
-      Script: {instanceID: 21570}
+      Script: {instanceID: 21568}
     - Class: 114
-      Script: {instanceID: 21618}
+      Script: {instanceID: 21732}
     - Class: 114
-      Script: {instanceID: 21784}
+      Script: {instanceID: 21734}
     - Class: 114
-      Script: {instanceID: 21786}
+      Script: {instanceID: 22098}
     - Class: 114
-      Script: {instanceID: 22152}
+      Script: {instanceID: 22414}
     - Class: 114
-      Script: {instanceID: 22440}
+      Script: {instanceID: 23404}
     - Class: 114
-      Script: {instanceID: 22480}
+      Script: {instanceID: 23474}
     - Class: 114
-      Script: {instanceID: 23478}
+      Script: {instanceID: 23610}
     - Class: 114
-      Script: {instanceID: 23548}
+      Script: {instanceID: 23984}
     - Class: 114
-      Script: {instanceID: 23684}
+      Script: {instanceID: 24630}
     - Class: 114
-      Script: {instanceID: 24058}
+      Script: {instanceID: 24692}
     - Class: 114
-      Script: {instanceID: 24444}
+      Script: {instanceID: 24762}
     - Class: 114
-      Script: {instanceID: 24708}
+      Script: {instanceID: 24888}
     - Class: 114
-      Script: {instanceID: 24770}
+      Script: {instanceID: 24892}
     - Class: 114
-      Script: {instanceID: 24840}
+      Script: {instanceID: 25020}
     - Class: 114
-      Script: {instanceID: 24966}
+      Script: {instanceID: 25128}
     - Class: 114
-      Script: {instanceID: 24970}
+      Script: {instanceID: 25382}
     - Class: 114
-      Script: {instanceID: 25098}
+      Script: {instanceID: 25456}
     - Class: 114
-      Script: {instanceID: 25212}
+      Script: {instanceID: 25832}
     - Class: 114
-      Script: {instanceID: 25352}
+      Script: {instanceID: 26116}
     - Class: 114
-      Script: {instanceID: 25472}
+      Script: {instanceID: 26168}
     - Class: 114
-      Script: {instanceID: 25546}
+      Script: {instanceID: 26364}
     - Class: 114
-      Script: {instanceID: 25926}
+      Script: {instanceID: 26634}
     - Class: 114
-      Script: {instanceID: 26216}
+      Script: {instanceID: 26636}
     - Class: 114
-      Script: {instanceID: 26272}
+      Script: {instanceID: 26926}
     - Class: 114
-      Script: {instanceID: 26470}
+      Script: {instanceID: 27074}
     - Class: 114
-      Script: {instanceID: 26742}
-    - Class: 114
-      Script: {instanceID: 26744}
-    - Class: 114
-      Script: {instanceID: 27042}
-    - Class: 114
-      Script: {instanceID: 27194}
+      Script: {instanceID: 27174}
     - Class: 114
       Script: {instanceID: 27262}
     - Class: 114
-      Script: {instanceID: 27298}
+      Script: {instanceID: 27396}
     - Class: 114
-      Script: {instanceID: 27386}
+      Script: {instanceID: 27542}
     - Class: 114
-      Script: {instanceID: 27522}
+      Script: {instanceID: 27840}
     - Class: 114
-      Script: {instanceID: 27672}
+      Script: {instanceID: 28596}
     - Class: 114
-      Script: {instanceID: 27976}
+      Script: {instanceID: 28648}
     - Class: 114
-      Script: {instanceID: 28472}
+      Script: {instanceID: 29176}
     - Class: 114
-      Script: {instanceID: 28738}
+      Script: {instanceID: 29240}
     - Class: 114
-      Script: {instanceID: 28790}
+      Script: {instanceID: 29268}
+    - Class: 114
+      Script: {instanceID: 34090}
+    - Class: 114
+      Script: {instanceID: 34094}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -827,12 +827,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: ccb8d0e92caecae9ffe765a68064f388
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Arrays
   - hash:
       serializedVersion: 2
       Hash: f2a98ff44eae2937f49b66c5ac80892b
@@ -1553,12 +1547,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.UI
     className: MultiplayerEventSystem
-  - hash:
-      serializedVersion: 2
-      Hash: 4ee3c79798efe8cc7e12f6e2bb55b45f
-    assemblyName: Unity.InputSystem
-    namespaceName: UnityEngine.InputSystem.XR
-    className: TrackedPoseDriver
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -2497,12 +2485,6 @@ ScriptsOnlyBuild:
     className: DebugUIHandlerIndirectFloatField
   - hash:
       serializedVersion: 2
-      Hash: ef8adabbe574d7cd909a6782761e7a26
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: HandAnimatorController
-  - hash:
-      serializedVersion: 2
       Hash: 751d867553f413cde86fe5db0b02780d
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
@@ -2737,12 +2719,6 @@ ScriptsOnlyBuild:
     className: PaniniProjection
   - hash:
       serializedVersion: 2
-      Hash: 4cdb87639da75dd584d8cb169129d54e
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ChatManager
-  - hash:
-      serializedVersion: 2
       Hash: 826d70cde3b432cc20561321ec0e2fb3
     assemblyName: UnityEngine.XR.LegacyInputHelpers
     namespaceName: UnityEngine.XR.LegacyInputHelpers
@@ -2819,7 +2795,43 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: beb698d8e69a08f4889b130207e49d71
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.XR
+    className: TrackedPoseDriver
+  - hash:
+      serializedVersion: 2
+      Hash: ef8adabbe574d7cd909a6782761e7a26
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HandAnimatorController
+  - hash:
+      serializedVersion: 2
+      Hash: 4cdb87639da75dd584d8cb169129d54e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ChatManager
+  - hash:
+      serializedVersion: 2
+      Hash: ccb8d0e92caecae9ffe765a68064f388
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Arrays
+  - hash:
+      serializedVersion: 2
+      Hash: 148bc03f9d7ebf8eee013ba9fc113105
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Hand
+  - hash:
+      serializedVersion: 2
+      Hash: 032a63b0f857ef09a2b35ba765d5b94c
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HandController
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main Scene.unity
-  playerPath: D:/Github/The-Streamer/Five Nights A Streamer/Builds/InteractorTest.apk
+  playerPath: D:/GitHub/The-Streamer/Five Nights A Streamer/Builds/InteractorTest.apk

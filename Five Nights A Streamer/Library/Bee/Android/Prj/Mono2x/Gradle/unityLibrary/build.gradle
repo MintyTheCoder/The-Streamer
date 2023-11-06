@@ -8,7 +8,7 @@ dependencies {
 }
 
 android {
-    ndkPath "C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"
+    ndkPath "C:/Program Files/Unity/Hub/Editor/2022.3.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/NDK"
 
     compileSdkVersion 32
     buildToolsVersion '32.0.0'
@@ -25,7 +25,7 @@ android {
             abiFilters 'armeabi-v7a'
         }
         versionCode 1
-        versionName '0.1'
+        versionName '0.11'
         consumerProguardFiles 'proguard-unity.txt'
     }
 
