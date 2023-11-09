@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638344590573401078
-    m_Hash: 1934923945
+      ticks: 638351487602285184
+    m_Hash: 2861086584
   m_LockFileStatus:
     m_FilePath: D:/GitHub/The-Streamer/Five Nights A Streamer/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638348909544742200
-    m_Hash: 1612336006
+      ticks: 638351487602423326
+    m_Hash: 3004218969
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -1374,12 +1374,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.xr.interaction.toolkit@2.5.0
+- packageId: com.unity.xr.interaction.toolkit@2.4.3
   testable: 0
   isDirectDependency: 1
-  version: 2.5.0
+  version: 2.4.3
   source: 1
-  resolvedPath: D:\GitHub\The-Streamer\Five Nights A Streamer\Library\PackageCache\com.unity.xr.interaction.toolkit@2.5.0
+  resolvedPath: D:\GitHub\The-Streamer\Five Nights A Streamer\Library\PackageCache\com.unity.xr.interaction.toolkit@2.4.3
   assetPath: Packages/com.unity.xr.interaction.toolkit
   name: com.unity.xr.interaction.toolkit
   displayName: XR Interaction Toolkit
@@ -1452,7 +1452,7 @@ m_ResolvedPackages:
   - name: com.unity.ugui
     version: 1.0.0
   - name: com.unity.xr.core-utils
-    version: 2.2.3
+    version: 2.2.1
   - name: com.unity.xr.legacyinputhelpers
     version: 2.1.10
   - name: com.unity.modules.audio
@@ -1505,13 +1505,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638283167040000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.5/manual/index.html
+  datePublishedTicks: 638257871900000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.4/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.com/Unity-Technologies/com.unity.xr.interaction.toolkit.git
-    revision: 1dd869b8f9543cefb1ba30a98a8ed1347c2a0565
+    revision: cb4acfeb3f935960aa749e1247cba8d8d57c8fe2
     path: 
   unityLifecycle:
     version: 2.4.1
@@ -1751,10 +1751,12 @@ m_ResolvedPackages:
     - 3.3.0
     - 4.0.0
     - 4.1.1
+    - 4.1.2
     - 4.2.0-exp-env-depth.1
     compatible:
     - 4.0.0
     - 4.1.1
+    - 4.1.2
     - 4.2.0-exp-env-depth.1
     recommended: 4.0.0
     deprecated: []
@@ -4435,10 +4437,12 @@ m_ResolvedPackages:
     - 1.8.7
     - 1.8.8
     - 1.8.9
+    - 1.8.10
     compatible:
     - 1.8.8
     - 1.8.9
-    recommended: 1.8.9
+    - 1.8.10
+    recommended: 1.8.10
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
