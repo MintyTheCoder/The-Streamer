@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - Arrays
     - ChatManager
-    - HandAnimatorController
     - HandPresence
     - HandPresencePhysics
     Unity.InputSystem.dll:
@@ -321,152 +320,154 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 664}
     - Class: 114
-      Script: {instanceID: 22320}
+      Script: {instanceID: 21452}
     - Class: 114
-      Script: {instanceID: 22596}
+      Script: {instanceID: 21636}
     - Class: 114
-      Script: {instanceID: 22654}
+      Script: {instanceID: 21682}
     - Class: 114
-      Script: {instanceID: 23166}
+      Script: {instanceID: 22062}
     - Class: 114
-      Script: {instanceID: 23520}
+      Script: {instanceID: 22360}
     - Class: 114
-      Script: {instanceID: 23676}
+      Script: {instanceID: 22484}
     - Class: 114
-      Script: {instanceID: 23882}
+      Script: {instanceID: 22646}
     - Class: 114
-      Script: {instanceID: 24090}
+      Script: {instanceID: 22818}
     - Class: 114
-      Script: {instanceID: 24458}
+      Script: {instanceID: 23074}
     - Class: 114
-      Script: {instanceID: 25528}
+      Script: {instanceID: 23892}
     - Class: 114
-      Script: {instanceID: 25624}
+      Script: {instanceID: 23968}
     - Class: 114
-      Script: {instanceID: 26414}
+      Script: {instanceID: 24524}
     - Class: 114
-      Script: {instanceID: 26628}
+      Script: {instanceID: 24692}
     - Class: 114
-      Script: {instanceID: 26784}
+      Script: {instanceID: 24812}
     - Class: 114
-      Script: {instanceID: 27054}
+      Script: {instanceID: 25014}
     - Class: 114
-      Script: {instanceID: 27546}
+      Script: {instanceID: 25356}
     - Class: 114
-      Script: {instanceID: 29086}
+      Script: {instanceID: 26498}
     - Class: 114
-      Script: {instanceID: 29458}
+      Script: {instanceID: 26766}
     - Class: 114
-      Script: {instanceID: 29558}
+      Script: {instanceID: 26846}
     - Class: 114
-      Script: {instanceID: 29618}
+      Script: {instanceID: 26894}
     - Class: 114
-      Script: {instanceID: 29684}
+      Script: {instanceID: 26952}
     - Class: 114
-      Script: {instanceID: 30242}
+      Script: {instanceID: 27382}
     - Class: 114
-      Script: {instanceID: 30300}
+      Script: {instanceID: 27418}
     - Class: 114
-      Script: {instanceID: 30978}
+      Script: {instanceID: 27906}
     - Class: 114
-      Script: {instanceID: 31826}
+      Script: {instanceID: 28518}
     - Class: 114
-      Script: {instanceID: 31888}
+      Script: {instanceID: 28562}
     - Class: 114
-      Script: {instanceID: 31920}
+      Script: {instanceID: 28594}
     - Class: 114
-      Script: {instanceID: 31932}
+      Script: {instanceID: 28598}
     - Class: 114
-      Script: {instanceID: 32944}
+      Script: {instanceID: 29378}
     - Class: 114
-      Script: {instanceID: 33160}
+      Script: {instanceID: 29530}
     - Class: 114
-      Script: {instanceID: 33564}
+      Script: {instanceID: 29830}
     - Class: 114
-      Script: {instanceID: 33638}
+      Script: {instanceID: 29896}
     - Class: 114
-      Script: {instanceID: 33754}
+      Script: {instanceID: 29976}
     - Class: 114
-      Script: {instanceID: 34686}
+      Script: {instanceID: 30614}
     - Class: 114
-      Script: {instanceID: 34866}
+      Script: {instanceID: 30766}
     - Class: 114
-      Script: {instanceID: 35330}
+      Script: {instanceID: 31126}
     - Class: 114
-      Script: {instanceID: 35688}
+      Script: {instanceID: 31344}
     - Class: 114
-      Script: {instanceID: 35988}
+      Script: {instanceID: 31532}
     - Class: 114
-      Script: {instanceID: 36196}
+      Script: {instanceID: 31676}
     - Class: 114
-      Script: {instanceID: 36372}
+      Script: {instanceID: 31816}
     - Class: 114
-      Script: {instanceID: 36388}
+      Script: {instanceID: 31828}
     - Class: 114
-      Script: {instanceID: 36476}
+      Script: {instanceID: 31900}
     - Class: 114
-      Script: {instanceID: 36524}
+      Script: {instanceID: 31940}
     - Class: 114
-      Script: {instanceID: 36552}
+      Script: {instanceID: 31964}
     - Class: 114
-      Script: {instanceID: 36684}
+      Script: {instanceID: 32076}
     - Class: 114
-      Script: {instanceID: 36700}
+      Script: {instanceID: 32084}
     - Class: 114
-      Script: {instanceID: 37344}
+      Script: {instanceID: 32564}
     - Class: 114
-      Script: {instanceID: 37440}
+      Script: {instanceID: 32628}
     - Class: 114
-      Script: {instanceID: 37512}
+      Script: {instanceID: 32684}
     - Class: 114
-      Script: {instanceID: 37656}
+      Script: {instanceID: 32768}
     - Class: 114
-      Script: {instanceID: 39086}
+      Script: {instanceID: 33834}
     - Class: 114
-      Script: {instanceID: 39756}
+      Script: {instanceID: 34332}
     - Class: 114
-      Script: {instanceID: 39850}
+      Script: {instanceID: 34394}
     - Class: 114
-      Script: {instanceID: 39898}
+      Script: {instanceID: 34430}
     - Class: 114
-      Script: {instanceID: 40422}
+      Script: {instanceID: 34650}
     - Class: 114
-      Script: {instanceID: 40466}
+      Script: {instanceID: 34814}
     - Class: 114
-      Script: {instanceID: 40620}
+      Script: {instanceID: 34846}
     - Class: 114
-      Script: {instanceID: 41504}
+      Script: {instanceID: 34946}
     - Class: 114
-      Script: {instanceID: 41660}
+      Script: {instanceID: 35610}
     - Class: 114
-      Script: {instanceID: 41756}
+      Script: {instanceID: 35722}
     - Class: 114
-      Script: {instanceID: 41876}
+      Script: {instanceID: 35798}
     - Class: 114
-      Script: {instanceID: 42242}
+      Script: {instanceID: 35886}
     - Class: 114
-      Script: {instanceID: 42358}
+      Script: {instanceID: 36180}
     - Class: 114
-      Script: {instanceID: 42512}
+      Script: {instanceID: 36264}
     - Class: 114
-      Script: {instanceID: 43064}
+      Script: {instanceID: 36366}
     - Class: 114
-      Script: {instanceID: 43758}
+      Script: {instanceID: 36758}
     - Class: 114
-      Script: {instanceID: 43782}
+      Script: {instanceID: 37320}
     - Class: 114
-      Script: {instanceID: 44828}
+      Script: {instanceID: 37336}
     - Class: 114
-      Script: {instanceID: 44892}
+      Script: {instanceID: 38090}
     - Class: 114
-      Script: {instanceID: 45424}
+      Script: {instanceID: 38142}
     - Class: 114
-      Script: {instanceID: 45432}
+      Script: {instanceID: 38518}
     - Class: 114
-      Script: {instanceID: 124088}
+      Script: {instanceID: 38522}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -1971,6 +1972,12 @@ ScriptsOnlyBuild:
     className: ColorAffordanceReceiver
   - hash:
       serializedVersion: 2
+      Hash: f5f1a34919d068fd17a00ca6011dd379
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: HandPresencePhysics
+  - hash:
+      serializedVersion: 2
       Hash: 654cebef8aa88cb6cd0504505364d614
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.Editor
@@ -2437,12 +2444,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
-  - hash:
-      serializedVersion: 2
-      Hash: fff1a32deae5d332d9da4054ff9bffa2
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: HandPresencePhysics
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main Scene.unity

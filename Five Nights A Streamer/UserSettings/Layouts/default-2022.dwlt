@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 384
     height: 767
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -268,8 +268,8 @@ MonoBehaviour:
     y: 0
     width: 902
     height: 549
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -390,9 +390,9 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 1
+    m_SearchArea: 0
     m_Folders:
-    - Assets/Oculus Hands Physics/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -400,30 +400,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Oculus Hands Physics/Scripts
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GitHub\The-Streamer\Five Nights A Streamer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 82440000
-    m_LastClickedID: 17538
-    m_ExpandedIDs: 00000000ae41000006420000ce42000000ca9a3b
+    scrollPos: {x: 0, y: 27}
+    m_SelectedIDs: a6410000
+    m_LastClickedID: 16806
+    m_ExpandedIDs: 00000000a6410000f64100005a42000096420000be430000c6e000001efb000022fb000026fb000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: URP Package Samples
+      m_OriginalName: URP Package Samples
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 64294
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -437,7 +437,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ae41000006420000ce420000
+    m_ExpandedIDs: 00000000a6410000fa410000c6e00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -579,21 +579,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f055fbffa256fbffa85cfbff6a73fbff1c74fbff027afbff0685fbff068afbffec8ffbffb8a5fbffc8a5fbff24a8fbff5ab4fbffb6b5fbffb4b9fbff9ceafbff4eebfbff2cf1fbff12fffbffc4fffbff9606fcff9a12fcff4c13fcff3a1afcffa62afcff582bfcff2a32fcffb441fcff6642fcff5049fcff0a62fcffbc62fcff8e69fcff9276fcff4477fcff2e7efcff0ca0fcffc2a0fcff2ca8fcffaaaffcffbeb3fcff14bdfcff28c1fcffb0cdfcff6ecefcffd8d5fcff58ddfcff6ce1fcffa4edfcffb8f1fcfffc6bfdff1070fdff907dfdffa481fdff068efdffb88efdff2296fdff949dfdffa8a1fdff58b3fdff0ab4fdff74bbfdffe6bffdfffac3fdff38d1fdffead1fdff54d9fdffc6e0fdffdae4fdff0009feffb209feff1c11feff9415feffa819feff4a22feff5e26feff7c31feff68fa000004fb000010fb00003615010000160100661601009c1701007618010082180100922301005c240100c2240100f8250100603a01006e3c0100bc42010086430100b2800100c08001008a810100f081010026830100288a0100368a0100008b01009c8c0100b29301007c940100e294010018960100f2960100fe96010008a00100d2a0010052a301005ea30100b6b00100c2b001000ab801001cb8010036b80100bcb80100c6be010090bf0100f6bf01002cc1010000c80100a6c80100fcc80100d2c9010044ca010084ca010090d20100a0d20100f0d2010032d3010038d3010052d30100acd30100b8d30100d6d30100f6d30100e8d70100aad801000ad9010048da01004ce101000ee20100
+      m_ExpandedIDs: 582dfdff0a2efdffea33fdff9453fdff4654fdff425afdff8683fdff3884fdff3e8afdff50d3fdff02d4fdfffed9fdff2a21feff3222feff8a28feff7e58feff8259feff7e5ffeff3671feffe871feffe877feffa488feffb288feffc288feffce88feffd289feff8ee500000ce600004ce60000ace60000dce600000ae700001ee70000e4e7000002e8000030e80000caf6000048f7000088f70000e8f7000018f8000046f800005af8000020f900003ef900006cf900007c0b01008a0b0100080c0100480c0100a80c0100d80c0100060d01001a0d0100e00d0100fe0d01002c0e010024150100e2150100421601007a1701004423010002240100762d0100342e0100942e0100cc2f01009c300100b6300100be300100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Custom Right Hand Model with Collider
-        m_OriginalName: Custom Right Hand Model with Collider
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 117316
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -959,9 +959,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.034532446, y: 0.9529423, z: -981.86615}
+    m_Target: {x: -0.089370176, y: 0.50023997, z: -981.0648}
     speed: 2
-    m_Value: {x: -0.034532446, y: 0.9529423, z: -981.86615}
+    m_Value: {x: -0.089370176, y: 0.50023997, z: -981.0648}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1007,13 +1007,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.20975535, y: -0.16626956, z: 0.03622357, w: 0.9628392}
+    m_Target: {x: 0.0023655952, y: 0.99731654, z: -0.037416797, w: 0.06321086}
     speed: 2
-    m_Value: {x: 0.20975384, y: -0.16626836, z: 0.03622331, w: 0.9628323}
+    m_Value: {x: 0.002365546, y: 0.99729586, z: -0.037416022, w: 0.06320955}
   m_Size:
-    m_Target: 0.3312256
+    m_Target: 0.95069355
     speed: 2
-    m_Value: 0.3312256
+    m_Value: 0.95069355
   m_Ortho:
     m_Target: 0
     speed: 2
