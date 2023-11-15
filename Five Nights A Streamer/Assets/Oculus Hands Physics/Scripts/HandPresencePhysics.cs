@@ -8,11 +8,34 @@ public class HandPresencePhysics : MonoBehaviour
     private Rigidbody rb;
     public Renderer nonPhysicalHand;
     public float showNonPhysicalHandDistance = 0.05f;
+    private Collider[] handColliders;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        handColliders = GetComponentsInChildren<Collider>();
+    }
+
+    public void EnableHandCollider()
+    {
+        foreach (Collider collider in handColliders) 
+        {
+            collider.enabled = true;
+        }
+    }
+
+    public void EnableHandColliderDelay(float delay)
+    {
+        Invoke("EnableHandCollider", delay);
+    }
+
+    public void DisableHandCollider()
+    {
+        foreach (Collider collider in handColliders)
+        {
+            collider.enabled = false;
+        }
     }
 
     private void Update()
@@ -32,7 +55,7 @@ public class HandPresencePhysics : MonoBehaviour
 
     void FixedUpdate()
     {
-        //position
+        /*//position
         rb.velocity = (target.position - transform.position) / Time.fixedDeltaTime;
 
         //rotation
@@ -41,6 +64,20 @@ public class HandPresencePhysics : MonoBehaviour
 
         Vector3 rotationDifferenceInDegree = angleInDegree * rotationAxis;
 
-        rb.angularVelocity = (rotationDifferenceInDegree * Mathf.Deg2Rad / Time.fixedDeltaTime);
+        rb.angularVelocity = (rotationDifferenceInDegree * Mathf.Deg2Rad / Time.fixedDeltaTime);*/
+
+        // Position
+        rb.velocity = (target.position - transform.position) / Time.fixedDeltaTime;
+
+        // Rotation
+        Quaternion rotationDifference = Quaternion.Inverse(transform.rotation) * target.rotation;
+
+        // Extract the rotation axis
+        Vector3 rotationAxis;
+        float rotationAngle;
+        rotationDifference.ToAngleAxis(out rotationAngle, out rotationAxis);
+
+        // Set the angular velocity using the rotation axis
+        rb.angularVelocity = (rotationAxis * rotationAngle * Mathf.Deg2Rad / Time.fixedDeltaTime);
     }
 }
