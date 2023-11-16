@@ -69,3 +69,11 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.xr.interaction.toolkit from version 2.4.3 to 2.5.0
+
+=== Thu Nov 16 12:59:45 2023
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.xr.interaction.toolkit from version 2.4.3 to 2.5.0
