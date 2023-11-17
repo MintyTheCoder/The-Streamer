@@ -397,6 +397,7 @@
 "Assets/Scripts/Arrays.cs"
 "Assets/Scripts/ChatManager.cs"
 "Assets/Scripts/ClockBehavior.cs"
+"Assets/Scripts/EventSystem.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/HandAnimatorController.cs"
 -langversion:9.0

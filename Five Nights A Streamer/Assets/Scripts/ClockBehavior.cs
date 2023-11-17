@@ -7,9 +7,10 @@ using UnityEngine;
 public class ClockBehavior : MonoBehaviour
 {
     private Boolean isGameOver;
-    public TextMeshProUGUI clockTime;
-    public float delay = 120f;
-    public int time = 7;
+
+    [SerializeField] TextMeshProUGUI clockTime;
+    [SerializeField] float delay = 120f;
+    [SerializeField] int time = 7;
     
 
     // Start is called before the first frame update
