@@ -1,8 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 
 public class EventSystem : MonoBehaviour
 {
@@ -15,34 +14,33 @@ public class EventSystem : MonoBehaviour
         isGameOver = GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver;
     }
 
-    public void moveIntruder(float intensity)
-    {
-        while (!isGameOver)
-        {
-            StartCoroutine(spawnAfterDelay(intensity));
-            if (GameObject.FindWithTag("Intruder"))
-            {
-                Destroy(intruderPrefab);
-                spawnAfterDelay(intensity);
-            }
-            else
-            {
-                Debug.Log("error");
-            }
-        }
-    }
-
-    private GameObject randomSpawnPoint()
+    private GameObject RandomSpawnPoint()
     {
        int randomPosition =  UnityEngine.Random.Range(0, intruderSpawnLocations.Length);
        
        return intruderSpawnLocations[randomPosition];
     }
 
-    IEnumerator spawnAfterDelay(float delay)
+    /// <summary>
+    /// Moves the intruder to a random spawn point after a specified delay.
+    /// </summary>
+    /// <param name="delay">The delay in seconds before moving the intruder.</param>
+    /// <returns>A coroutine to handle the intruder movement.</returns>
+    public IEnumerator SpawnIntruder(float delay)
     {
-        Debug.Log("Spawning...");
-        yield return new WaitForSeconds(delay);
-        Instantiate(intruderPrefab, randomSpawnPoint().transform.position, Quaternion.identity);
+        while (!isGameOver)
+        {
+            if (GameObject.FindWithTag("Intruder") != null)
+            {
+                Debug.Log("Destroying... : " + GameObject.FindWithTag("Intruder").name);
+                Destroy(GameObject.FindWithTag("Intruder"));
+            }
+
+            // no condition
+            Instantiate(intruderPrefab, RandomSpawnPoint().transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(delay);
+            Debug.Log("Will it Reach?"); 
+        }
+        
     }
 }

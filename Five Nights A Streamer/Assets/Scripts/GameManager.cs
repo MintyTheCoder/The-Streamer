@@ -1,21 +1,30 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEditor.Build.Reporting;
+using UnityEngine.Rendering;
 
 public class GameManager : EventSystem
 {
     public Boolean isGameOver;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        moveIntruder(8);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        //temporary
+        StartCoroutine(SpawnIntruder(8));
         
+        Debug.Log("Running too!");
     }
+  
+    private void Update()
+    {
+        if (isGameOver)
+        {
+            Debug.Log("Game Over!");
+        }
+    }
+   
+
+    
 }
