@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3785,12 +3785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b936e073cfa4e46986a0975f5695c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intruderSpawnLocations:
-  - {fileID: 1626583276}
-  - {fileID: 537515056}
-  - {fileID: 1932228503}
-  - {fileID: 1333659505}
   intruderPrefab: {fileID: 4135035050424728189, guid: 5da29a4d68bdbf34c80d4efdaeed2f22, type: 3}
+  spawnables: []
   isGameOver: 0
 --- !u!4 &2070185369
 Transform:

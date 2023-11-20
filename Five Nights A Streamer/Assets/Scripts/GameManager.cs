@@ -12,7 +12,7 @@ public class GameManager : EventSystem
     private void Start()
     {
         //temporary
-        StartCoroutine(SpawnIntruder(8));
+        //StartCoroutine(SpawnIntruder(8));
         
         Debug.Log("Running too!");
     }
