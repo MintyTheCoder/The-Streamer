@@ -59,7 +59,7 @@ public class ChatManager : MonoBehaviour
         usernameText.text = username + ": ";
         messageText.text = username + ": " + message;
 
-        Debug.Log("Spawned Message");
+        //Debug.Log("Spawned Message");
 
         ChatDeleter(newMessage);
         
@@ -91,7 +91,7 @@ public class ChatManager : MonoBehaviour
             for (int i = 0; i < chatMessageList.Length - 1; i++)
             {
                 chatMessageList[i] = chatMessageList[i + 1];
-                Debug.Log("Object Moved Up To Index " + i);
+                //Debug.Log("Object Moved Up To Index " + i);
             }
             chatMessageList[chatMessageList.Length - 1] = newMessage;
         }

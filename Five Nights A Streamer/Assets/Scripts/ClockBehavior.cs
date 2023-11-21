@@ -7,16 +7,14 @@ using UnityEngine;
 public class ClockBehavior : MonoBehaviour
 {
     private Boolean isGameOver;
-
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
-    [SerializeField] int time = 7;
+    int time = 7;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        isGameOver = GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver;
         clockTime.text = time + ":00 PM";
         StartCoroutine(IncrementClock());
     }
@@ -33,7 +31,7 @@ public class ClockBehavior : MonoBehaviour
         {
             if (time >= 12)
             {
-                Debug.Log("Game Over");
+                GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver = true;
                 isGameOver = true;
             }
             else

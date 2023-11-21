@@ -1277,6 +1277,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &664454451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 664454452}
+  m_Layer: 0
+  m_Name: SpawnPoint4 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &664454452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664454451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.7967336, z: 10.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1602844173}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,7 +1866,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockTime: {fileID: 379002769}
   delay: 5
-  time: 7
 --- !u!1 &774617593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,6 +2593,7 @@ Transform:
   - {fileID: 537515057}
   - {fileID: 1932228504}
   - {fileID: 1333659506}
+  - {fileID: 664454452}
   m_Father: {fileID: 284862077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614228952
@@ -3786,8 +3817,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intruderPrefab: {fileID: 4135035050424728189, guid: 5da29a4d68bdbf34c80d4efdaeed2f22, type: 3}
-  spawnables: []
+  spawnables:
+  - gameObject: {fileID: 1626583276}
+    weight: 1
+  - gameObject: {fileID: 537515056}
+    weight: 2
+  - gameObject: {fileID: 1932228503}
+    weight: 1
+  - gameObject: {fileID: 1333659505}
+    weight: 4
+  - gameObject: {fileID: 664454451}
+    weight: 0
   isGameOver: 0
+  intruderSpawnDelay: 3
 --- !u!4 &2070185369
 Transform:
   m_ObjectHideFlags: 0

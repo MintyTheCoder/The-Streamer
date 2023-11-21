@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngineInternal;
+using UnityEditorInternal;
+using System.Linq;
 
 public class EventSystem : MonoBehaviour
 {
-    private Boolean isGameOver;
     [SerializeField] GameObject intruderPrefab;
+    
 
     [System.Serializable]
     public struct Spawnable
@@ -19,7 +22,7 @@ public class EventSystem : MonoBehaviour
 
     private void Start()
     {
-        isGameOver = GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver;
+        //code
     }
 
     private GameObject RandomSpawnPoint()
@@ -31,9 +34,9 @@ public class EventSystem : MonoBehaviour
             totalWeight += obj.weight;
         }
 
-        // Pick a random value from 0 to the added weight of every spawnable
+        // Pick a random value from 0 to the total weight of every spawnable
         float random = UnityEngine.Random.Range(0, totalWeight);
-
+ 
         // Looping through the list again
         foreach (Spawnable obj in spawnables)
         {
@@ -42,10 +45,11 @@ public class EventSystem : MonoBehaviour
             {
                 return obj.gameObject;
             }
+       
         }
 
         // This should NOT happen
-        return null;
+        return spawnables.ElementAt(4).gameObject;
     }
 
     /// <summary>
@@ -56,7 +60,7 @@ public class EventSystem : MonoBehaviour
     public IEnumerator SpawnIntruder(float delay)
     {
         // Run until the game is over
-        while (!isGameOver)
+        while (!GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver)
         {
             if (GameObject.FindWithTag("Intruder") != null)
             {
