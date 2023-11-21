@@ -10,7 +10,7 @@ INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\
 INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 	package
-		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:70-107
+		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:70-118
 		INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 	android:versionName
@@ -18,7 +18,7 @@ INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\
 		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
 		INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 	xmlns:tools
-		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:108-154
+		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:119-165
 	android:versionCode
 		INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml
 		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:1-5:12
@@ -26,7 +26,7 @@ INJECTED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\
 	xmlns:android
 		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:11-69
 	android:installLocation
-		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:155-195
+		ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:2:166-206
 application
 ADDED from D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\launcher\src\main\AndroidManifest.xml:3:3-83
 MERGED from [:unityLibrary] D:\GitHub\The-Streamer\Five Nights A Streamer\Library\Bee\Android\Prj\Mono2x\Gradle\unityLibrary\build\intermediates\merged_manifest\release\AndroidManifest.xml:31:5-94:19

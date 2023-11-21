@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.FBI.FiveNightsAStreamer",
+  "applicationId": "com.DefaultCompany.FiveNightsAStreamer",
   "variantName": "release",
   "elements": []
 }

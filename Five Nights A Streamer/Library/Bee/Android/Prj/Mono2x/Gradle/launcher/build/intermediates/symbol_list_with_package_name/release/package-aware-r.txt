@@ -1,4 +1,4 @@
-com.FBI.FiveNightsAStreamer
+com.DefaultCompany.FiveNightsAStreamer
 id unitySurfaceView
 mipmap app_icon
 mipmap app_icon_round

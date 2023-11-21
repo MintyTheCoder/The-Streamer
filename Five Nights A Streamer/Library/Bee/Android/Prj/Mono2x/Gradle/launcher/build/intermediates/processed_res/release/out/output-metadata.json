@@ -4,7 +4,7 @@
     "type": "PROCESSED_RES",
     "kind": "Directory"
   },
-  "applicationId": "com.FBI.FiveNightsAStreamer",
+  "applicationId": "com.DefaultCompany.FiveNightsAStreamer",
   "variantName": "release",
   "elements": [
     {
@@ -12,7 +12,7 @@
       "filters": [],
       "attributes": [],
       "versionCode": 1,
-      "versionName": "0.11",
+      "versionName": "1.0",
       "outputFile": "resources-release.ap_"
     }
   ],
