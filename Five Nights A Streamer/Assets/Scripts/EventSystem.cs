@@ -8,13 +8,16 @@ using System.Linq;
 
 public class EventSystem : MonoBehaviour
 {
-    [SerializeField] GameObject intruderPrefab;
+    private GameManager _gameManager;
     private Transform dangerZone;
+    [SerializeField] GameObject intruderPrefab;
+
+    // Structs are like mini classes
     [System.Serializable]
     public struct Spawnable
     {
-        public GameObject gameObject;
-        public float weight;
+        public GameObject GameObject;
+        public float Weight;
     }
 
     [SerializeField] List<Spawnable> spawnables;
@@ -22,7 +25,7 @@ public class EventSystem : MonoBehaviour
     private void Start()
     {
         // Get the "danger" game objects transform before list shuffles
-        dangerZone = spawnables.ElementAt(0).gameObject.transform;
+        dangerZone = spawnables.ElementAt(0).GameObject.transform;
     }
 
     // Handle all the checks here
@@ -32,7 +35,7 @@ public class EventSystem : MonoBehaviour
         if (intruderPrefab.transform.position == dangerZone.position && !GameObject.Find("Door").GetComponent<DoorController>().isDoorClosed)
         {
             Debug.LogWarning("You died");
-            GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver = true;
+            _gameManager.IsGameOver = true;
         }
 
     }
@@ -44,7 +47,7 @@ public class EventSystem : MonoBehaviour
         // Adding all the objects weights together
         foreach (Spawnable obj in spawnables)
         {
-            totalWeight += obj.weight;
+            totalWeight += obj.Weight;
         }
 
         float randomValue = UnityEngine.Random.Range(0f, totalWeight);
@@ -54,22 +57,24 @@ public class EventSystem : MonoBehaviour
 
         foreach (Spawnable obj in spawnables)
         {
-            if (randomValue < obj.weight)
+            if (randomValue < obj.Weight)
             {
-                return obj.gameObject;
+                return obj.GameObject;
             }
-            Debug.Log("Subtracted " + obj.weight);
-            // By subtracting the weight, the algorithm accounts for the probability distribution based on weights.
-            // The larger the weight of the current object, the less likely it is to subtract its weight from randomValue
-            randomValue -= obj.weight;
+            Debug.Log("Subtracted " + obj.Weight);
+            /** 
+             * By subtracting the weight, the algorithm accounts for the probability distribution based on weights.
+             * The larger the weight of the current object, the less likely it is to subtract its weight from randomValue
+             */
+            randomValue -= obj.Weight;
             Debug.Log("Value: " + randomValue);
         }
 
         // Fallback in case of any issue (shouldn't normally happen)
-        return spawnables[spawnables.Count - 1].gameObject; 
+        throw new Exception("Could pick a random weighted object"); 
     }
 
-    // Helper function to shuffle the list
+    // Helper function to shuffle the list; T is a generic type
     private void ShuffleList<T>(List<T> list)
     {
         for (int i = 0; i < list.Count; i++)
@@ -90,7 +95,7 @@ public class EventSystem : MonoBehaviour
     public IEnumerator SpawnIntruder(float delay, float yOffset)
     {
         // Run until the game is over
-        while (!GameObject.Find("GameManager").GetComponent<GameManager>().isGameOver)
+        while (!_gameManager.IsGameOver)
         {
             if (GameObject.FindWithTag("Intruder") != null)
             {
