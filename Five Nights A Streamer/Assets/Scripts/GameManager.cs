@@ -8,12 +8,17 @@ using UnityEngine.Rendering;
 public class GameManager : EventSystem
 {
     public Boolean isGameOver;
+    [SerializeField] Boolean doesIntruderSpawn;
     [SerializeField] float intruderSpawnDelay;
+    [SerializeField] float yOffset;
+    
 
     private void Start()
     {
-        //temporary
-        StartCoroutine(SpawnIntruder(intruderSpawnDelay));
+        if (doesIntruderSpawn)
+        {
+            StartCoroutine(SpawnIntruder(intruderSpawnDelay, yOffset));
+        }
         
         Debug.Log("Running too!");
     }
@@ -23,7 +28,7 @@ public class GameManager : EventSystem
         Debug.Log(isGameOver);
         if (isGameOver)
         {
-            Debug.Log("Game Over!");
+            //code
         }
     }
    
