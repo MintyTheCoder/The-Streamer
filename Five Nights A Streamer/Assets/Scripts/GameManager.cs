@@ -13,18 +13,20 @@ using System;
 /// <ul>
 ///     <list>- Public variables -> pascal case</list>
 ///     <list>- Private and Serialized Fields -> camel case</list>
-///     <list>- Object variables -> use a dash then camel case</list>
+///     <list>- Objects -> use a dash then camel case</list>
 /// </ul>
 /// </summary>
 /// <remarks>Remember for all public variables use encapsulation!</remarks>
 public class GameManager : EventSystem
 {
-    [SerializeField] public Boolean IsGameOver { get; set; }
+
+
+    public Boolean IsGameOver {get; set;}
+
     [SerializeField] Boolean doesIntruderSpawn;
     [SerializeField] float intruderSpawnDelay;
     [SerializeField] float yOffset;
     
-
     private void Start()
     {
         if (doesIntruderSpawn)

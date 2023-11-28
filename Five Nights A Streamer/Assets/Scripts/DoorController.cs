@@ -8,7 +8,7 @@ public class DoorController : MonoBehaviour
     private HingeJoint hingeJoint;
     private float hingeLimit;
     private float angleThreshold = 0.5f;
-    public Boolean isDoorClosed;
+    public Boolean IsDoorClosed {get; private set;}
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class DoorController : MonoBehaviour
     {
         if (Mathf.Abs(hingeJoint.angle - hingeLimit) <= angleThreshold)
         {
-            isDoorClosed = true;
+            IsDoorClosed = true;
         }
     }
 }

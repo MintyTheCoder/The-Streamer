@@ -6,16 +6,16 @@ using UnityEngine;
 
 public class ClockBehavior : MonoBehaviour
 {
-    private GameManager _gameManager = new GameManager();
     private int time = 7;
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
-    
+    GameManager _gameManager;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         clockTime.text = time + ":00 PM";
         StartCoroutine(IncrementClock());
     }
@@ -23,7 +23,7 @@ public class ClockBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Other scripts" + _gameManager.IsGameOver);
+        //Debug.Log("Other scripts" + GameManager._instance.IsGameOver);
     }
 
     IEnumerator IncrementClock()
