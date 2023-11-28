@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 148327151}
   - component: {fileID: 148327150}
   - component: {fileID: 148327149}
+  - component: {fileID: 148327155}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -451,6 +452,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148327147}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &148327155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148327147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ecb1108374089f4cbf50ff46ea0d6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angleThreshold: 0.5
 --- !u!1 &158575227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,37 +1723,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &664454451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 664454452}
-  m_Layer: 0
-  m_Name: FallBackSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &664454452
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664454451}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.7967336, z: 10.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1602844173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -3236,7 +3219,6 @@ Transform:
   - {fileID: 537515057}
   - {fileID: 1932228504}
   - {fileID: 1333659506}
-  - {fileID: 664454452}
   m_Father: {fileID: 284862077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1614228952
@@ -4461,20 +4443,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intruderPrefab: {fileID: 4135035050424728189, guid: 5da29a4d68bdbf34c80d4efdaeed2f22, type: 3}
   spawnables:
-  - gameObject: {fileID: 0}
-    weight: 0
-  - gameObject: {fileID: 0}
-    weight: 0
-  - gameObject: {fileID: 0}
-    weight: 0
-  - gameObject: {fileID: 0}
-    weight: 0
-  - gameObject: {fileID: 0}
-    weight: 0
-  isGameOver: 0
+  - GameObject: {fileID: 1626583276}
+    Weight: 4
+  - GameObject: {fileID: 537515056}
+    Weight: 2
+  - GameObject: {fileID: 1932228503}
+    Weight: 1
+  - GameObject: {fileID: 1333659505}
+    Weight: 1
   doesIntruderSpawn: 0
   intruderSpawnDelay: 3
   yOffset: 0
+  timeBeforeSpawn: 0
 --- !u!4 &2070185369
 Transform:
   m_ObjectHideFlags: 0
@@ -4499,7 +4479,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2081600816}
-  - component: {fileID: 2081600817}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -4526,19 +4505,6 @@ Transform:
   - {fileID: 148327148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2081600817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081600815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ecb1108374089f4cbf50ff46ea0d6d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDoorClosed: 0
 --- !u!1 &2088278390
 GameObject:
   m_ObjectHideFlags: 0

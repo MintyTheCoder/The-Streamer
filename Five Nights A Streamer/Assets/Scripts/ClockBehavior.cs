@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ClockBehavior : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class ClockBehavior : MonoBehaviour
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
     GameManager _gameManager;
-    
 
     // Start is called before the first frame update
     void Start()

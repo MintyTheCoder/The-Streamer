@@ -9,6 +9,7 @@ using System.Linq;
 public class EventSystem : MonoBehaviour
 {
     private GameManager _gameManager;
+    private DoorController _doorController;
     private Transform dangerZone;
     [SerializeField] GameObject intruderPrefab;
 
@@ -27,17 +28,17 @@ public class EventSystem : MonoBehaviour
         // Get the "danger" game objects transform before list shuffles
         dangerZone = spawnables.ElementAt(0).GameObject.transform;
         _gameManager =  GameObject.Find("GameManager").GetComponent<GameManager>();
-
+        _doorController = GameObject.Find("Door").GetComponent<DoorController>();
     }
 
     // Handle all the checks here
     private void Update()
     {
         // Check if the intruder is at a certain game object and if the door is not closed, if so stop the game(Jump scares and delays will be added in the future).
-        if (intruderPrefab.transform.position == dangerZone.position)
+        if (intruderPrefab.transform.position == dangerZone.position && _doorController.IsDoorClosed)
         {
             Debug.LogWarning("You died");
-            
+            _gameManager.IsGameOver = true;
         }
 
     }
