@@ -23,7 +23,7 @@ public class ClockBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Other scripts" + GameManager._instance.IsGameOver);
+        
     }
 
     IEnumerator IncrementClock()

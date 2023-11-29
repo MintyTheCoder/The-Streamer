@@ -23,7 +23,8 @@ public class DoorController : MonoBehaviour
     void Start()
     {
         hingeJoint = GetComponent<HingeJoint>();
-        hingeLimit = hingeJoint.limits.min; 
+        hingeLimit = hingeJoint.limits.min;
+        Debug.Log(hingeLimit);
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class DoorController : MonoBehaviour
         if (Mathf.Abs(hingeJoint.angle - hingeLimit) <= angleThreshold)
         {
             IsDoorClosed = true;
+            Debug.Log("Closed");
         }
     }
 }

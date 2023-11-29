@@ -4448,13 +4448,13 @@ MonoBehaviour:
   - GameObject: {fileID: 537515056}
     Weight: 2
   - GameObject: {fileID: 1932228503}
-    Weight: 1
+    Weight: 3
   - GameObject: {fileID: 1333659505}
-    Weight: 1
-  doesIntruderSpawn: 0
+    Weight: 2
+  doesIntruderSpawn: 1
   intruderSpawnDelay: 3
-  yOffset: 0
-  timeBeforeSpawn: 0
+  yOffset: 2
+  timeBeforeSpawn: 2
 --- !u!4 &2070185369
 Transform:
   m_ObjectHideFlags: 0

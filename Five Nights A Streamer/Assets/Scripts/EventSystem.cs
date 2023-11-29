@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngineInternal;
-using UnityEditorInternal;
 using System.Linq;
 
 public class EventSystem : MonoBehaviour
@@ -22,23 +20,24 @@ public class EventSystem : MonoBehaviour
     }
 
     [SerializeField] List<Spawnable> spawnables;
-    
+
+
     private void Start()
     {
-        // Get the "danger" game objects transform before list shuffles
-        dangerZone = spawnables.ElementAt(0).GameObject.transform;
-        _gameManager =  GameObject.Find("GameManager").GetComponent<GameManager>();
+        //_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _doorController = GameObject.Find("Door").GetComponent<DoorController>();
+        // Get the "danger" game objects transform before list shuffles
+        dangerZone = spawnables.ElementAt(0).GameObject.transform;        
     }
 
     // Handle all the checks here
     private void Update()
     {
         // Check if the intruder is at a certain game object and if the door is not closed, if so stop the game(Jump scares and delays will be added in the future).
-        if (intruderPrefab.transform.position == dangerZone.position && _doorController.IsDoorClosed)
+        if (intruderPrefab.transform.position == dangerZone.position && !_doorController.IsDoorClosed)
         {
             Debug.LogWarning("You died");
-            _gameManager.IsGameOver = true;
+            //_gameManager.IsGameOver = true;
         }
 
     }
@@ -64,13 +63,12 @@ public class EventSystem : MonoBehaviour
             {
                 return obj.GameObject;
             }
-            Debug.Log("Subtracted " + obj.Weight);
+
             /** 
              * By subtracting the weight, the algorithm accounts for the probability distribution based on weights.
              * The larger the weight of the current object, the less likely it is to subtract its weight from randomValue
              */
             randomValue -= obj.Weight;
-            Debug.Log("Value: " + randomValue);
         }
 
         // Fallback in case of any issue (shouldn't normally happen)
@@ -97,12 +95,12 @@ public class EventSystem : MonoBehaviour
     /// <returns>A coroutine to handle the intruder movement.</returns>
     public IEnumerator SpawnIntruder(float delay, float yOffset)
     {
+        
         // Run until the game is over
-        while (_gameManager.IsGameOver)
+        while (!GameObject.Find("GameManager").GetComponent<GameManager>().IsGameOver)
         {
             if (GameObject.FindWithTag("Intruder") != null)
             {
-                Debug.Log("Destroying... : " + GameObject.FindWithTag("Intruder").name);
                 Destroy(GameObject.FindWithTag("Intruder"));
             }
             GameObject randomObject = RandomSpawnPoint(); 

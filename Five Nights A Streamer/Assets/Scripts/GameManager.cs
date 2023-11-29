@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 /// Naming conventions for variables in all scripts:
 /// <para/>
 /// <ul>
-///     <list>- Public variables -> pascal case</list>
+///     <list>- Public variables and structs -> pascal case</list>
 ///     <list>- Private and Serialized Fields -> camel case</list>
 ///     <list>- Objects -> use a dash then camel case</list>
 /// </ul>
@@ -32,20 +32,19 @@ public class GameManager : EventSystem
     
     private void Start()
     {
-        if (doesIntruderSpawn)
-        {
-            Invoke("StartIntruderEvent", timeBeforeSpawn); 
-        }
+     
+            //Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
+        StartCoroutine(SpawnIntruder(intruderSpawnDelay, yOffset));
+        
         
         Debug.Log("Running too!");
     }
 
     private void Update()
     {
-        Debug.Log(IsGameOver);
         if (IsGameOver)
         {
-            Invoke("ReloadScene", 3);
+            Invoke(nameof(ReloadScene), 3);
         }
     }
 
