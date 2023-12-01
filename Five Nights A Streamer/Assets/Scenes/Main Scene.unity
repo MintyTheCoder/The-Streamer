@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18018535, g: 0.22559482, b: 0.30677685, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4444,7 +4444,7 @@ MonoBehaviour:
   intruderPrefab: {fileID: 4135035050424728189, guid: 5da29a4d68bdbf34c80d4efdaeed2f22, type: 3}
   spawnables:
   - GameObject: {fileID: 1626583276}
-    Weight: 4
+    Weight: 8
   - GameObject: {fileID: 537515056}
     Weight: 2
   - GameObject: {fileID: 1932228503}
@@ -4453,7 +4453,7 @@ MonoBehaviour:
     Weight: 2
   doesIntruderSpawn: 1
   intruderSpawnDelay: 3
-  yOffset: 2
+  yOffset: 0
   timeBeforeSpawn: 2
 --- !u!4 &2070185369
 Transform:
