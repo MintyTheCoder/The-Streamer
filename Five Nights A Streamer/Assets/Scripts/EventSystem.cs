@@ -17,27 +17,36 @@ public class EventSystem : MonoBehaviour
     {
         public GameObject GameObject;
         public float Weight;
+        
     }
 
     [SerializeField] List<Spawnable> spawnables;
 
 
+    // Initialize the grabbing of components here
+    private void Awake()
+    {
+        _gameManager = GameObject.Find("GameManager")?.GetComponent<GameManager>();
+        _doorController = GameObject.Find("Door").GetComponent<DoorController>();
+        
+    }
+
     private void Start()
     {
-        //_gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        _doorController = GameObject.Find("Door").GetComponent<DoorController>();
         // Get the "danger" game objects transform before list shuffles
-        dangerZone = spawnables.ElementAt(0).GameObject.transform;        
+        dangerZone = spawnables.ElementAt(0).GameObject.transform;   
     }
 
     // Handle all the checks here
     private void Update()
     {
+        Debug.Log(_doorController.IsDoorClosed);
+
         // Check if the intruder is at a certain game object and if the door is not closed, if so stop the game(Jump scares and delays will be added in the future).
-        if (intruderPrefab.transform.position == dangerZone.position && !_doorController.IsDoorClosed)
+        if (intruderPrefab.transform.position == dangerZone.position && _doorController.IsDoorClosed)
         {
             Debug.LogWarning("You died");
-            //_gameManager.IsGameOver = true;
+            _gameManager.IsGameOver = true;
         }
 
     }
@@ -97,7 +106,7 @@ public class EventSystem : MonoBehaviour
     {
         
         // Run until the game is over
-        while (!GameObject.Find("GameManager").GetComponent<GameManager>().IsGameOver)
+        while (!_gameManager.IsGameOver)
         {
             if (GameObject.FindWithTag("Intruder") != null)
             {
