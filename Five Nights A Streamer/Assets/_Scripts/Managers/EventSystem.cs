@@ -18,7 +18,6 @@ public class EventSystem : MonoBehaviour
     {
         public GameObject GameObject;
         public float Weight;
-        
     }
 
     [SerializeField] List<Spawnable> spawnables;

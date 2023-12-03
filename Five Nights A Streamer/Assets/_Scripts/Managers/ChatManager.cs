@@ -5,28 +5,34 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 //using static UnityEngine.InputSystem.InputRemoting;
 
 public class ChatManager : MonoBehaviour
 {
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
-    Arrays arrayScript;
-
     Vector3 spawnPosition = new Vector3(0, -275, -50);
-
-    string[] userNames;
-    string[] chatMessages;
+    ChatData _chatData;
     public GameObject[] chatMessageList;
-
     int chatMessagesCount = 0;
+
+    private class ChatData{
+        public string[] Usernames;
+        public string[] Messages;
+    }
 
     private void Awake()
     {
-        arrayScript = GameObject.Find("Arrays").GetComponent<Arrays>();
+        // arrayScript = GameObject.Find("Arrays").GetComponent<Arrays>();
 
-        userNames = arrayScript.userNames;
-        chatMessages = arrayScript.chatMessages;
+        // userNames = arrayScript.userNames;
+        // chatMessages = arrayScript.chatMessages;
+
+        string json = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
+        _chatData = JsonUtility.FromJson<ChatData>(json);
+        Debug.Log(_chatData.Usernames[1]);
+        Debug.Log(json);
 
         AddChatMessage(GetRandomUsername(), GetRandomMessage());
 
@@ -45,7 +51,7 @@ public class ChatManager : MonoBehaviour
 
     private void Start()
     {
-        //AddChatMessage(GetRandomUsername(), GetRandomMessage());     
+
     }
     public void AddChatMessage(string username, string message)
     {
@@ -55,7 +61,7 @@ public class ChatManager : MonoBehaviour
         TextMeshProUGUI usernameText = newMessage.transform.Find("Username").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
 
-        usernameText.color =  new Color(Random.value, Random.value, Random.value);
+        usernameText.color =  new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
         usernameText.text = username + ": ";
         messageText.text = username + ": " + message;
 
@@ -99,15 +105,15 @@ public class ChatManager : MonoBehaviour
 
     string GetRandomUsername()
     {
-        string username = userNames[Random.Range(0,userNames.Length)];
+        string username = _chatData.Usernames[UnityEngine.Random.Range(0,_chatData.Usernames.Length)];
 
         return username;
     }
 
     string GetRandomMessage()
     {
-        string message = chatMessages[Random.Range(0, chatMessages.Length)];
-
+        string message = _chatData.Messages[UnityEngine.Random.Range(0, _chatData.Messages.Length)];
+        
         return message;
     }
 }
