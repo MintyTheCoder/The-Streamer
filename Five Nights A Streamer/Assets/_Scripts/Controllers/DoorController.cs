@@ -16,7 +16,6 @@ public class DoorController : MonoBehaviour
     private HingeJoint hingeJoint;
     private float hingeLimit;
     [SerializeField] float angleThreshold = 0.5f;
-
     public Boolean IsDoorClosed {get; private set;}
 
     // Start is called before the first frame update

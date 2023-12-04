@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
-
+using System.IO;
 
 /// <summary>
 /// Contains the code to run events at certain times and manage the game/UI.
@@ -29,10 +29,16 @@ public class GameManager : EventSystem
     [SerializeField] float intruderSpawnDelay;
     [SerializeField] float yOffset;
     [SerializeField] float timeBeforeSpawn;
-    
+
+    private struct PlayerSaveData
+    {
+        public string Night;
+    }
+
+
     private void Start()
     {
-        //Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
+        SetLevel();
         if (doesIntruderSpawn)
         {
             Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
@@ -49,6 +55,19 @@ public class GameManager : EventSystem
         {
             Invoke(nameof(ReloadScene), 3);
         }
+    }
+
+    // Parse the level information to the PlayerSave json.
+    private void SetLevel()
+    {
+        string currentLevel = SceneManager.GetActiveScene().name;
+
+        PlayerSaveData data = new PlayerSaveData();
+        data.Night = currentLevel;
+
+        string parsedData = JsonUtility.ToJson(data);
+        Debug.Log(parsedData);
+        File.WriteAllText(Application.dataPath + "/_Scripts/PlayerSave.json", parsedData);
     }
 
     // So we can invoke the spawning

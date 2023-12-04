@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-//using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-//using static UnityEngine.InputSystem.InputRemoting;
 
 public class ChatManager : MonoBehaviour
 {
@@ -17,7 +15,7 @@ public class ChatManager : MonoBehaviour
     public GameObject[] chatMessageList;
     int chatMessagesCount = 0;
 
-    private class ChatData{
+    private struct ChatData{
         public string[] Usernames;
         public string[] Messages;
     }
