@@ -23,7 +23,7 @@ public class EventSystem : MonoBehaviour
     [SerializeField] List<Spawnable> spawnables;
 
     // Initialize the grabbing of components and data here
-    private void Awake()
+    void Awake()
     {
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         _doorController = GameObject.Find("Door").GetComponent<DoorController>();
@@ -32,7 +32,7 @@ public class EventSystem : MonoBehaviour
     }
 
     // Handle all the checks here
-    private void Update()
+    void Update()
     {
 
     }
@@ -41,7 +41,6 @@ public class EventSystem : MonoBehaviour
     {
         float totalWeight = 0f;
 
-        // Adding all the objects weights together
         foreach (Spawnable obj in spawnables)
         {
             totalWeight += obj.Weight;
@@ -49,7 +48,6 @@ public class EventSystem : MonoBehaviour
 
         float randomValue = UnityEngine.Random.Range(0f, totalWeight);
 
-        // Shuffle the list to randomize selection among objects with the same weight
         ShuffleList(spawnables);
 
         foreach (Spawnable obj in spawnables)
@@ -66,11 +64,9 @@ public class EventSystem : MonoBehaviour
             randomValue -= obj.Weight;
         }
 
-        // Fallback in case of any issue (shouldn't normally happen)
         throw new Exception("Could pick a random weighted object"); 
     }
 
-    // Helper function to shuffle the list; T is a generic type
     private void ShuffleList<T>(List<T> list)
     {
         for (int i = 0; i < list.Count; i++)
@@ -109,6 +105,7 @@ public class EventSystem : MonoBehaviour
             {
                 Debug.LogWarning("You died");
                 _gameManager.IsGameOver = true;
+                _gameManager.HasPlayerWon = false;
             }
             yield return new WaitForSeconds(delay);
         }

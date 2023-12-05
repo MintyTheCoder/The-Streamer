@@ -25,50 +25,55 @@ using System.IO;
 public class GameManager : EventSystem
 {
     public Boolean IsGameOver {get; set;}
+    public Boolean HasPlayerWon { get; set;}
     [SerializeField] Boolean doesIntruderSpawn;
     [SerializeField] float intruderSpawnDelay;
     [SerializeField] float yOffset;
     [SerializeField] float timeBeforeSpawn;
 
-    private struct PlayerSaveData
+    public struct PlayerSaveData
     {
-        public string Night;
+        public static string Night;
     }
 
-
-    private void Start()
+    void Awake()
     {
         SetLevel();
+    }
+
+    void Start()
+    {
         if (doesIntruderSpawn)
         {
             Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
         }
-        
-        
-        Debug.Log("Running too!");
     }
 
-    private void Update()
+    void Update()
     {
         Debug.Log(IsGameOver);
-        if (IsGameOver)
+        if (IsGameOver && HasPlayerWon == true)
         {
-            Invoke(nameof(ReloadScene), 3);
+            Debug.Log("You won");
+            Invoke(nameof(LoadNextScene), 5);
+        }
+        else
+        {
+            Debug.Log("You lost");
+            Invoke(nameof(ReloadScene), 5);
         }
     }
 
-    // Parse the level information to the PlayerSave json.
+    // Parse the level information to the PlayerSave json file.
     private void SetLevel()
     {
         string currentLevel = SceneManager.GetActiveScene().name;
 
-        PlayerSaveData data = new PlayerSaveData();
-        data.Night = currentLevel;
-
+        string data = PlayerSaveData.Night = currentLevel;
+         
         string parsedData = JsonUtility.ToJson(data);
-        Debug.Log(parsedData);
-        File.WriteAllText(Application.dataPath + "/_Scripts/PlayerSave.json", parsedData);
-    }
+        File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", parsedData);
+    } 
 
     // So we can invoke the spawning
     private void StartIntruderEvent()
@@ -76,7 +81,11 @@ public class GameManager : EventSystem
         StartCoroutine(SpawnIntruder(intruderSpawnDelay, yOffset));
     }
 
-    // So we can invoke the reloaded
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     private void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

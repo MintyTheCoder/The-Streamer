@@ -32,6 +32,7 @@ public class ClockBehavior : MonoBehaviour
         {
             if (time >= 12)
             {
+                _gameManager.HasPlayerWon = true;
                 _gameManager.IsGameOver = true;
             }
             else

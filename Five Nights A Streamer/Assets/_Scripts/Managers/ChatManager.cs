@@ -20,7 +20,7 @@ public class ChatManager : MonoBehaviour
         public string[] Messages;
     }
 
-    private void Awake()
+    void Awake()
     {
         // arrayScript = GameObject.Find("Arrays").GetComponent<Arrays>();
 
@@ -47,7 +47,7 @@ public class ChatManager : MonoBehaviour
        
     }
 
-    private void Start()
+    void Start()
     {
 
     }
