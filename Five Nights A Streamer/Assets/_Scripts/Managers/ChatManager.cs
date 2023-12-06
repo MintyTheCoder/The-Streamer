@@ -29,9 +29,6 @@ public class ChatManager : MonoBehaviour
 
         string json = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
         _chatData = JsonUtility.FromJson<ChatData>(json);
-        Debug.Log(_chatData.Usernames[1]);
-        Debug.Log(json);
-
         AddChatMessage(GetRandomUsername(), GetRandomMessage());
 
     }

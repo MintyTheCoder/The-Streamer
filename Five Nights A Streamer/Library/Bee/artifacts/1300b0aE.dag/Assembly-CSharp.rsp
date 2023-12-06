@@ -398,7 +398,6 @@
 "Assets/_Scripts/Controllers/DoorController.cs"
 "Assets/_Scripts/Controllers/HandAnimatorController.cs"
 "Assets/_Scripts/Managers/ChatManager.cs"
-"Assets/_Scripts/Managers/EventSystem.cs"
 "Assets/_Scripts/Managers/GameManager.cs"
 "Assets/_Scripts/Managers/UIManager.cs"
 -langversion:9.0
