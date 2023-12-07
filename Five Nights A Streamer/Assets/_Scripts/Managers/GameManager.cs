@@ -14,7 +14,8 @@ using System.IO;
 /// <ul>
 ///     <list>- Public variables and structs -> pascal case</list>
 ///     <list>- Private and Serialized Fields -> camel case</list>
-///     <list>- Objects -> use a dash then camel case</list>
+///     <list>- Objects we created -> use a dash then camel case</list>
+///     <list>- Other objects -> use camel case</list>
 /// </ul>
 /// </summary>
 /// <remarks>
@@ -49,12 +50,12 @@ public class GameManager : MonoBehaviour
 
     public struct PlayerSaveData
     {
-        public static string Night;
+        public string Night;
     }
 
     void Awake()
     {
-        SetLevel();
+        //SetLevel();
         _doorController = doorObject.GetComponent<DoorController>();
         originalSpawnables = spawnables;
         dangerGameObject = originalSpawnables[0].GameObject;
@@ -89,16 +90,17 @@ public class GameManager : MonoBehaviour
     {
         string currentLevel = SceneManager.GetActiveScene().name;
 
-        string data = PlayerSaveData.Night = currentLevel;
+        PlayerSaveData _save = new PlayerSaveData();
+        _save.Night = currentLevel;
 
-        string parsedData = JsonUtility.ToJson(data);
-        File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", parsedData);
+        string json = JsonUtility.ToJson(_save);
+        File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
     }
 
     // So we can invoke the spawning
     private void StartIntruderEvent()
     {
-        StartCoroutine(SpawnIntruder(intruderSpawnDelay, yOffset));
+        StartCoroutine(SpawnIntruder());
     }
 
     private void LoadNextScene()
@@ -161,7 +163,7 @@ public class GameManager : MonoBehaviour
     /// <param name="delay">The delay in seconds before moving the intruder.</param>
     /// <param name="yOffset">The offset on the y axis of the intruders spawn</param>
     /// <returns>A coroutine to handle the intruder movement.</returns>
-    public IEnumerator SpawnIntruder(float delay, float yOffset)
+    public IEnumerator SpawnIntruder()
     {
         while (!IsGameOver)
         {
@@ -176,13 +178,13 @@ public class GameManager : MonoBehaviour
 
             Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
             Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + yOffset, dangerGameObject.transform.position.z);
-            if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
+            if (dangerZone == intruderPosition && _doorController.IsDoorClosed)
             {
                 Debug.LogWarning("You died");
                 IsGameOver = true;
                 HasPlayerWon = false;
             }
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(intruderSpawnDelay);
         }
 
     }
