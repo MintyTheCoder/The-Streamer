@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static GameManager;
 
 /// <summary>
 /// Class that contains the methods to control the main and settings menus. This also creates the inital save file and reads other json files.
@@ -12,8 +13,7 @@ public class UIManager : MonoBehaviour
 {
     void Awake()
     {
-        SetBasePLayerSaveData();
-        GetSavedLevel();
+        SetBasePlayerSaveData();
     }
 
     // Start is called before the first frame update
@@ -28,27 +28,41 @@ public class UIManager : MonoBehaviour
         
     }
 
-    private string GetSavedLevel()
+    
+
+    private string GetSavedNight()
     {
         if(File.Exists(Application.persistentDataPath + "/PlayerSave.json"))
         {
             string json = File.ReadAllText(Application.persistentDataPath + "/PlayerSave.json");
             GameManager.PlayerSaveData _saveData = JsonUtility.FromJson<GameManager.PlayerSaveData>(json);
-            return  _saveData.Night;
+            Debug.Log(_saveData);
+            return _saveData.Night;
         }
-        else 
+        else
         {
             throw new Exception("File doesnt exist");
+
         }
     }
 
-    private void SetBasePLayerSaveData()
+    private void SetBasePlayerSaveData()
     {
-        GameManager.PlayerSaveData _save = new GameManager.PlayerSaveData();
-        _save.Night = "Night 1";
+        GameManager.PlayerSaveData data = new GameManager.PlayerSaveData();
+        if (!File.Exists(Application.persistentDataPath + "/PlayerSave.json"))
+        {
+            
+            data.Night = "Night 1";
+            data.IsGameComplete = false;
 
-        string json = JsonUtility.ToJson(_save);
-        Debug.Log(json);
-        File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
+            string json = JsonUtility.ToJson(data);
+            Debug.Log(json);
+            File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
+        }
+        else
+        {
+            Debug.Log("File exists");
+        }
     }
+
 }

@@ -50,7 +50,8 @@ public class GameManager : MonoBehaviour
 
     public struct PlayerSaveData
     {
-        public string Night;
+        public string Night { get; set; }
+        public Boolean IsGameComplete {  get; set; }
     }
 
     void Awake()
@@ -163,7 +164,7 @@ public class GameManager : MonoBehaviour
     /// <param name="delay">The delay in seconds before moving the intruder.</param>
     /// <param name="yOffset">The offset on the y axis of the intruders spawn</param>
     /// <returns>A coroutine to handle the intruder movement.</returns>
-    public IEnumerator SpawnIntruder()
+    private IEnumerator SpawnIntruder()
     {
         while (!IsGameOver)
         {
@@ -187,6 +188,20 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(intruderSpawnDelay);
         }
 
+    }
+
+    public static Boolean IsGameCompleted()
+    {
+        string json = File.ReadAllText(Application.persistentDataPath + "/PlayerSave.json");
+        PlayerSaveData _saveData = JsonUtility.FromJson<PlayerSaveData>(json);
+        if (_saveData.IsGameComplete == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
