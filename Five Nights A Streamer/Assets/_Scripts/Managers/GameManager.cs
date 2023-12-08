@@ -26,9 +26,9 @@ using System.IO;
 public class GameManager : MonoBehaviour
 {
     public Boolean IsGameOver {get; set;}
-    public Boolean HasPlayerWon { get; set;}
+    public bool HasPlayerWon { get; set;}
 
-    [SerializeField] Boolean doesIntruderSpawn;
+    [SerializeField] bool doesIntruderSpawn;
     [SerializeField] float intruderSpawnDelay;
     [SerializeField] float yOffset;
     [SerializeField] float timeBeforeSpawn;
@@ -48,12 +48,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<Spawnable> spawnables;
     private List<Spawnable> originalSpawnables;
 
-    public struct PlayerSaveData
-    {
-        public string Night { get; set; }
-        public Boolean IsGameComplete {  get; set; }
-    }
-
     void Awake()
     {
         //SetLevel();
@@ -65,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log(Application.persistentDataPath);
         if (doesIntruderSpawn)
         {
             Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
@@ -91,10 +86,9 @@ public class GameManager : MonoBehaviour
     {
         string currentLevel = SceneManager.GetActiveScene().name;
 
-        PlayerSaveData _save = new PlayerSaveData();
-        _save.Night = currentLevel;
+        PlayerSaveData _data = new PlayerSaveData(currentLevel, false);
 
-        string json = JsonUtility.ToJson(_save);
+        string json = JsonUtility.ToJson(_data);
         File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
     }
 
@@ -190,7 +184,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public static Boolean IsGameCompleted()
+    public static bool IsGameCompleted()
     {
         string json = File.ReadAllText(Application.persistentDataPath + "/PlayerSave.json");
         PlayerSaveData _saveData = JsonUtility.FromJson<PlayerSaveData>(json);

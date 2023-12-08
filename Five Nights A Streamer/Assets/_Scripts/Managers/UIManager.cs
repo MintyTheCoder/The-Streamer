@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static GameManager;
 
 /// <summary>
 /// Class that contains the methods to control the main and settings menus. This also creates the inital save file and reads other json files.
@@ -19,7 +18,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -28,34 +27,21 @@ public class UIManager : MonoBehaviour
         
     }
 
-    
-
     private string GetSavedNight()
     {
-        if(File.Exists(Application.persistentDataPath + "/PlayerSave.json"))
-        {
-            string json = File.ReadAllText(Application.persistentDataPath + "/PlayerSave.json");
-            GameManager.PlayerSaveData _saveData = JsonUtility.FromJson<GameManager.PlayerSaveData>(json);
-            Debug.Log(_saveData);
-            return _saveData.Night;
-        }
-        else
-        {
-            throw new Exception("File doesnt exist");
-
-        }
+        string json = File.ReadAllText(Application.persistentDataPath + "/PlayerSave.json");
+        PlayerSaveData _saveData = JsonUtility.FromJson<PlayerSaveData>(json);
+        return _saveData.Night;
     }
 
     private void SetBasePlayerSaveData()
     {
-        GameManager.PlayerSaveData data = new GameManager.PlayerSaveData();
+        
         if (!File.Exists(Application.persistentDataPath + "/PlayerSave.json"))
         {
-            
-            data.Night = "Night 1";
-            data.IsGameComplete = false;
-
-            string json = JsonUtility.ToJson(data);
+            PlayerSaveData _data = new PlayerSaveData("Night 1", false);
+            Debug.Log(_data.IsGameComplete);
+            string json = JsonUtility.ToJson(_data);
             Debug.Log(json);
             File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
         }

@@ -400,6 +400,7 @@
 "Assets/_Scripts/Managers/ChatManager.cs"
 "Assets/_Scripts/Managers/GameManager.cs"
 "Assets/_Scripts/Managers/UIManager.cs"
+"Assets/_Scripts/PlayerSaveData.cs"
 -langversion:9.0
 
 /deterministic
