@@ -397,10 +397,10 @@
 "Assets/_Scripts/Behaviors/ClockBehavior.cs"
 "Assets/_Scripts/Controllers/DoorController.cs"
 "Assets/_Scripts/Controllers/HandAnimatorController.cs"
+"Assets/_Scripts/GameUtils.cs"
 "Assets/_Scripts/Managers/ChatManager.cs"
 "Assets/_Scripts/Managers/GameManager.cs"
 "Assets/_Scripts/Managers/UIManager.cs"
-"Assets/_Scripts/PlayerSaveData.cs"
 -langversion:9.0
 
 /deterministic

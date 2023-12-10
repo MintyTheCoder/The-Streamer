@@ -22,7 +22,6 @@ public class DoorController : MonoBehaviour
     {
         hingeJoint = GetComponent<HingeJoint>();
         hingeLimit = hingeJoint.limits.min;
-        Debug.Log(hingeLimit);
     }
 
     // Update is called once per frame

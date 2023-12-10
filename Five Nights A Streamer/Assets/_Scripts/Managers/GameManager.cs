@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
-using System.IO;
+using GameUtils;
 
 /// <summary>
 /// Contains the code to run events at certain times and manage the game loop/events.
@@ -25,12 +25,12 @@ using System.IO;
 /// </remarks>
 public class GameManager : MonoBehaviour
 {
-    public Boolean IsGameOver {get; set;}
-    public bool HasPlayerWon { get; set;}
+    public static bool IsGameOver {get; set;}
+    public static bool HasPlayerWon { get; set;}
 
     [SerializeField] bool doesIntruderSpawn;
     [SerializeField] float intruderSpawnDelay;
-    [SerializeField] float yOffset;
+    [SerializeField] float intruderYOffset;
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
     [SerializeField] GameObject doorObject;
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        //SetLevel();
+        PlayerSaveU.SaveLatestNight();
         _doorController = doorObject.GetComponent<DoorController>();
         originalSpawnables = spawnables;
         dangerGameObject = originalSpawnables[0].GameObject;
@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        IsGameOver = false;
+        HasPlayerWon = false;  
         Debug.Log(Application.persistentDataPath);
         if (doesIntruderSpawn)
         {
@@ -68,31 +70,20 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        /*if (IsGameOver && HasPlayerWon == true)
+        // Checking for game status and saving data
+        if (IsGameOver && HasPlayerWon)
         {
             Debug.Log("You won");
+            PlayerSaveU.SaveCompletionStatus();
             Invoke(nameof(LoadNextScene), 5);
         }
         else
         {
             Debug.Log("You lost");
             Invoke(nameof(ReloadScene), 5);
-        }*/
-
+        }
     }
 
-    // Parse the level information to the PlayerSave json file.
-    private void SetLevel()
-    {
-        string currentLevel = SceneManager.GetActiveScene().name;
-
-        PlayerSaveData _data = new PlayerSaveData(currentLevel, false);
-
-        string json = JsonUtility.ToJson(_data);
-        File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
-    }
-
-    // So we can invoke the spawning
     private void StartIntruderEvent()
     {
         StartCoroutine(SpawnIntruder());
@@ -108,17 +99,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void ShuffleList<T>(List<T> list)
-    {
-        for (int i = 0; i < list.Count; i++)
-        {
-            int randomIndex = UnityEngine.Random.Range(i, list.Count);
-            T temp = list[i];
-            list[i] = list[randomIndex];
-            list[randomIndex] = temp;
-        }
-    }
-
     private GameObject RandomSpawnPoint()
     {
         float totalWeight = 0f;
@@ -130,8 +110,8 @@ public class GameManager : MonoBehaviour
 
         float randomValue = UnityEngine.Random.Range(0f, totalWeight);
 
-        ShuffleList(spawnables);
-
+        ListU.ShuffleList(spawnables);
+        
         foreach (Spawnable obj in spawnables)
         {
             if (randomValue < obj.Weight)
@@ -139,21 +119,18 @@ public class GameManager : MonoBehaviour
                 return obj.GameObject;
             }
 
-            /** 
-             * By subtracting the weight, the algorithm accounts for the probability distribution based on weights.
-             * The larger the weight of the current object, the less likely it is to subtract its weight from randomValue
-             */
+            /*
+            * By subtracting the weight, the algorithm accounts for the probability distribution based on weights.
+            * The larger the weight of the current object, the less likely it is to subtract its weight from randomValue
+            */
             randomValue -= obj.Weight;
         }
 
-        throw new Exception("Could pick a random weighted object");
+        throw new Exception("Couldn't pick a random weighted object");
     }
 
-    
-
-
     /// <summary>
-    /// Moves the intruder to a random spawn point after a specified delay.
+    /// Moves the intruder to a random spawn point based on weight after a specified delay.
     /// </summary>
     /// <param name="delay">The delay in seconds before moving the intruder.</param>
     /// <param name="yOffset">The offset on the y axis of the intruders spawn</param>
@@ -162,17 +139,16 @@ public class GameManager : MonoBehaviour
     {
         while (!IsGameOver)
         {
-
             if (GameObject.FindWithTag("Intruder") != null)
             {
                 Destroy(GameObject.FindWithTag("Intruder"));
             }
             GameObject randomObject = RandomSpawnPoint();
 
-            Instantiate(intruderPrefab, new Vector3(randomObject.transform.position.x, randomObject.transform.position.y + yOffset, randomObject.transform.position.z), Quaternion.identity);
+            Instantiate(intruderPrefab, new Vector3(randomObject.transform.position.x, randomObject.transform.position.y + intruderYOffset, randomObject.transform.position.z), Quaternion.identity);
 
             Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
-            Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + yOffset, dangerGameObject.transform.position.z);
+            Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + intruderYOffset, dangerGameObject.transform.position.z);
             if (dangerZone == intruderPosition && _doorController.IsDoorClosed)
             {
                 Debug.LogWarning("You died");
@@ -184,19 +160,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public static bool IsGameCompleted()
-    {
-        string json = File.ReadAllText(Application.persistentDataPath + "/PlayerSave.json");
-        PlayerSaveData _saveData = JsonUtility.FromJson<PlayerSaveData>(json);
-        if (_saveData.IsGameComplete == true)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+    
 
 }
 

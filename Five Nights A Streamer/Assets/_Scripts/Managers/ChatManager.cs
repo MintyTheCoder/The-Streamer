@@ -23,7 +23,7 @@ public class ChatManager : MonoBehaviour
     void Awake()
     {
         // arrayScript = GameObject.Find("Arrays").GetComponent<Arrays>();
-
+        
         // userNames = arrayScript.userNames;
         // chatMessages = arrayScript.chatMessages;
 

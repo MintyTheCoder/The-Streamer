@@ -10,12 +10,11 @@ public class ClockBehavior : MonoBehaviour
     private int time = 7;
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
-    GameManager _gameManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         clockTime.text = time + ":00 PM";
         StartCoroutine(IncrementClock());
     }
@@ -28,12 +27,12 @@ public class ClockBehavior : MonoBehaviour
 
     IEnumerator IncrementClock()
     {
-        while (!_gameManager.IsGameOver)
+        while (!GameManager.IsGameOver)
         {
             if (time >= 12)
             {
-                _gameManager.HasPlayerWon = true;
-                _gameManager.IsGameOver = true;
+                GameManager.IsGameOver = true;
+                GameManager.HasPlayerWon = true;
             }
             else
             {
