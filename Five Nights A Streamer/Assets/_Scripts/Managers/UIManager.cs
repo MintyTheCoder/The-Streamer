@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
 {
     void Awake()
     {
-        SetBasePlayerSaveData();
+        SaveBasePlayerSaveData();
     }
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    private void SetBasePlayerSaveData()
+    private void SaveBasePlayerSaveData()
     {
         if (!File.Exists(Application.persistentDataPath + "/PlayerSave.json"))
         {

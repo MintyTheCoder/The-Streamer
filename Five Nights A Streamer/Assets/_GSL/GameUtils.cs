@@ -62,10 +62,9 @@ namespace GameUtils
         public static void SaveCompletionStatus()
         {
             PlayerSaveData _data = new PlayerSaveData();
-            _data.IsGameComplete = PlayerSaveU.IsGameCompleted();
+            _data.IsGameComplete = IsGameCompleted();
 
             string json = JsonUtility.ToJson(_data);
-            Debug.Log(json);
             File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
         }
 

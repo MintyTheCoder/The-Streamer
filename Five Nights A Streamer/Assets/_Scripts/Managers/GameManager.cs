@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 using GameUtils;
+using UnityEngine.Events;
 
 /// <summary>
 /// Contains the code to run events at certain times and manage the game loop/events.
@@ -28,6 +29,8 @@ public class GameManager : MonoBehaviour
     public static bool IsGameOver {get; set;}
     public static bool HasPlayerWon { get; set;}
 
+    [SerializeField] UnityEvent onPlayerWin;
+    [SerializeField] UnityEvent onPlayerLoss;
     [SerializeField] bool doesIntruderSpawn;
     [SerializeField] float intruderSpawnDelay;
     [SerializeField] float intruderYOffset;
@@ -61,7 +64,6 @@ public class GameManager : MonoBehaviour
     {
         IsGameOver = false;
         HasPlayerWon = false;  
-        Debug.Log(Application.persistentDataPath);
         if (doesIntruderSpawn)
         {
             Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
@@ -75,12 +77,12 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You won");
             PlayerSaveU.SaveCompletionStatus();
-            Invoke(nameof(LoadNextScene), 5);
+            onPlayerWin.Invoke();
         }
         else
         {
             Debug.Log("You lost");
-            Invoke(nameof(ReloadScene), 5);
+            onPlayerLoss.Invoke();
         }
     }
 
@@ -137,7 +139,7 @@ public class GameManager : MonoBehaviour
     /// <returns>A coroutine to handle the intruder movement.</returns>
     private IEnumerator SpawnIntruder()
     {
-        while (!IsGameOver)
+        while (IsGameOver == false)
         {
             if (GameObject.FindWithTag("Intruder") != null)
             {
@@ -159,9 +161,6 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
-    
-
 }
 
 
