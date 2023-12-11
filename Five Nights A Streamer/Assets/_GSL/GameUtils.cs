@@ -21,7 +21,6 @@ namespace GameUtils
                 list[randomIndex] = temp;
             }
         }
-
     }
 
     public class PlayerSaveU
@@ -90,5 +89,6 @@ namespace GameUtils
         public string Night;
         public bool IsGameComplete;
     }
+
 }
 

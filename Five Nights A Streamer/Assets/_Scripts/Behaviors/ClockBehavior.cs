@@ -7,7 +7,7 @@ using UnityEngine.VFX;
 
 public class ClockBehavior : MonoBehaviour
 {
-    private int time = 7;
+    private int time = 6;
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
 
@@ -22,25 +22,24 @@ public class ClockBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("Information from clock: " + GameManager.IsGameOver);
     }
 
     IEnumerator IncrementClock()
     {
-        while (!GameManager.IsGameOver)
-        {
+        while (GameManager.IsGameOver == false)
+        {    
+            time++;
+            clockTime.text = time + ":00 PM";
+            
             if (time >= 12)
             {
+                Debug.Log("Clock got here");
                 GameManager.IsGameOver = true;
-                GameManager.HasPlayerWon = true;
+                GameManager.HasPlayerWon = true;  
+                yield break;  // Exit the coroutine
             }
-            else
-            {
-                yield return new WaitForSeconds(delay);
-                time++;
-                clockTime.text = time + ":00 PM";
-            }
+            yield return new WaitForSeconds(delay);
         }
- 
     }
 }

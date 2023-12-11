@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
     [SerializeField] GameObject doorObject;
-    
     private DoorController _doorController;
     private GameObject dangerGameObject;
 
@@ -73,17 +72,20 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Checking for game status and saving data
-        if (IsGameOver && HasPlayerWon)
+        if (IsGameOver == true && HasPlayerWon == true)
         {
             Debug.Log("You won");
+            StopAllCoroutines();
             PlayerSaveU.SaveCompletionStatus();
             onPlayerWin.Invoke();
         }
         else
         {
             Debug.Log("You lost");
+            StopAllCoroutines();
             onPlayerLoss.Invoke();
         }
+
     }
 
     private void StartIntruderEvent()
@@ -139,7 +141,7 @@ public class GameManager : MonoBehaviour
     /// <returns>A coroutine to handle the intruder movement.</returns>
     private IEnumerator SpawnIntruder()
     {
-        while (IsGameOver == false)
+        while (true)
         {
             if (GameObject.FindWithTag("Intruder") != null)
             {
@@ -151,9 +153,9 @@ public class GameManager : MonoBehaviour
 
             Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
             Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + intruderYOffset, dangerGameObject.transform.position.z);
-            if (dangerZone == intruderPosition && _doorController.IsDoorClosed)
+            if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
             {
-                Debug.LogWarning("You died");
+                Debug.Log("You DIEEEDDDDD");
                 IsGameOver = true;
                 HasPlayerWon = false;
             }
