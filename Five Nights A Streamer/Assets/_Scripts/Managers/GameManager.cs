@@ -26,33 +26,44 @@ using UnityEngine.Events;
 /// </remarks>
 public class GameManager : MonoBehaviour
 {
+    private DoorController _doorController;
+    private GameObject dangerGameObject;
+    private List<Spawnable> originalSpawnables;
+
     public static bool IsGameOver {get; set;}
     public static bool HasPlayerWon { get; set;}
 
+    [Header("GameObject References")]
+
+    [SerializeField] GameObject doorObject;
+
+    [Header("Game Status Events")]
+
     [SerializeField] UnityEvent onPlayerWin;
     [SerializeField] UnityEvent onPlayerLoss;
+
+    [Header("Intruder Event Settings")]
+
     [SerializeField] bool doesIntruderSpawn;
     [SerializeField] float intruderSpawnDelay;
     [SerializeField] float intruderYOffset;
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
-    [SerializeField] GameObject doorObject;
-    private DoorController _doorController;
-    private GameObject dangerGameObject;
 
-    [System.Serializable]
+    [Serializable]
     public struct Spawnable
     {
         public GameObject GameObject;
         public float Weight;
     }
-
     [SerializeField] List<Spawnable> spawnables;
-    private List<Spawnable> originalSpawnables;
+    
+
+    
 
     void Awake()
     {
-        PlayerSaveU.SaveLatestNight();
+        PlayerSaveU.SaveData();
         _doorController = doorObject.GetComponent<DoorController>();
         originalSpawnables = spawnables;
         dangerGameObject = originalSpawnables[0].GameObject;
@@ -65,7 +76,7 @@ public class GameManager : MonoBehaviour
         HasPlayerWon = false;  
         if (doesIntruderSpawn)
         {
-            Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
+            //Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
         }
     }
 
@@ -76,16 +87,15 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You won");
             StopAllCoroutines();
-            PlayerSaveU.SaveCompletionStatus();
+            PlayerSaveU.SaveData();
             onPlayerWin.Invoke();
         }
-        else
+        else if (IsGameOver == true && HasPlayerWon == false)
         {
             Debug.Log("You lost");
             StopAllCoroutines();
             onPlayerLoss.Invoke();
         }
-
     }
 
     private void StartIntruderEvent()

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,65 +26,50 @@ namespace GameUtils
 
     public class PlayerSaveU
     {
-        /// <summary>
-        /// Determines if the game is completed or not.
-        /// </summary>
-        /// <returns>True if the game is completed</returns>
-        public static bool IsGameCompleted()
-        {
-            string currentScene = SceneManager.GetActiveScene().name;
-            if (currentScene.Equals("Night 5") && GameManager.HasPlayerWon == true)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public static string path { get; private set; } = Application.persistentDataPath + "/PlayerSave.json";
 
         /// <summary>
-        /// Parses the latest night to the PlayerSave json.
+        /// Parses the latest data to the PlayerSave json.
         /// </summary> 
-        public static void SaveLatestNight()
+        public static void SaveData()
         {
             string currentLevel = SceneManager.GetActiveScene().name;
-            PlayerSaveData _data = new PlayerSaveData();
+            // Load current data found in the PlayerSave json
+            PlayerSaveData _data = LoadSave();
+            // Set all the data that needs to change
             _data.Night = currentLevel;
-
-            string json = JsonUtility.ToJson(_data);
-            File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
-        }
-
-        /// <summary>
-        /// Saves the completion status of the game.
-        /// </summary> 
-        public static void SaveCompletionStatus()
-        {
-            PlayerSaveData _data = new PlayerSaveData();
             _data.IsGameComplete = IsGameCompleted();
 
             string json = JsonUtility.ToJson(_data);
-            File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
+            Debug.Log(json);
+            File.WriteAllText(path, json);
         }
 
         /// <summary>
-        /// Get the latest night found in the PlayerSave json.
+        /// Get the latest save data found in the PlayerSave json.
         /// </summary>
-        /// <returns>The night as a string</returns>
-        public static string GetSavedNight()
+        /// <returns>A PlayerSaveData object</returns>
+        public static PlayerSaveData LoadSave()
         {
-            string json = File.ReadAllText(Application.persistentDataPath + "/PlayerSave.json");
+            string json = File.ReadAllText(path);
             PlayerSaveData _saveData = JsonUtility.FromJson<PlayerSaveData>(json);
-            return _saveData.Night;
+            return _saveData;
         }
+
+        // Determines if the game is completed or not
+        private static bool IsGameCompleted()
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            return currentScene.Equals("Night 5") && GameManager.HasPlayerWon == true ? true : false;
+        }
+
 
     }
 
     /// <summary>
     /// Serializable blueprint of the PlayerSave
     /// </summary> 
-    [System.Serializable]
+    [Serializable]
     public class PlayerSaveData
     {
         public string Night;

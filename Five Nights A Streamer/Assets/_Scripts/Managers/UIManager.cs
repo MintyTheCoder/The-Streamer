@@ -9,13 +9,14 @@ public class UIManager : MonoBehaviour
 {
     void Awake()
     {
+        File.Delete(Application.persistentDataPath + "/PlayerSave.json");
         SaveBasePlayerSaveData();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerSaveU.GetSavedNight());
+        Debug.Log(PlayerSaveU.LoadSave());
     }
 
     // Update is called once per frame
