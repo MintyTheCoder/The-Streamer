@@ -30,16 +30,14 @@ namespace GameUtils
 
         /// <summary>
         /// Parses the latest data to the PlayerSave json.
-        /// </summary> 
+        /// </summary>
         public static void SaveData()
         {
             string currentLevel = SceneManager.GetActiveScene().name;
-            // Load current data found in the PlayerSave json
             PlayerSaveData _data = LoadSave();
-            // Set all the data that needs to change
+
             _data.Night = currentLevel;
             _data.IsGameComplete = IsGameCompleted();
-
             string json = JsonUtility.ToJson(_data);
             Debug.Log(json);
             File.WriteAllText(path, json);

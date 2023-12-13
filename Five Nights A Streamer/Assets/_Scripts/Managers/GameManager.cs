@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
         HasPlayerWon = false;  
         if (doesIntruderSpawn)
         {
-            //Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
+            Invoke(nameof(StartIntruderEvent), timeBeforeSpawn);
         }
     }
 
