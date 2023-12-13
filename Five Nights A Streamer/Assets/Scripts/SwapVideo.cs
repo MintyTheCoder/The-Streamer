@@ -7,6 +7,7 @@ public class SwapVideo : MonoBehaviour
 {
     [SerializeField] VideoPlayer videoPlayer;
     [SerializeField] VideoClip video;
+
     void Start()
     {
       videoPlayer = GetComponent<VideoPlayer>();

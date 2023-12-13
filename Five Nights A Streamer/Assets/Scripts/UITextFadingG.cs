@@ -4,7 +4,7 @@ using TMPro;
 
 public class UITextFadingG : MonoBehaviour
 {
-    public TextMeshProUGUI textDisplay1;
+    public TextMeshProUGUI TextDisplay1;
    
     void OnEnable()
     {
@@ -18,7 +18,7 @@ public class UITextFadingG : MonoBehaviour
         while (currentTime < duration)
         {
             float alpha = Mathf.Lerp(0f, 1f, currentTime / duration);
-            textDisplay1.color = new Color(textDisplay1.color.r, textDisplay1.color.g, textDisplay1.color.b, alpha);
+            TextDisplay1.color = new Color(TextDisplay1.color.r, TextDisplay1.color.g, TextDisplay1.color.b, alpha);
             currentTime += Time.deltaTime;
             yield return null;
         }
