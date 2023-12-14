@@ -13,7 +13,7 @@ using UnityEngine.Events;
 /// Naming conventions for variables in all scripts:
 /// <para/>
 /// <ul>
-///     <list>- Public variables and structs -> pascal case</list>
+///     <list>- Public variables, structs and classes -> pascal case</list>
 ///     <list>- Private and Serialized Fields -> camel case</list>
 ///     <list>- Objects we created -> use a dash then camel case</list>
 ///     <list>- Other objects -> use camel case</list>
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     private void StartIntruderEvent()
     {
-        StartCoroutine(SpawnIntruder());
+        StartCoroutine(SpawnIntruder(intruderSpawnDelay, intruderYOffset));
     }
 
     private void LoadNextScene()
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
     /// <param name="delay">The delay in seconds before moving the intruder.</param>
     /// <param name="yOffset">The offset on the y axis of the intruders spawn</param>
     /// <returns>A coroutine to handle the intruder movement.</returns>
-    private IEnumerator SpawnIntruder()
+    private IEnumerator SpawnIntruder(float delay, float yOffset)
     {
         while (true)
         {
@@ -162,14 +162,14 @@ public class GameManager : MonoBehaviour
             Instantiate(intruderPrefab, new Vector3(randomObject.transform.position.x, randomObject.transform.position.y + intruderYOffset, randomObject.transform.position.z), Quaternion.identity);
 
             Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
-            Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + intruderYOffset, dangerGameObject.transform.position.z);
+            Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + yOffset, dangerGameObject.transform.position.z);
             if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
             {
                 Debug.Log("You DIEEEDDDDD");
                 IsGameOver = true;
                 HasPlayerWon = false;
             }
-            yield return new WaitForSeconds(intruderSpawnDelay);
+            yield return new WaitForSeconds(delay);
         }
 
     }

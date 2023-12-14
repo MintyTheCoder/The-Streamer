@@ -38,6 +38,7 @@ namespace GameUtils
 
             _data.Night = currentLevel;
             _data.IsGameComplete = IsGameCompleted();
+
             string json = JsonUtility.ToJson(_data);
             Debug.Log(json);
             File.WriteAllText(path, json);
