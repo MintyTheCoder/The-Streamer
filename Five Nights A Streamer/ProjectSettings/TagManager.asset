@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Message
+  - Intruder
   layers:
   - Default
   - TransparentFX
@@ -11,9 +13,9 @@ TagManager:
   - Postprocessing
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Left Hand Physics
+  - Right Hand Physics
+  - Non Physics Hand
   - 
   - 
   - 
