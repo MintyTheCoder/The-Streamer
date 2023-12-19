@@ -1,22 +1,28 @@
 using System.IO;
 using UnityEngine;
 using GameUtils;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// Class that contains the methods to control the main and settings menus. This also creates the inital save file and reads other json files.
 /// </summary>
 public class UIManager : MonoBehaviour
 {
+    [Header("Buttons")]
+    [SerializeField] Button playButton;
+    
     void Awake()
     {
-        File.Delete(Application.persistentDataPath + "/PlayerSave.json");
         SaveBasePlayerSaveData();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerSaveU.LoadSave());
+        Debug.Log(PlayerSaveU.LoadSave().Night);
+        playButton.GetComponentInChildren<TextMeshProUGUI>().text = PlayerSaveU.LoadSave().Night;
     }
 
     // Update is called once per frame
@@ -25,9 +31,19 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void LoadLatestScene()
+    {
+        SceneManager.LoadScene(PlayerSaveU.LoadSave().Night);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     private void SaveBasePlayerSaveData()
     {
-        if (!File.Exists(Application.persistentDataPath + "/PlayerSave.json"))
+        if (!File.Exists(PlayerSaveU.path))
         {
             PlayerSaveData _data = new PlayerSaveData();
             _data.Night = "Night 1";
@@ -35,11 +51,7 @@ public class UIManager : MonoBehaviour
 
             string json = JsonUtility.ToJson(_data);
             Debug.Log(json);
-            File.WriteAllText(Application.persistentDataPath + "/PlayerSave.json", json);
-        }
-        else
-        {
-            Debug.Log("File exists");
+            File.WriteAllText(PlayerSaveU.path, json);
         }
     }
 

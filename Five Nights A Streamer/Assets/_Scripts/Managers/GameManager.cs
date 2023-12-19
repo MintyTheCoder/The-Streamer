@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] UnityEvent onPlayerWin;
     [SerializeField] UnityEvent onPlayerLoss;
+    [SerializeField] UnityEvent OnLoad = new UnityEvent();
 
     [Header("Intruder Event Settings")]
 
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float intruderYOffset;
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
+    [SerializeField] List<Spawnable> spawnables;
 
     [Serializable]
     public struct Spawnable
@@ -56,7 +58,7 @@ public class GameManager : MonoBehaviour
         public GameObject GameObject;
         public float Weight;
     }
-    [SerializeField] List<Spawnable> spawnables;
+    
     
 
     
@@ -67,8 +69,13 @@ public class GameManager : MonoBehaviour
         _doorController = doorObject.GetComponent<DoorController>();
         originalSpawnables = spawnables;
         dangerGameObject = originalSpawnables[0].GameObject;
+        SceneManager.sceneLoaded += PlayEvent;
     }
 
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= PlayEvent;
+    }
 
     void Start()
     {
@@ -96,6 +103,11 @@ public class GameManager : MonoBehaviour
             StopAllCoroutines();
             onPlayerLoss.Invoke();
         }
+    }
+
+    private void PlayEvent(Scene scene, LoadSceneMode mode)
+    {
+        OnLoad.Invoke();
     }
 
     private void StartIntruderEvent()
