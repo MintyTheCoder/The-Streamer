@@ -7,7 +7,7 @@ using GameUtils;
 using UnityEngine.Events;
 
 /// <summary>
-/// Contains the code to run events at certain times and manage the game loop/events.
+/// Contains the code to run events at certain times and manage the game loop/events. This will also deal with basic scene management.
 /// <para/>
 /// 
 /// Naming conventions for variables in all scripts:
@@ -58,10 +58,6 @@ public class GameManager : MonoBehaviour
         public GameObject GameObject;
         public float Weight;
     }
-    
-    
-
-    
 
     void Awake()
     {
@@ -115,14 +111,16 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnIntruder(intruderSpawnDelay, intruderYOffset));
     }
 
-    private void LoadNextScene()
+    public void LoadNextSceneDelay(float delay)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Invoke(nameof(LoadNextScene), delay);
     }
 
-    private void ReloadScene()
+    private void LoadNextScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    public void LoadMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Start Menu");
     }
 
     private GameObject RandomSpawnPoint()

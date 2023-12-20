@@ -21,7 +21,6 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerSaveU.LoadSave().Night);
         playButton.GetComponentInChildren<TextMeshProUGUI>().text = PlayerSaveU.LoadSave().Night;
     }
 
