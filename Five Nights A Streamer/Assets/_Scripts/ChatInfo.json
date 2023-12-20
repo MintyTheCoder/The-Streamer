@@ -204,5 +204,14 @@
         "StreamerSirenX",
         "GameOnMasterX"
     ],
-    "Messages": ["Hi", "Hello", "Good Evening", "I hate Brodie Liverman"]
+    "Messages": ["Hi", "Hello", "Good Evening", "I hate Brodie Liverman"],
+
+    "StalkerUsernames": ["DarkQuan88", "EvilQuan45"],
+    "StalkerMessages":[
+        "You suck at this game",
+        "I'm gonna find you",
+        "I wish I could meet you and hang out wiht you",
+        "Do you ever feel unsafe in your own home?",
+        "Do you ever feel like someone is watching you?"
+    ]
 }
