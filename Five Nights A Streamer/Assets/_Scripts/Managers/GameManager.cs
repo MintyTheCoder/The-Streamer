@@ -33,15 +33,10 @@ public class GameManager : MonoBehaviour
     public static bool IsGameOver {get; set;}
     public static bool HasPlayerWon { get; set;}
 
-    [Header("GameObject References")]
+    [Header("References")]
 
     [SerializeField] GameObject doorObject;
-
-    [Header("Game Status Events")]
-
-    [SerializeField] UnityEvent onPlayerWin;
-    [SerializeField] UnityEvent onPlayerLoss;
-    [SerializeField] UnityEvent OnLoad = new UnityEvent();
+    [SerializeField] GameObject nightFade;
 
     [Header("Intruder Event Settings")]
 
@@ -65,12 +60,6 @@ public class GameManager : MonoBehaviour
         _doorController = doorObject.GetComponent<DoorController>();
         originalSpawnables = spawnables;
         dangerGameObject = originalSpawnables[0].GameObject;
-        SceneManager.sceneLoaded += PlayEvent;
-    }
-
-    void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= PlayEvent;
     }
 
     void Start()
@@ -91,19 +80,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("You won");
             StopAllCoroutines();
             PlayerSaveU.SaveData();
-            onPlayerWin.Invoke();
+            
         }
         else if (IsGameOver == true && HasPlayerWon == false)
         {
             Debug.Log("You lost");
             StopAllCoroutines();
-            onPlayerLoss.Invoke();
         }
-    }
-
-    private void PlayEvent(Scene scene, LoadSceneMode mode)
-    {
-        OnLoad.Invoke();
     }
 
     private void StartIntruderEvent()
@@ -111,16 +94,14 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnIntruder(intruderSpawnDelay, intruderYOffset));
     }
 
-    public void LoadNextSceneDelay(float delay)
-    {
-        Invoke(nameof(LoadNextScene), delay);
-    }
+    /// <summary>
+    /// Loads next scene in the build index.
+    /// </summary>
+    public void LoadNextScene() => SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
 
-    private void LoadNextScene() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-    public void LoadMainMenu()
+    private void LoadMainMenu()
     {
-        SceneManager.LoadScene("Start Menu");
+        SceneManager.LoadSceneAsync("Start Menu");
     }
 
     private GameObject RandomSpawnPoint()
