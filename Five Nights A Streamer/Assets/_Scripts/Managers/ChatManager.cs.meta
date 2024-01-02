@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 8d23bfd43a79eb943b676795cf1ce136
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - chatMessagePrefab: {instanceID: 0}
+  - chatPanel: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
