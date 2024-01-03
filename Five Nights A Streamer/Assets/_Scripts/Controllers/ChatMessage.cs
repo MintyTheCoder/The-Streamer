@@ -9,7 +9,7 @@ public class ChatMessage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI usernameTMP, messageTMP;
     [SerializeField] GameObject extendedMessagePanel;
-    [SerializeField] String usernameText, messageText;
+    //[SerializeField] String usernameText, messageText;
     private void SetUsernameText(string username)
     {
         usernameTMP.text = username;

@@ -206,12 +206,14 @@
     ],
     "Messages": ["Hi", "Hello", "Good Evening", "I hate Brodie Liverman"],
 
-    "StalkerUsernames": ["DarkQuan88", "EvilQuan45"],
+    "StalkerUsernames": ["DarkQuan88", "EvilQuan45", "NightStalker32"],
     "StalkerMessages":[
         "You suck at this game",
         "I'm gonna find you",
         "I wish I could meet you and hang out wiht you",
         "Do you ever feel unsafe in your own home?",
-        "Do you ever feel like someone is watching you?"
+        "Do you ever feel like someone is watching you?",
+        "What would you do if one of your viewers came to your house?",
+        "Where do you live?"
     ]
 }
