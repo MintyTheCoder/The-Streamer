@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("You won");
             StopAllCoroutines();
             PlayerSaveU.SaveData();
-            
+            FadeController.StartSceneSwitch = true;
         }
         else if (IsGameOver == true && HasPlayerWon == false)
         {
@@ -93,11 +93,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(SpawnIntruder(intruderSpawnDelay, intruderYOffset));
     }
-
-    /// <summary>
-    /// Loads next scene in the build index.
-    /// </summary>
-    public void LoadNextScene() => SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
 
     private void LoadMainMenu()
     {
