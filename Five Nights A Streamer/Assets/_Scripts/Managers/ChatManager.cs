@@ -7,7 +7,7 @@ public class ChatManager : MonoBehaviour
 {
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
-    Vector3 spawnPosition = new Vector3(0, -275, -50);
+    Vector3 spawnPosition = new Vector3(-15.3f, 68 , 0);
     ChatData _chatData;
     public GameObject[] chatMessageList;
     int chatMessagesCount = 0;
@@ -68,12 +68,15 @@ public class ChatManager : MonoBehaviour
 
     void MoveAllMessages()
     {
-        foreach(GameObject message in GameObject.FindGameObjectsWithTag("Message"))
+        if (chatMessageList != null)
         {
-            message.transform.position += new Vector3(0, 15, 0);
-        }
+            foreach (GameObject message in GameObject.FindGameObjectsWithTag("Message"))
+            {
+                message.transform.position += new Vector3(0, 10, 0);
+            }
 
-        GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
+            GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
+        }  
     }
 
     private void ChatDeleter(GameObject newMessage)
