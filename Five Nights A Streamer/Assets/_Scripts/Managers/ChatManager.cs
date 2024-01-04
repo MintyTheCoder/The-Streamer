@@ -7,7 +7,7 @@ public class ChatManager : MonoBehaviour
 {
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
-    Vector3 spawnPosition = new Vector3(-15.3f, 68 , 0);
+    Vector3 spawnPosition;
     ChatData _chatData;
     public GameObject[] chatMessageList;
     int chatMessagesCount = 0;
@@ -23,6 +23,7 @@ public class ChatManager : MonoBehaviour
         
         // userNames = arrayScript.userNames;
         // chatMessages = arrayScript.chatMessages;
+        spawnPosition = chatPanel.transform.position + new Vector3(0 , -1.4f, -0.1f);
 
         string json = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
         _chatData = JsonUtility.FromJson<ChatData>(json);
@@ -41,15 +42,11 @@ public class ChatManager : MonoBehaviour
        
     }
 
-    void Start()
-    {
-
-    }
     public void AddChatMessage(string username, string message)
     {
         MoveAllMessages();
 
-        GameObject newMessage = Instantiate(chatMessagePrefab, spawnPosition, Quaternion.identity, chatPanel);
+        GameObject newMessage = Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90,0)), chatPanel);
         TextMeshProUGUI usernameText = newMessage.transform.Find("Username").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
 
@@ -72,7 +69,7 @@ public class ChatManager : MonoBehaviour
         {
             foreach (GameObject message in GameObject.FindGameObjectsWithTag("Message"))
             {
-                message.transform.position += new Vector3(0, 10, 0);
+                message.transform.position += new Vector3(0, 0.1f, 0);
             }
 
             GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
