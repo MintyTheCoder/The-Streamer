@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
 
     [SerializeField] GameObject doorObject;
-    [SerializeField] GameObject nightFade;
+    [SerializeField] GameObject gameOverScreen;
 
     [Header("Intruder Event Settings")]
 
@@ -86,7 +86,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You lost");
             StopAllCoroutines();
+            gameOverScreen.SetActive(true);
+            Invoke(nameof(SwitchToMenu), 5);
         }
+    }
+
+    private void SwitchToMenu()
+    {
+        FadeController.StartMenuSwitch = true;
     }
 
     private void StartIntruderEvent()
