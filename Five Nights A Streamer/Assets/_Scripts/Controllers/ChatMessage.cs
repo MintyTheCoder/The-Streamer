@@ -33,6 +33,4 @@ public class ChatMessage : MonoBehaviour
 
         extendedMessagePanel.gameObject.SetActive(true);
     }
-
-
 }

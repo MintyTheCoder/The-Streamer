@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 1, g: 0, b: 0, a: 1}
+  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: c53a9dafc7fd8e345b773b48638fa0c8, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 51416de9779919a46b29d0ee9604547a, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -662,15 +662,15 @@ RectTransform:
   m_GameObject: {fileID: 170378413}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5.9}
-  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 0.01}
+  m_LocalScale: {x: 1.0470972, y: 1.0470972, z: 0.10470972}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 269156409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.30353, y: 28.866089}
-  m_SizeDelta: {x: 15140.385, y: 7265.1187}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &170378415
 MonoBehaviour:
@@ -1019,7 +1019,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10000
   m_TargetDisplay: 0
 --- !u!1 &379886253
 GameObject:
@@ -1259,19 +1259,7 @@ MonoBehaviour:
   m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 437391536}
-        m_TargetAssemblyTypeName: BrightnessFading, Assembly-CSharp
-        m_MethodName: changeBrightness
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &437391536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,8 +1303,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458206520}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4479085, y: -47.66488, z: 908.7671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3106,8 +3094,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269637866}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.4479085, y: -47.66488, z: 908.7671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3981,12 +3969,12 @@ MonoBehaviour:
       m_Name: Position
       m_Type: 0
       m_ExpectedControlType: Vector3
-      m_Id: 3675c523-d495-49cd-b601-046dde3d5de8
+      m_Id: 300058bf-2ffd-475c-946e-a5d99564e067
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: c0b5d9ba-ba15-4a8e-b02f-493f6159df2b
+        m_Id: 9b805ce4-cf68-4eff-85cf-5fa7de3a4daa
         m_Path: <XRHMD>/centerEyePosition
         m_Interactions: 
         m_Processors: 
@@ -3994,7 +3982,7 @@ MonoBehaviour:
         m_Action: Position
         m_Flags: 0
       - m_Name: 
-        m_Id: 2b652f5e-8440-4b09-85c3-3c6c290864a3
+        m_Id: d7c8689f-318e-426e-b3c9-db10146359a8
         m_Path: <HandheldARInputDevice>/devicePosition
         m_Interactions: 
         m_Processors: 
@@ -4009,12 +3997,12 @@ MonoBehaviour:
       m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: Quaternion
-      m_Id: fab1e2cc-c60e-4030-b714-08a8cb6ed406
+      m_Id: 4504d6c1-22b4-4fa0-bcc9-2ed375402057
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 18d3dccf-929a-4c43-97bc-54d07bdd914e
+        m_Id: a0cdccd8-c037-48f6-9ee7-1a59c09b76eb
         m_Path: <XRHMD>/centerEyeRotation
         m_Interactions: 
         m_Processors: 
@@ -4022,7 +4010,7 @@ MonoBehaviour:
         m_Action: Rotation
         m_Flags: 0
       - m_Name: 
-        m_Id: b6c0b0ff-d17b-4ab7-88dd-2a4061e9bd03
+        m_Id: b312a578-b27a-48fe-9340-7addfffc352d
         m_Path: <HandheldARInputDevice>/deviceRotation
         m_Interactions: 
         m_Processors: 
@@ -4037,12 +4025,12 @@ MonoBehaviour:
       m_Name: Tracking State
       m_Type: 0
       m_ExpectedControlType: Integer
-      m_Id: 5d5fac88-afbf-472b-9a84-5f4f7e6bf32c
+      m_Id: faf7b3ae-b025-435e-aa73-e16c6ebe87ca
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings:
       - m_Name: 
-        m_Id: 6f3b5268-1530-4179-87bc-c99438371d03
+        m_Id: 21f1f09f-09f9-4afe-b888-e34113ea03c1
         m_Path: <XRHMD>/trackingState
         m_Interactions: 
         m_Processors: 
@@ -4069,6 +4057,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  m_HasMigratedActions: 1
 --- !u!81 &1365353466
 AudioListener:
   m_ObjectHideFlags: 0
