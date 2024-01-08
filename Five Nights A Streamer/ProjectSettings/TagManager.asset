@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Message
   - Intruder
+  - Message Panel
   layers:
   - Default
   - TransparentFX

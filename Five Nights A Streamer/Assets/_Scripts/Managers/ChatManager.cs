@@ -7,6 +7,7 @@ public class ChatManager : MonoBehaviour
 {
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
+    [SerializeField] float spawnDelay;
     Vector3 spawnPosition;
     ChatData _chatData;
     public GameObject[] chatMessageList;
@@ -23,7 +24,7 @@ public class ChatManager : MonoBehaviour
         
         // userNames = arrayScript.userNames;
         // chatMessages = arrayScript.chatMessages;
-        spawnPosition = chatPanel.transform.position + new Vector3(0 , -1.4f, -0.1f);
+        spawnPosition = chatPanel.transform.position + new Vector3(0 , -.9f, -0.51f);
 
         string json = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
         _chatData = JsonUtility.FromJson<ChatData>(json);
@@ -36,7 +37,7 @@ public class ChatManager : MonoBehaviour
         //while (true)
         //{
             //yield return new WaitForSeconds(Random.Range(5,7));
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(spawnDelay);
             AddChatMessage(GetRandomUsername(), GetRandomMessage());
         //}
        

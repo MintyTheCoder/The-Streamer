@@ -9,7 +9,14 @@ public class ChatMessage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI usernameTMP, messageTMP;
     [SerializeField] GameObject extendedMessagePanel;
-    //[SerializeField] String usernameText, messageText;
+    private RectTransform canvasRectTransform;
+
+    private void Start()
+    {
+        canvasRectTransform = extendedMessagePanel.GetComponent<RectTransform>();
+
+        LockCanvasPosition();
+    }
     private void SetUsernameText(string username)
     {
         usernameTMP.text = username;
@@ -22,15 +29,22 @@ public class ChatMessage : MonoBehaviour
 
     public void DisplayPanel()
     {
+        bool activeStatus = extendedMessagePanel.activeInHierarchy;
         GameObject[] otherPanels;
-        otherPanels = GameObject.FindGameObjectsWithTag("Message Panels");
+        otherPanels = GameObject.FindGameObjectsWithTag("Message Panel");
 
         foreach (GameObject panel in otherPanels) 
         {
-            panel.gameObject.SetActive(false);
+            panel.SetActive(false);
         }
 
+        extendedMessagePanel.SetActive(!activeStatus);
+    }
 
-        extendedMessagePanel.gameObject.SetActive(true);
+    private void LockCanvasPosition()
+    {
+        // Set the anchoredPosition to keep the Canvas in a fixed position
+        // For example, let's lock it at (x: 100, y: 100) in the canvas space
+        canvasRectTransform.anchoredPosition = new Vector2(100f, 100f);
     }
 }
