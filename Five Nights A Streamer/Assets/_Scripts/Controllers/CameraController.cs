@@ -29,7 +29,7 @@ public class CameraController : MonoBehaviour
     {
         cams[currentCam].enabled = false;
         currentCam++;
-        if (currentCam > cams.Length)
+        if (currentCam > cams.Length - 1)
         {
             currentCam = 0;
             cams[currentCam].enabled = true;
