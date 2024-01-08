@@ -4,116 +4,56 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] GameObject cam1;
-    [SerializeField] GameObject cam2;
-    [SerializeField] GameObject cam3;
-    [SerializeField] GameObject cam4;
-    [SerializeField] GameObject cam5;
-    [SerializeField] GameObject cam6;
-    [SerializeField] GameObject cam7;
-    [SerializeField] GameObject cam8;
 
+    [SerializeField] Camera[] cams;
+    private int currentCam;
 
     void Start()
     {
-        cam1.SetActive(true);
-        cam2.SetActive(false);
-        cam3.SetActive(false);
-        cam4.SetActive(false);
-        cam5.SetActive(false);
-        cam6.SetActive(false);
-        cam7.SetActive(false);
-        cam8.SetActive(false);
+        currentCam = 0;
     }
+
     void Update()
     {
-        if (Input.GetKeyDown("1"))
+        if(Input.GetKeyDown(KeyCode.W))
         {
-            cam1.SetActive(true);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
-            cam4.SetActive(false);
-            cam5.SetActive(false);
-            cam6.SetActive(false);
-            cam7.SetActive(false);
-            cam8.SetActive(false);
+            incCamera();
         }
-        if(Input.GetKeyDown("2")) 
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            cam1.SetActive(false);
-            cam2.SetActive(true);
-            cam3.SetActive(false);
-            cam4.SetActive(false);
-            cam5.SetActive(false);
-            cam6.SetActive(false);
-            cam7.SetActive(false);
-            cam8.SetActive(false);
+            decCamera();
         }
-        if(Input.GetKeyDown("3"))
+    }
+
+    public void incCamera()
+    {
+        cams[currentCam].enabled = false;
+        currentCam++;
+        if (currentCam > cams.Length)
         {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(true);
-            cam4.SetActive(false);
-            cam5.SetActive(false);
-            cam6.SetActive(false);
-            cam7.SetActive(false);
-            cam8.SetActive(false);
+            currentCam = 0;
+            cams[currentCam].enabled = true;
         }
-        if (Input.GetKeyDown("4"))
+        else
         {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
-            cam4.SetActive(true);
-            cam5.SetActive(false);
-            cam6.SetActive(false);
-            cam7.SetActive(false);
-            cam8.SetActive(false);
+            cams[currentCam].enabled = true;
         }
-        if (Input.GetKeyDown("5"))
+        
+    }
+
+    public void decCamera()
+    {
+        cams[currentCam].enabled = false;
+        currentCam--;
+        if (currentCam < 0)
         {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
-            cam4.SetActive(false);
-            cam5.SetActive(true);
-            cam6.SetActive(false);
-            cam7.SetActive(false);
-            cam8.SetActive(false);
+            currentCam = cams.Length-1;
+            cams[currentCam].enabled = true;
         }
-        if (Input.GetKeyDown("6"))
+        else
         {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
-            cam4.SetActive(false);
-            cam5.SetActive(false);
-            cam6.SetActive(true);
-            cam7.SetActive(false);
-            cam8.SetActive(false);
+            cams[currentCam].enabled = true;
         }
-        if (Input.GetKeyDown("7"))
-        {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
-            cam4.SetActive(false);
-            cam5.SetActive(false);
-            cam6.SetActive(false);
-            cam7.SetActive(true);
-            cam8.SetActive(false);
-        }
-        if (Input.GetKeyDown("8"))
-        {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
-            cam4.SetActive(false);
-            cam5.SetActive(false);
-            cam6.SetActive(false);
-            cam7.SetActive(false);
-            cam8.SetActive(true);
-        }
+        
     }
 }
