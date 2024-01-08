@@ -1,11 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [Serializable]
+    private struct Cam
+    {
+        public Camera cam;
+        public GameObject trigger;
+    }
 
-    [SerializeField] Camera[] cams;
+    [SerializeField] Cam[] cams;
     private int currentCam;
 
     void Start()
@@ -27,32 +34,32 @@ public class CameraController : MonoBehaviour
 
     public void incCamera()
     {
-        cams[currentCam].enabled = false;
+        cams[currentCam].cam.enabled = false;
         currentCam++;
         if (currentCam > cams.Length - 1)
         {
             currentCam = 0;
-            cams[currentCam].enabled = true;
+            cams[currentCam].cam.enabled = true;
         }
         else
         {
-            cams[currentCam].enabled = true;
+            cams[currentCam].cam.enabled = true;
         }
         
     }
 
     public void decCamera()
     {
-        cams[currentCam].enabled = false;
+        cams[currentCam].cam.enabled = false;
         currentCam--;
         if (currentCam < 0)
         {
             currentCam = cams.Length-1;
-            cams[currentCam].enabled = true;
+            cams[currentCam].cam.enabled = true;
         }
         else
         {
-            cams[currentCam].enabled = true;
+            cams[currentCam].cam.enabled = true;
         }
         
     }
