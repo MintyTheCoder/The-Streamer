@@ -11,20 +11,14 @@ public class ChatMessage : MonoBehaviour
     [SerializeField] GameObject extendedMessagePanel;
     private RectTransform canvasRectTransform;
 
-    private void Start()
-    {
-        canvasRectTransform = extendedMessagePanel.GetComponent<RectTransform>();
-
-        LockCanvasPosition();
-    }
     private void SetUsernameText(string username)
     {
-        usernameTMP.text = username;
+        usernameTMP.text = username + ": ";
     }
 
     private void SetMessageText(string message) 
     {
-        messageTMP.text = message;
+        messageTMP.text = usernameTMP.text + message;
     }
 
     public void DisplayPanel()
@@ -37,14 +31,13 @@ public class ChatMessage : MonoBehaviour
         {
             panel.SetActive(false);
         }
-
         extendedMessagePanel.SetActive(!activeStatus);
     }
 
-    private void LockCanvasPosition()
+    public void DeleteMessage()
     {
-        // Set the anchoredPosition to keep the Canvas in a fixed position
-        // For example, let's lock it at (x: 100, y: 100) in the canvas space
-        canvasRectTransform.anchoredPosition = new Vector2(100f, 100f);
+        Debug.Log("Message has been deleted");
+        SetUsernameText("Deleted");
+        SetMessageText("Message was deleted by a moderator");
     }
 }
