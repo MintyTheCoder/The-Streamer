@@ -9,16 +9,17 @@ public class ChatMessage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI usernameTMP, messageTMP;
     [SerializeField] GameObject extendedMessagePanel;
-    private RectTransform canvasRectTransform;
 
-    private void SetUsernameText(string username)
+    private void SetUsernameText(string username, Color color)
     {
         usernameTMP.text = username + ": ";
+        usernameTMP.color = color;
     }
 
-    private void SetMessageText(string message) 
+    private void SetMessageText(string message, Color color) 
     {
         messageTMP.text = usernameTMP.text + message;
+        messageTMP.color = color;
     }
 
     public void DisplayPanel()
@@ -37,7 +38,8 @@ public class ChatMessage : MonoBehaviour
     public void DeleteMessage()
     {
         Debug.Log("Message has been deleted");
-        SetUsernameText("Deleted");
-        SetMessageText("Message was deleted by a moderator");
+        SetUsernameText("Deleted", Color.red);
+        SetMessageText("Message deleted by a moderator", Color.red);
+        Destroy(extendedMessagePanel);
     }
 }
