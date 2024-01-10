@@ -24,7 +24,7 @@ public class ChatManager : MonoBehaviour
         
         // userNames = arrayScript.userNames;
         // chatMessages = arrayScript.chatMessages;
-        spawnPosition = chatPanel.transform.position + new Vector3(0 , -.9f, -0.51f);
+        spawnPosition = chatPanel.transform.position + new Vector3(0 , -.9f, -0.55f);
 
         string json = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
         _chatData = JsonUtility.FromJson<ChatData>(json);

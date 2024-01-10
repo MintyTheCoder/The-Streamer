@@ -9,22 +9,17 @@ public class ChatMessage : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI usernameTMP, messageTMP;
     [SerializeField] GameObject extendedMessagePanel;
-    private RectTransform canvasRectTransform;
 
-    private void Start()
+    private void SetUsernameText(string username, Color color)
     {
-        canvasRectTransform = extendedMessagePanel.GetComponent<RectTransform>();
-
-        LockCanvasPosition();
-    }
-    private void SetUsernameText(string username)
-    {
-        usernameTMP.text = username;
+        usernameTMP.text = username + ": ";
+        usernameTMP.color = color;
     }
 
-    private void SetMessageText(string message) 
+    private void SetMessageText(string message, Color color) 
     {
-        messageTMP.text = message;
+        messageTMP.text = usernameTMP.text + message;
+        messageTMP.color = color;
     }
 
     public void DisplayPanel()
@@ -37,14 +32,14 @@ public class ChatMessage : MonoBehaviour
         {
             panel.SetActive(false);
         }
-
         extendedMessagePanel.SetActive(!activeStatus);
     }
 
-    private void LockCanvasPosition()
+    public void DeleteMessage()
     {
-        // Set the anchoredPosition to keep the Canvas in a fixed position
-        // For example, let's lock it at (x: 100, y: 100) in the canvas space
-        canvasRectTransform.anchoredPosition = new Vector2(100f, 100f);
+        Debug.Log("Message has been deleted");
+        SetUsernameText("Deleted", Color.red);
+        SetMessageText("Message deleted by a moderator", Color.red);
+        Destroy(extendedMessagePanel);
     }
 }
