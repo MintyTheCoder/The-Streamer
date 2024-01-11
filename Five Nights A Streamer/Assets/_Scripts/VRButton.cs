@@ -19,20 +19,20 @@ public class VRButton : MonoBehaviour
     {
         sound = GetComponent<AudioSource>();
         isPressed = false;
-        material = button.GetComponent<Material>();
+        //material = button.GetComponent<Material>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(!isPressed) 
         {
-            button.transform.localPosition -= new Vector3(0.1f, 0, 0.1f);
+            button.transform.localPosition -= new Vector3(0.001f, 0, 0.001f);
             presser = other.gameObject;
             onPress.Invoke();
             sound.Play();
             isPressed = true;
 
-            material.color -= new Color(0, 0, 0, 10);
+            //material.color -= new Color(0, 0, 0, 10);
         }
     }
 
@@ -40,7 +40,7 @@ public class VRButton : MonoBehaviour
     {
         if(other.gameObject == presser)
         {
-            button.transform.localPosition += new Vector3(0.1f, 0, 0.1f);
+            button.transform.localPosition += new Vector3(0.001f, 0, 0.001f);
             onRelease.Invoke();
             isPressed = false;
         }
