@@ -34,6 +34,7 @@ public class CameraController : MonoBehaviour
 
     public void incCamera()
     {
+        Debug.Log("Prev cam");
         cams[currentCam].cam.enabled = false;
         currentCam++;
         if (currentCam > cams.Length - 1)
@@ -50,6 +51,7 @@ public class CameraController : MonoBehaviour
 
     public void decCamera()
     {
+        Debug.Log("Next cam");
         cams[currentCam].cam.enabled = false;
         currentCam--;
         if (currentCam < 0)
