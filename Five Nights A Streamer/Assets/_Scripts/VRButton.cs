@@ -9,40 +9,35 @@ public class VRButton : MonoBehaviour
     public UnityEvent onPress;
     public UnityEvent onRelease;
 
-    Material material;
-
     GameObject presser;
     AudioSource sound;
-    bool isPressed;
+    bool isPressed = false;
     // Start is called before the first frame update
     void Start()
     {
         sound = GetComponent<AudioSource>();
-        isPressed = false;
-        //material = button.GetComponent<Material>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!isPressed) 
+        if (!isPressed)
         {
             button.transform.localPosition -= new Vector3(0.001f, 0, 0.001f);
             presser = other.gameObject;
             onPress.Invoke();
             sound.Play();
             isPressed = true;
-
-            //material.color -= new Color(0, 0, 0, 10);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject == presser)
+        if (other.gameObject == presser)
         {
             button.transform.localPosition += new Vector3(0.001f, 0, 0.001f);
             onRelease.Invoke();
             isPressed = false;
         }
     }
+
 }

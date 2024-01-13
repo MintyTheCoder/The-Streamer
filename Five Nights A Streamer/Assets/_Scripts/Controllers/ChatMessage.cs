@@ -24,15 +24,18 @@ public class ChatMessage : MonoBehaviour
 
     public void DisplayPanel()
     {
-        bool activeStatus = extendedMessagePanel.activeInHierarchy;
-        GameObject[] otherPanels;
-        otherPanels = GameObject.FindGameObjectsWithTag("Message Panel");
-
-        foreach (GameObject panel in otherPanels) 
+        if (extendedMessagePanel != null) 
         {
-            panel.SetActive(false);
+            bool activeStatus = extendedMessagePanel.activeInHierarchy;
+            GameObject[] otherPanels;
+            otherPanels = GameObject.FindGameObjectsWithTag("Message Panel");
+
+            foreach (GameObject panel in otherPanels)
+            {
+                panel.SetActive(false);
+            }
+            extendedMessagePanel.SetActive(!activeStatus);
         }
-        extendedMessagePanel.SetActive(!activeStatus);
     }
 
     public void DeleteMessage()
