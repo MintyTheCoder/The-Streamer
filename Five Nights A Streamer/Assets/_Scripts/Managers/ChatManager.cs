@@ -2,6 +2,8 @@ using System.Collections;
 using System.IO;
 using UnityEngine;
 using TMPro;
+using System;
+using System.Collections.Generic;
 
 public class ChatManager : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class ChatManager : MonoBehaviour
     int chatMessagesCount = 0;
 
     private struct ChatData{
-        public string[] Usernames;
+        public List<string> Usernames;
         public string[] Messages;
     }
 
@@ -26,10 +28,31 @@ public class ChatManager : MonoBehaviour
         // chatMessages = arrayScript.chatMessages;
         spawnPosition = chatPanel.transform.position + new Vector3(0 , -0.95f, -0.55f);
 
-        string json = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
-        _chatData = JsonUtility.FromJson<ChatData>(json);
+        string chatInfo = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
+        _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
         AddChatMessage(GetRandomUsername(), GetRandomMessage());
 
+    }
+
+    /// <summary>
+    /// Searches through the list and "bans" the user
+    /// </summary>
+    /// <param name="user">string that represents a in game chatter</param>
+    public void BanUser(string user)
+    {
+        string chatInfo = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
+        _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
+
+        for (int i = 0; i < _chatData.Usernames.Count; i++)
+        {
+            if (user.Equals(_chatData.Usernames[i]))
+            {
+                _chatData.Usernames.RemoveAt(i);
+            }
+        }
+
+        string json = JsonUtility.ToJson(_chatData);
+        File.WriteAllText(Application.dataPath + "/_Scripts/ChatInfo.json", json);
     }
 
     IEnumerator DelayMessage()
@@ -98,7 +121,7 @@ public class ChatManager : MonoBehaviour
 
     string GetRandomUsername()
     {
-        string username = _chatData.Usernames[UnityEngine.Random.Range(0,_chatData.Usernames.Length)];
+        string username = _chatData.Usernames[UnityEngine.Random.Range(0,_chatData.Usernames.Count)];
 
         return username;
     }
