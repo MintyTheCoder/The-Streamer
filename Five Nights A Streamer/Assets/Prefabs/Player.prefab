@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 7628998157625665556}
   - component: {fileID: 1254796305894903167}
   - component: {fileID: 1888966815434235285}
-  - component: {fileID: 2609300634074174870}
   m_Layer: 0
   m_Name: RightHand  Ray
   m_TagString: Untagged
@@ -742,21 +741,6 @@ MonoBehaviour:
   m_OverrideInteractorLineOrigin: 1
   m_LineOriginTransform: {fileID: 0}
   m_LineOriginOffset: 0
---- !u!114 &2609300634074174870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3314433624227375884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b56684aba41be06468cf3931aa42d7ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 65
 --- !u!1 &4552993096215830746
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +879,6 @@ GameObject:
   - component: {fileID: 2768135381572860152}
   - component: {fileID: 2272862144962759118}
   - component: {fileID: 5786158857000149723}
-  - component: {fileID: 4366840260559233584}
   m_Layer: 0
   m_Name: LeftHand Ray
   m_TagString: Untagged
@@ -1533,21 +1516,6 @@ MonoBehaviour:
   m_OverrideInteractorLineOrigin: 1
   m_LineOriginTransform: {fileID: 0}
   m_LineOriginOffset: 0
---- !u!114 &4366840260559233584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6442308014478331518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b56684aba41be06468cf3931aa42d7ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 65
 --- !u!1001 &234532461348204831
 PrefabInstance:
   m_ObjectHideFlags: 0
