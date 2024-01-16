@@ -5,6 +5,8 @@ using System;
 using UnityEngine.SceneManagement;
 using GameUtils;
 using UnityEngine.Events;
+using UnityEditor.ShaderGraph.Drawing;
+using UnityEditor;
 
 /// <summary>
 /// Contains the code to run events at certain times and manage the game loop/events. This will also deal with basic scene management.
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject doorObject;
     [SerializeField] GameObject gameOverScreen;
+
 
     [Header("Intruder Event Settings")]
 
@@ -106,6 +109,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync("Start Menu");
     }
 
+    private void IntruderEndGame()
+    {
+        Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
+        Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + intruderYOffset, dangerGameObject.transform.position.z);
+        if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
+        {
+            Debug.Log("You DIEEEDDDDD");
+            IsGameOver = true;
+            IsGameOver = true;
+            HasPlayerWon = false;
+        }
+    }
+
     private GameObject RandomSpawnPoint()
     {
         float totalWeight = 0f;
@@ -158,9 +174,7 @@ public class GameManager : MonoBehaviour
             Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + yOffset, dangerGameObject.transform.position.z);
             if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
             {
-                Debug.Log("You DIEEEDDDDD");
-                IsGameOver = true;
-                HasPlayerWon = false;
+                Invoke(nameof(IntruderEndGame), 3);
             }
             yield return new WaitForSeconds(delay);
         }
