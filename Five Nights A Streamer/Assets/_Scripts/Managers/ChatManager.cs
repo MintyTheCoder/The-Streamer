@@ -5,40 +5,37 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(ChatInfo))]
+
 public class ChatManager : MonoBehaviour
 {
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
     [SerializeField] float spawnDelay;
     Vector3 spawnPosition;
-    ChatData _chatData;
+    ChatInfo chatInfo;
     public GameObject[] chatMessageList;
     int chatMessagesCount = 0;
 
-    [Serializable]
-    private struct ChatData{
-        public List<string> Usernames;
-        public string[] Messages;
-    }
+    public string[] usernames, messages, stalkerUsernames, stalkerMessages;
 
     void Start()
-    {  
-        // arrayScript = GameObject.Find("Arrays").GetComponent<Arrays>();
-        
-        // userNames = arrayScript.userNames;
-        // chatMessages = arrayScript.chatMessages;
+    {
+        chatInfo = GetComponent<ChatInfo>();
+        usernames = chatInfo.usernames;
+        messages = chatInfo.messages;
+        stalkerUsernames = chatInfo.stalkerUsernames;
+        stalkerMessages = chatInfo.stalkerMessages;
         spawnPosition = chatPanel.transform.position + new Vector3(0 , -0.95f, -0.55f);
-        string chatInfo = File.ReadAllText(Application.persistentDataPath + "/ChatInfoCopy.json");
-        _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
-        AddChatMessage();
-        //AddChatMessage(GetRandomUsername(), GetRandomMessage());
+        //AddChatMessage();
+        AddChatMessage(GetRandomUsername(), GetRandomMessage());
     }
 
     /// <summary>
     /// Searches through the list and "bans" the user
     /// </summary>
     /// <param name="user">string that represents a in game chatter</param>
-    public void BanUser(string user)
+    /*public void BanUser(string user)
     {
         string chatInfo = File.ReadAllText(Application.persistentDataPath + "/ChatInfoCopy.json");
         _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
@@ -53,15 +50,15 @@ public class ChatManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(_chatData);
         File.WriteAllText(Application.persistentDataPath + "/ChatInfoCopy.json", json);
-    }
+    }*/
 
     IEnumerator DelayMessage()
     {
         yield return new WaitForSeconds(spawnDelay);
-        AddChatMessage();//GetRandomUsername(), GetRandomMessage());
+        AddChatMessage(GetRandomUsername(), GetRandomMessage());
     }
 
-    public void AddChatMessage()//string username, string message)
+    public void AddChatMessage(string username, string message)
     {
         MoveAllMessages();
         //Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90, 0)), chatPanel);
@@ -70,8 +67,8 @@ public class ChatManager : MonoBehaviour
         TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
 
         usernameText.color =  new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
-        //usernameText.text = username + ": ";
-        //messageText.text = username + ": " + message;
+        usernameText.text = username + ": ";
+        messageText.text = username + ": " + message;
 
         ChatDeleter(newMessage);
         
@@ -113,15 +110,17 @@ public class ChatManager : MonoBehaviour
 
     string GetRandomUsername()
     {
-        string username = _chatData.Usernames[UnityEngine.Random.Range(0,_chatData.Usernames.Count)];
+        string username = usernames[UnityEngine.Random.Range(0, usernames.Length)];
 
         return username;
     }
 
     string GetRandomMessage()
     {
-        string message = _chatData.Messages[UnityEngine.Random.Range(0, _chatData.Messages.Length)];
-        
+        string message = messages[UnityEngine.Random.Range(0, messages.Length)];
+
         return message;
     }
+
+
 }

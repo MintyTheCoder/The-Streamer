@@ -64,7 +64,7 @@ public class ChatMessage : MonoBehaviour
 
     public void Ban()
     {
-        chatManager.BanUser(GetUsername());
+        //chatManager.BanUser(GetUsername());
         DeleteMessage();
     }
 }
