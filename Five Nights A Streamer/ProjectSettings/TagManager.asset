@@ -8,6 +8,7 @@ TagManager:
   - Intruder
   - Message Panel
   - Security Cams
+  - Chat Manager
   layers:
   - Default
   - TransparentFX
