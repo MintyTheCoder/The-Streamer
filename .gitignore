@@ -73,3 +73,5 @@ Assets/AddressableAssetsData/*/*.bin*
 # Temporary auto-generated Android Assets
 Assets/StreamingAssets/aa.meta
 Assets/StreamingAssets/aa/*
+Audio/Funny.aup3
+Audio/POE Background Noise.aup3
