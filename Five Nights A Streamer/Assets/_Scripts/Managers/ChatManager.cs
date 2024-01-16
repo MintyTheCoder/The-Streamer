@@ -15,6 +15,7 @@ public class ChatManager : MonoBehaviour
     public GameObject[] chatMessageList;
     int chatMessagesCount = 0;
 
+    [Serializable]
     private struct ChatData{
         public List<string> Usernames;
         public string[] Messages;
@@ -28,7 +29,7 @@ public class ChatManager : MonoBehaviour
         // chatMessages = arrayScript.chatMessages;
         spawnPosition = chatPanel.transform.position + new Vector3(0 , -0.95f, -0.55f);
 
-        string chatInfo = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
+        string chatInfo = File.ReadAllText(Application.persistentDataPath + "/ChatInfoCopy.json");
         _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
         AddChatMessage(GetRandomUsername(), GetRandomMessage());
 
@@ -40,7 +41,7 @@ public class ChatManager : MonoBehaviour
     /// <param name="user">string that represents a in game chatter</param>
     public void BanUser(string user)
     {
-        string chatInfo = File.ReadAllText(Application.dataPath + "/_Scripts/ChatInfo.json");
+        string chatInfo = File.ReadAllText(Application.persistentDataPath + "/ChatInfoCopy.json");
         _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
 
         for (int i = 0; i < _chatData.Usernames.Count; i++)
@@ -52,7 +53,7 @@ public class ChatManager : MonoBehaviour
         }
 
         string json = JsonUtility.ToJson(_chatData);
-        File.WriteAllText(Application.dataPath + "/_Scripts/ChatInfo.json", json);
+        File.WriteAllText(Application.persistentDataPath + "/ChatInfoCopy.json", json);
     }
 
     IEnumerator DelayMessage()

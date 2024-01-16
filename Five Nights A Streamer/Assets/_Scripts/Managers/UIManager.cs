@@ -4,6 +4,8 @@ using GameUtils;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.TestTools;
+using System.ComponentModel;
 
 /// <summary>
 /// Class that contains the methods to control the main and settings menus. This also creates the inital save file and reads other json files.
@@ -15,19 +17,13 @@ public class UIManager : MonoBehaviour
     
     void Awake()
     {
-        SaveBasePlayerSaveData();
+        SaveBaseData();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         playButton.GetComponentInChildren<TextMeshProUGUI>().text = PlayerSaveU.LoadSave().Night;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void LoadLatestScene()
@@ -40,10 +36,12 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    private void SaveBasePlayerSaveData()
+
+    private void SaveBaseData()
     {
         if (!File.Exists(PlayerSaveU.path))
         {
+            // Creating player save
             PlayerSaveData _data = new PlayerSaveData();
             _data.Night = "Night 1";
             _data.IsGameComplete = false;
@@ -51,6 +49,12 @@ public class UIManager : MonoBehaviour
             string json = JsonUtility.ToJson(_data);
             Debug.Log(json);
             File.WriteAllText(PlayerSaveU.path, json);
+        }
+
+        if (!File.Exists(Application.persistentDataPath + "/ChatInfoCopy.json"))
+        {
+            // Making the chat different across machines
+            File.Copy(Application.dataPath + "/_Scripts/ChatInfo.json", Application.persistentDataPath + "/ChatInfoCopy.json");
         }
     }
 
