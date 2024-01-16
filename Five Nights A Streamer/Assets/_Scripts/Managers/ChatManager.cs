@@ -21,18 +21,17 @@ public class ChatManager : MonoBehaviour
         public string[] Messages;
     }
 
-    void Awake()
-    {
+    void Start()
+    {  
         // arrayScript = GameObject.Find("Arrays").GetComponent<Arrays>();
         
         // userNames = arrayScript.userNames;
         // chatMessages = arrayScript.chatMessages;
         spawnPosition = chatPanel.transform.position + new Vector3(0 , -0.95f, -0.55f);
-
         string chatInfo = File.ReadAllText(Application.persistentDataPath + "/ChatInfoCopy.json");
         _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
-        AddChatMessage(GetRandomUsername(), GetRandomMessage());
-
+        AddChatMessage();
+        //AddChatMessage(GetRandomUsername(), GetRandomMessage());
     }
 
     /// <summary>
@@ -58,28 +57,21 @@ public class ChatManager : MonoBehaviour
 
     IEnumerator DelayMessage()
     {
-        //while (true)
-        //{
-            //yield return new WaitForSeconds(Random.Range(5,7));
-            yield return new WaitForSeconds(spawnDelay);
-            AddChatMessage(GetRandomUsername(), GetRandomMessage());
-        //}
-       
+        yield return new WaitForSeconds(spawnDelay);
+        AddChatMessage();//GetRandomUsername(), GetRandomMessage());
     }
 
-    public void AddChatMessage(string username, string message)
+    public void AddChatMessage()//string username, string message)
     {
         MoveAllMessages();
-
-        GameObject newMessage = Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90,0)), chatPanel);
+        //Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90, 0)), chatPanel);
+        GameObject newMessage = Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90, 0)), chatPanel);
         TextMeshProUGUI usernameText = newMessage.transform.Find("Username").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
 
         usernameText.color =  new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
-        usernameText.text = username + ": ";
-        messageText.text = username + ": " + message;
-
-        //Debug.Log("Spawned Message");
+        //usernameText.text = username + ": ";
+        //messageText.text = username + ": " + message;
 
         ChatDeleter(newMessage);
         
@@ -114,7 +106,6 @@ public class ChatManager : MonoBehaviour
             for (int i = 0; i < chatMessageList.Length - 1; i++)
             {
                 chatMessageList[i] = chatMessageList[i + 1];
-                //Debug.Log("Object Moved Up To Index " + i);
             }
             chatMessageList[chatMessageList.Length - 1] = newMessage;
         }
