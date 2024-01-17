@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Start Menu.unity
     guid: a3510d3a8fe3343469645c74732157c7
   - enabled: 0
@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 0bfa97546ff8f904fade7a7c787f4307
   - enabled: 1
     path: Assets/_Scenes/Home Scene.unity
-    guid: 0c022f72d3308d24f9f0ffdedafa818b
+    guid: 41afc133aad015146abffc41da9e845e
   - enabled: 0
     path: Assets/_Scenes/Night 2.unity
     guid: 7ce094b727a8c5a419d984a275cbb085
