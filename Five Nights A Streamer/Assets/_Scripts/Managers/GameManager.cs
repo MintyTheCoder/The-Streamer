@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameObject doorObject;
     [SerializeField] GameObject gameOverScreen;
+    [SerializeField] GameObject canvas;
 
 
     [Header("Intruder Event Settings")]
@@ -88,7 +89,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("You lost");
             StopAllCoroutines();
-            gameOverScreen.SetActive(true);
+            canvas.SetActive(true);
             Invoke(nameof(SwitchToMenu), 5);
         }
     }
