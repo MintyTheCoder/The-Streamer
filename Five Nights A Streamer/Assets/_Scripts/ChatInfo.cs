@@ -211,17 +211,22 @@ public class ChatInfo : MonoBehaviour
         "GameOnMasterX"
     };
 
-    public ArrayList messages = new ArrayList() { "Hi", "Hello", "Good Evening", "Ahhh that was a scary vid", "W jumpscare"};
+    public ArrayList messages = new ArrayList() { "Hi", "Hello", "Good Evening", "Ahhh that was a scary vid", "W jumpscare", "Awesome content", "Love your stuff dude", "What's up man", "L", "W", "Nice", "Pog", "???", "Bruh", "No way", "Unbelievable", ":)", ":o", "W game", "U suck", "Love the streams"};
 
-    public ArrayList stalkerUsernames = new ArrayList() { "DarkQuan88", "EvilQuan45", "NightStalker32", "YourBestFriend"};
+    public ArrayList stalkerUsernames = new ArrayList() { "DarkQuan88", "EvilQuan45", "NightStalker32", "YourBestFriend", "YourBiggestFan", "CreepQuan71", "ILoveYouStreamer", "#1Stalker", "QuanMan89", "HunterQuan63", "EvilYoungster", "SomeEvilGuy", "DangerousPerson68", "SinisterSigma03", "WickedDummy47", "FoulChap", "DarkFigure00", "SketchyGeezer", "VileBloke97"};
 
-    public ArrayList stalkerMessages = new ArrayList () {"You suck at this game",
-        "I'm gonna find you",
+    public ArrayList stalkerMessages = new ArrayList () {"You suck at this game.",
+        "I'm gonna find you.",
         "I wish I could meet you and hang out wiht you",
         "Do you ever feel unsafe in your own home?",
         "Do you ever feel like someone is watching you?",
         "What would you do if one of your viewers came to your house?",
-        "Where do you live?" };
+        "Where do you live?",
+        "I know where you live.", 
+        "Your house is bigger than I thought.",
+        "I can see you.",
+        "I made a shrine for you.", 
+        "I love everything about you.", };
 }
 
 
