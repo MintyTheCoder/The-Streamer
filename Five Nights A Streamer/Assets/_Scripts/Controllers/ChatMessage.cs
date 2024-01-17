@@ -12,12 +12,33 @@ public class ChatMessage : MonoBehaviour
     [SerializeField] TextMeshProUGUI usernameTMP, messageTMP;
     [SerializeField] GameObject extendedMessagePanel;
     [SerializeField] ChatManager chatManager;
+    [SerializeField] GameManager gameManager;
     GameObject chatManagerObject;
+    GameObject gameManagerObject;
+    GameManager.Spawnable[] spawnables;
+    public Vector2 deleteRate = new Vector2(2,3);
+    public Vector2 banRate = new Vector2(4,5);
+
+    int deleteMin, deleteMax, banMin, banMax;
 
     private void Start()
     {
         chatManagerObject = GameObject.FindGameObjectWithTag("Chat Manager");
         chatManager = chatManagerObject.GetComponent<ChatManager>();
+
+        gameManagerObject = GameObject.FindGameObjectWithTag("Game Manager");
+        gameManager = gameManagerObject.GetComponent<GameManager>();
+
+        deleteMin = (int) deleteRate.x;
+        deleteMax = (int) deleteRate.y;
+
+        banMin = (int) banRate.x;
+        banMax = (int) banRate.y;
+
+        for (int i = 0; i < gameManager.spawnables.Count; i++)
+        {
+            spawnables[i] = gameManager.spawnables[i];
+        }
     }
 
     private void SetUsernameText(string username, Color color)
@@ -59,6 +80,42 @@ public class ChatMessage : MonoBehaviour
         SetUsernameText("Deleted", Color.red);
         SetMessageText("Message deleted by a moderator", Color.red);
         Destroy(extendedMessagePanel);
+
+        if (gameObject.tag == "Normal Chat")
+        {
+            spawnables[0].Weight -= deleteMin;
+            spawnables[1].Weight -= deleteMin;
+            spawnables[2].Weight -= deleteMin;
+            spawnables[3].Weight -= deleteMin;
+            spawnables[4].Weight -= deleteMin;
+            spawnables[5].Weight -= deleteMin;
+
+            spawnables[6].Weight += deleteMax;
+            spawnables[7].Weight += deleteMax;
+            spawnables[8].Weight += deleteMax;
+            spawnables[9].Weight += deleteMax;
+            spawnables[10].Weight += deleteMax;
+            spawnables[11].Weight += deleteMax;
+            spawnables[12].Weight += deleteMax;
+        }
+
+        else if(gameObject.tag == "Stalker Chat")
+        {
+            spawnables[0].Weight += deleteMin;
+            spawnables[1].Weight += deleteMin;
+            spawnables[2].Weight += deleteMin;
+            spawnables[3].Weight += deleteMin;
+            spawnables[4].Weight += deleteMin;
+            spawnables[5].Weight += deleteMin;
+
+            spawnables[6].Weight -= deleteMax;
+            spawnables[7].Weight -= deleteMax;
+            spawnables[8].Weight -= deleteMax;
+            spawnables[9].Weight -= deleteMax;
+            spawnables[10].Weight -= deleteMax;
+            spawnables[11].Weight -= deleteMax;
+            spawnables[12].Weight -= deleteMax;
+        }
     }
 
 
@@ -78,5 +135,41 @@ public class ChatMessage : MonoBehaviour
         SetUsernameText("Banned", Color.red);
         SetMessageText("User banned by moderator", Color.red);
         Destroy(extendedMessagePanel);
+
+        if (gameObject.tag == "Normal Chat")
+        {
+            spawnables[0].Weight -= banMin;
+            spawnables[1].Weight -= banMin;
+            spawnables[2].Weight -= banMin;
+            spawnables[3].Weight -= banMin;
+            spawnables[4].Weight -= banMin;
+            spawnables[5].Weight -= banMin;
+
+            spawnables[6].Weight += banMax;
+            spawnables[7].Weight += banMax;
+            spawnables[8].Weight += banMax;
+            spawnables[9].Weight += banMax;
+            spawnables[10].Weight += banMax;
+            spawnables[11].Weight += banMax;
+            spawnables[12].Weight += banMax;
+        }
+
+        else if (gameObject.tag == "Stalker Chat")
+        {
+            spawnables[0].Weight += banMin;
+            spawnables[1].Weight += banMin;
+            spawnables[2].Weight += banMin;
+            spawnables[3].Weight += banMin;
+            spawnables[4].Weight += banMin;
+            spawnables[5].Weight += banMin;
+
+            spawnables[6].Weight -= banMax;
+            spawnables[7].Weight -= banMax;
+            spawnables[8].Weight -= banMax;
+            spawnables[9].Weight -= banMax;
+            spawnables[10].Weight -= banMax;
+            spawnables[11].Weight -= banMax;
+            spawnables[12].Weight -= banMax;
+        }
     }
 }
