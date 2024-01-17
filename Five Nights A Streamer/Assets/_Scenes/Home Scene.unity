@@ -5614,7 +5614,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2000760169}
   m_LocalEulerAnglesHint: {x: 0, y: 146.098, z: 0}
-<<<<<<< Updated upstream
 --- !u!65 &477924753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5849,8 +5848,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2137674422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1001 &490395556
 PrefabInstance:
   m_ObjectHideFlags: 0
