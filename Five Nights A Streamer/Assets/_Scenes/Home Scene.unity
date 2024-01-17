@@ -2518,11 +2518,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 1bbe2c604601fdb44b9e7eeec90773ef, type: 3}
 --- !u!1 &230768195 stripped
 GameObject:
-<<<<<<< Updated upstream
-  m_CorrespondingSourceObject: {fileID: 1290666548114358, guid: 1bbe2c604601fdb44b9e7eeec90773ef, type: 3}
-  m_PrefabInstance: {fileID: 230768194}
-  m_PrefabAsset: {fileID: 0}
-=======
   m_CorrespondingSourceObject: {fileID: 1270021923660130, guid: 1bbe2c604601fdb44b9e7eeec90773ef, type: 3}
   m_PrefabInstance: {fileID: 230768194}
   m_PrefabAsset: {fileID: 0}
@@ -2881,7 +2876,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> Stashed changes
 --- !u!1 &253064518
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,11 +3173,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-<<<<<<< Updated upstream
   messageFreqRange: {x: 0, y: 20}
-=======
-  messageFreqRange: {x: 0, y: 0}
->>>>>>> Stashed changes
   alert: {fileID: 273136401}
 --- !u!82 &273136401
 AudioSource:
