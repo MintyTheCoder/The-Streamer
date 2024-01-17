@@ -5,7 +5,7 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 
-[RequireComponent(typeof(ChatInfo))]
+//[RequireComponent(typeof(ChatInfo))]
 
 public class ChatManager : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class ChatManager : MonoBehaviour
     public GameObject[] chatMessageList;
     int chatMessagesCount = 0;
 
-    public string[] usernames, messages, stalkerUsernames, stalkerMessages;
+    public ArrayList usernames, messages, stalkerUsernames, stalkerMessages;
 
     void Start()
     {
@@ -110,14 +110,14 @@ public class ChatManager : MonoBehaviour
 
     string GetRandomUsername()
     {
-        string username = usernames[UnityEngine.Random.Range(0, usernames.Length)];
+        string username = (string) usernames[UnityEngine.Random.Range(0, usernames.Count)];
 
         return username;
     }
 
     string GetRandomMessage()
     {
-        string message = messages[UnityEngine.Random.Range(0, messages.Length)];
+        string message = (string) messages[UnityEngine.Random.Range(0, messages.Count)];
 
         return message;
     }

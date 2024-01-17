@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChatInfo : MonoBehaviour
 {
-    public string[] usernames =
+    public ArrayList usernames = new ArrayList()
     {
         "StreamerMaster",
         "GamingGuru",
@@ -211,11 +211,11 @@ public class ChatInfo : MonoBehaviour
         "GameOnMasterX"
     };
 
-    public string[] messages =  { "Hi", "Hello", "Good Evening", "I hate Brodie Liverman"};
+    public ArrayList messages = new ArrayList() { "Hi", "Hello", "Good Evening", "I hate Brodie Liverman"};
 
-    public string[] stalkerUsernames = { "DarkQuan88", "EvilQuan45", "NightStalker32" };
+    public ArrayList stalkerUsernames = new ArrayList() { "DarkQuan88", "EvilQuan45", "NightStalker32" };
 
-    public string[] stalkerMessages = {"You suck at this game",
+    public ArrayList stalkerMessages = new ArrayList () {"You suck at this game",
         "I'm gonna find you",
         "I wish I could meet you and hang out wiht you",
         "Do you ever feel unsafe in your own home?",

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
 
 public class ChatMessage : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class ChatMessage : MonoBehaviour
 
     private void Start()
     {
-        //chatManagerObject = GameObject.FindGameObject("Chat Manager");
         chatManagerObject = GameObject.FindGameObjectWithTag("Chat Manager");
         chatManager = chatManagerObject.GetComponent<ChatManager>();
     }
@@ -34,7 +34,7 @@ public class ChatMessage : MonoBehaviour
 
     private string GetUsername()
     {
-        return usernameTMP.text;
+        return usernameTMP.text.Replace(": ", "");
     }
 
     public void DisplayPanel()
@@ -64,7 +64,16 @@ public class ChatMessage : MonoBehaviour
 
     public void Ban()
     {
-        //chatManager.BanUser(GetUsername());
+        Debug.Log(GetUsername());
+        if(chatManager.usernames.Contains(GetUsername()))
+        {
+            chatManager.usernames.Remove(chatManager.messages.IndexOf(GetUsername()));
+        }
+
+        else if (chatManager.stalkerUsernames.Contains(GetUsername())) 
+        {
+            chatManager.stalkerMessages.Remove(chatManager.stalkerMessages.IndexOf(GetUsername()));
+        }
         DeleteMessage();
     }
 }
