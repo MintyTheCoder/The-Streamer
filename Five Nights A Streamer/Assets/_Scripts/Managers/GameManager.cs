@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] float intruderYOffset;
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
-    [SerializeField] List<Spawnable> spawnables;
+    public List<Spawnable> spawnables;
     [SerializeField] GameObject dangerObject;
 
     [Serializable]
