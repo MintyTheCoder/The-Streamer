@@ -12,10 +12,14 @@ public class ChatManager : MonoBehaviour
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
     [SerializeField] float spawnDelay;
+    int messageFreq;
     Vector3 spawnPosition;
     ChatInfo chatInfo;
     public GameObject[] chatMessageList;
     int chatMessagesCount = 0;
+    int normalMessageCount = 0;
+    [SerializeField] Vector2 messageFreqRange = new Vector2 ();
+    [SerializeField] AudioSource alert;
 
     public ArrayList usernames, messages, stalkerUsernames, stalkerMessages;
 
@@ -27,41 +31,28 @@ public class ChatManager : MonoBehaviour
         stalkerUsernames = chatInfo.stalkerUsernames;
         stalkerMessages = chatInfo.stalkerMessages;
         spawnPosition = chatPanel.transform.position + new Vector3(0 , -0.95f, -0.55f);
-        //AddChatMessage();
         AddChatMessage(GetRandomUsername(), GetRandomMessage());
+        messageFreq = UnityEngine.Random.Range((int)messageFreqRange.x, (int)messageFreqRange.y);
     }
-
-    /// <summary>
-    /// Searches through the list and "bans" the user
-    /// </summary>
-    /// <param name="user">string that represents a in game chatter</param>
-    /*public void BanUser(string user)
-    {
-        string chatInfo = File.ReadAllText(Application.persistentDataPath + "/ChatInfoCopy.json");
-        _chatData = JsonUtility.FromJson<ChatData>(chatInfo);
-
-        for (int i = 0; i < _chatData.Usernames.Count; i++)
-        {
-            if (user.Equals(_chatData.Usernames[i]))
-            {
-                _chatData.Usernames.RemoveAt(i);
-            }
-        }
-
-        string json = JsonUtility.ToJson(_chatData);
-        File.WriteAllText(Application.persistentDataPath + "/ChatInfoCopy.json", json);
-    }*/
 
     IEnumerator DelayMessage()
     {
         yield return new WaitForSeconds(spawnDelay);
-        AddChatMessage(GetRandomUsername(), GetRandomMessage());
+        if (normalMessageCount == messageFreq) 
+        {
+            AddStalkerMessage(GetRandomStalkerUser(), GetRandomStalkerMessage());
+            messageFreq = UnityEngine.Random.Range((int) messageFreqRange.x, (int) messageFreqRange.y);
+        }
+
+        else
+        {
+            AddChatMessage(GetRandomUsername(), GetRandomMessage());
+        }
     }
 
     public void AddChatMessage(string username, string message)
     {
         MoveAllMessages();
-        //Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90, 0)), chatPanel);
         GameObject newMessage = Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90, 0)), chatPanel);
         TextMeshProUGUI usernameText = newMessage.transform.Find("Username").GetComponent<TextMeshProUGUI>();
         TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
@@ -70,23 +61,52 @@ public class ChatManager : MonoBehaviour
         usernameText.text = username + ": ";
         messageText.text = username + ": " + message;
 
+        newMessage.tag = "Normal Chat";
+
         ChatDeleter(newMessage);
         
         chatMessagesCount++;
+        normalMessageCount++;
 
         StartCoroutine(DelayMessage());
+        alert.Play();
+    }
+
+    public void AddStalkerMessage(string username, string message) 
+    {
+        MoveAllMessages();
+        GameObject newMessage = Instantiate(chatMessagePrefab, spawnPosition, Quaternion.Euler(new Vector3(0, 90, 0)), chatPanel);
+        TextMeshProUGUI usernameText = newMessage.transform.Find("Username").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI messageText = newMessage.transform.Find("Message").GetComponent<TextMeshProUGUI>();
+
+        newMessage.tag = "Stalker Chat";
+
+        usernameText.color = new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
+        usernameText.text = username + ": ";
+        messageText.text = username + ": " + message;
+
+        ChatDeleter(newMessage);
+
+        chatMessagesCount++;
+        normalMessageCount = 0;
+
+        StartCoroutine(DelayMessage());
+        alert.Play();
     }
 
     void MoveAllMessages()
     {
         if (chatMessageList != null)
         {
-            foreach (GameObject message in GameObject.FindGameObjectsWithTag("Message"))
+            foreach (GameObject message in GameObject.FindGameObjectsWithTag("Normal Chat"))
             {
                 message.transform.position += new Vector3(0, 0.1f, 0);
             }
 
-            GameObject[] messages = GameObject.FindGameObjectsWithTag("Message");
+            foreach (GameObject message in GameObject.FindGameObjectsWithTag("Stalker Chat"))
+            {
+                message.transform.position += new Vector3(0, 0.1f, 0);
+            }
         }  
     }
 
@@ -122,5 +142,17 @@ public class ChatManager : MonoBehaviour
         return message;
     }
 
+    string GetRandomStalkerUser()
+    {
+        string username = (string) stalkerUsernames[UnityEngine.Random.Range(0, stalkerUsernames.Count)];
 
+        return username;
+    }
+
+    string GetRandomStalkerMessage() 
+    {
+        string message = (string) stalkerMessages[UnityEngine.Random.Range(0, stalkerMessages.Count)];
+
+        return message;
+    }
 }

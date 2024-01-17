@@ -9,6 +9,8 @@ TagManager:
   - Message Panel
   - Security Cams
   - Chat Manager
+  - Normal Chat
+  - Stalker Chat
   layers:
   - Default
   - TransparentFX

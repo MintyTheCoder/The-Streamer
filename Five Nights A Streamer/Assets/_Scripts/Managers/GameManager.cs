@@ -5,7 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 using GameUtils;
 using UnityEngine.Events;
-using UnityEditor.ShaderGraph.Drawing;
+//using UnityEditor.ShaderGraph.Drawing;
 using UnityEditor;
 
 /// <summary>
@@ -24,7 +24,7 @@ using UnityEditor;
 /// <remarks>
 /// Remember for all public variables use encapsulation!
 /// <para/>
-/// <seealso href="https://github.com/MintyTheCoder/The-Streamer">The-Streamers GitHub</seealso>
+/// <seealso href="https://github.com/MintyTheCoder/The-Streamer">Five Night A Streamer GitHub</seealso>
 /// </remarks>
 public class GameManager : MonoBehaviour
 {

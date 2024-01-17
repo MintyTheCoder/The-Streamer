@@ -64,7 +64,6 @@ public class ChatMessage : MonoBehaviour
 
     public void Ban()
     {
-        Debug.Log(GetUsername());
         if(chatManager.usernames.Contains(GetUsername()))
         {
             chatManager.usernames.Remove(chatManager.messages.IndexOf(GetUsername()));
@@ -74,6 +73,10 @@ public class ChatMessage : MonoBehaviour
         {
             chatManager.stalkerMessages.Remove(chatManager.stalkerMessages.IndexOf(GetUsername()));
         }
-        DeleteMessage();
+
+        Debug.Log("User has been banned");
+        SetUsernameText("Banned", Color.red);
+        SetMessageText("User banned by moderator", Color.red);
+        Destroy(extendedMessagePanel);
     }
 }

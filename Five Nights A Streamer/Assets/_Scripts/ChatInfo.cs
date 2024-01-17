@@ -211,7 +211,7 @@ public class ChatInfo : MonoBehaviour
         "GameOnMasterX"
     };
 
-    public ArrayList messages = new ArrayList() { "Hi", "Hello", "Good Evening", "I hate Brodie Liverman"};
+    public ArrayList messages = new ArrayList() { "Hi", "Hello", "Good Evening", "Ahhh that was a scary vid", "W jumpscare"};
 
     public ArrayList stalkerUsernames = new ArrayList() { "DarkQuan88", "EvilQuan45", "NightStalker32" };
 
