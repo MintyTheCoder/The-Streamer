@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraDetection : MonoBehaviour
 {
     private Camera camera;
-    private AudioSource source;
+    [SerializeField] AudioSource source;
     private MeshRenderer meshRenderer;
     private Plane[] cameraFrustum;
     private Bounds bounds;
@@ -15,7 +15,6 @@ public class CameraDetection : MonoBehaviour
     {
         meshRenderer = GetComponent<MeshRenderer>();
         bounds = GetComponent<Collider>().bounds;
-        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

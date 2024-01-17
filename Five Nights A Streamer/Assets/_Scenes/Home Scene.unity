@@ -2753,7 +2753,7 @@ HingeJoint:
   m_Anchor: {x: 0.01, y: 0.98, z: 0}
   m_Axis: {x: 0, y: 6, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -9.041905, y: 11.702835, z: -9.464912}
+  m_ConnectedAnchor: {x: -9.041906, y: 11.702835, z: -9.464912}
   serializedVersion: 2
   m_UseSpring: 1
   m_Spring:
@@ -17997,8 +17997,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2807468276518845152, guid: 426242874778fa54f8dc1c623f398bde, type: 3}
     - target: {fileID: 928276339787918757, guid: de6b7773b023ed443b4d03292d61246e, type: 3}
+      propertyPath: intruderYOffset
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 928276339787918757, guid: de6b7773b023ed443b4d03292d61246e, type: 3}
+      propertyPath: timeBeforeSpawn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 928276339787918757, guid: de6b7773b023ed443b4d03292d61246e, type: 3}
       propertyPath: doesIntruderSpawn
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 928276339787918757, guid: de6b7773b023ed443b4d03292d61246e, type: 3}
+      propertyPath: intruderSpawnDelay
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 928276339787918757, guid: de6b7773b023ed443b4d03292d61246e, type: 3}
       propertyPath: spawnables.Array.size

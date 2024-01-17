@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 {
     private DoorController _doorController;
 
-
     public static bool IsGameOver {get; set;}
     public static bool HasPlayerWon { get; set;}
 
@@ -115,6 +114,8 @@ public class GameManager : MonoBehaviour
         if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
         {
             Debug.Log("You DIEEEDDDDD");
+            GameObject.Find("Stalker").GetComponent<Animator>().SetTrigger("Jumpscare");
+            GameObject.Find("Stalker").GetComponent<AudioSource>().Play();
             IsGameOver = true;
             IsGameOver = true;
             HasPlayerWon = false;
