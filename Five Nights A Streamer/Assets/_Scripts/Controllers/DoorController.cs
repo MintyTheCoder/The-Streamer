@@ -15,6 +15,7 @@ public class DoorController : MonoBehaviour
     private HingeJoint hingeJoint;
     private float hingeLimit;
     [SerializeField] float angleThreshold = 0.5f;
+    [SerializeField] AudioSource source;
     public bool IsDoorClosed {get; private set;}
 
     // Start is called before the first frame update
@@ -29,8 +30,9 @@ public class DoorController : MonoBehaviour
     {
         if (Mathf.Abs(hingeJoint.angle - hingeLimit) <= angleThreshold)
         {
+            Debug.Log("Door is Closed");
+            source.Play();
             IsDoorClosed = true;
-            Debug.Log("Closed");
         }
     }
 }
