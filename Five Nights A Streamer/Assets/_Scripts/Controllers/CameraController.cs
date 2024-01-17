@@ -5,14 +5,9 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [Serializable]
-    private struct Cam
-    {
-        public Camera cam;
-        public GameObject trigger;
-    }
 
-    [SerializeField] Cam[] cams;
+
+    [SerializeField] Camera[] cams;
     private int currentCam;
 
     void Start()
@@ -35,16 +30,16 @@ public class CameraController : MonoBehaviour
     public void incCamera()
     {
         Debug.Log("Next cam");
-        cams[currentCam].cam.enabled = false;
+        cams[currentCam].enabled = false;
         currentCam++;
         if (currentCam > cams.Length - 1)
         {
             currentCam = 0;
-            cams[currentCam].cam.enabled = true;
+            cams[currentCam].enabled = true;
         }
         else
         {
-            cams[currentCam].cam.enabled = true;
+            cams[currentCam].enabled = true;
         }
         
     }
@@ -52,16 +47,16 @@ public class CameraController : MonoBehaviour
     public void decCamera()
     {
         Debug.Log("Prev cam");
-        cams[currentCam].cam.enabled = false;
+        cams[currentCam].enabled = false;
         currentCam--;
         if (currentCam < 0)
         {
             currentCam = cams.Length-1;
-            cams[currentCam].cam.enabled = true;
+            cams[currentCam].enabled = true;
         }
         else
         {
-            cams[currentCam].cam.enabled = true;
+            cams[currentCam].enabled = true;
         }
         
     }

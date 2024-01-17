@@ -43,15 +43,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] bool doesIntruderSpawn;
 
-    public float intruderSpawnDelay;
+    [SerializeField] public float intruderSpawnDelay;
     [SerializeField] float intruderYOffset;
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
-    public List<Spawnable> spawnables;
+    [SerializeField] public List<Spawnable> spawnables;
     [SerializeField] GameObject dangerObject;
+    
 
     [Serializable]
-    public struct Spawnable
+    public class Spawnable
     {
         public GameObject GameObject;
         public float Weight;
@@ -114,8 +115,6 @@ public class GameManager : MonoBehaviour
         if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
         {
             Debug.Log("You DIEEEDDDDD");
-            GameObject.Find("Stalker").GetComponent<Animator>().SetTrigger("Jumpscare");
-            GameObject.Find("Stalker").GetComponent<AudioSource>().Play();
             IsGameOver = true;
             IsGameOver = true;
             HasPlayerWon = false;
@@ -168,7 +167,9 @@ public class GameManager : MonoBehaviour
             }
             GameObject randomObject = RandomSpawnPoint();
 
-            Instantiate(intruderPrefab, new Vector3(randomObject.transform.position.x, randomObject.transform.position.y + intruderYOffset, randomObject.transform.position.z), Quaternion.identity);
+            Instantiate(intruderPrefab, new Vector3(randomObject.transform.position.x, randomObject.transform.position.y + intruderYOffset, randomObject.transform.position.z), 
+                 randomObject.transform.rotation);
+
 
             Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
             Vector3 dangerZone = new Vector3(dangerObject.transform.position.x, dangerObject.transform.position.y + yOffset, dangerObject.transform.position.z);

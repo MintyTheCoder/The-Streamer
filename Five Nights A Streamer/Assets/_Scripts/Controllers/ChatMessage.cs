@@ -15,7 +15,7 @@ public class ChatMessage : MonoBehaviour
     [SerializeField] GameManager gameManager;
     GameObject chatManagerObject;
     GameObject gameManagerObject;
-    GameManager.Spawnable[] spawnables;
+    public List<GameManager.Spawnable> spawnables;
     public Vector2 deleteRate = new Vector2(2,3);
     public Vector2 banRate = new Vector2(4,5);
 
@@ -35,10 +35,11 @@ public class ChatMessage : MonoBehaviour
         banMin = (int) banRate.x;
         banMax = (int) banRate.y;
 
-        for (int i = 0; i < gameManager.spawnables.Count; i++)
+
+        /*for (int i = 0; i < gameManager.spawnables.Count -1; i++)
         {
-            spawnables[i] = gameManager.spawnables[i];
-        }
+            spawnableObject[i] = gameManager.spawnables[i];
+        }*/
     }
 
     private void SetUsernameText(string username, Color color)
@@ -80,6 +81,8 @@ public class ChatMessage : MonoBehaviour
         SetUsernameText("Deleted", Color.red);
         SetMessageText("Message deleted by a moderator", Color.red);
         Destroy(extendedMessagePanel);
+
+        spawnables = GameObject.Find("GameManager").GetComponent<GameManager>().spawnables;
 
         if (gameObject.tag == "Normal Chat")
         {
@@ -139,7 +142,7 @@ public class ChatMessage : MonoBehaviour
         SetUsernameText("Banned", Color.red);
         SetMessageText("User banned by moderator", Color.red);
         Destroy(extendedMessagePanel);
-
+        spawnables = GameObject.Find("GameManager").GetComponent<GameManager>().spawnables;
         if (gameObject.tag == "Normal Chat")
         {
             spawnables[0].Weight -= banMin;
