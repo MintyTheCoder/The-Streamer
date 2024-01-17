@@ -11,6 +11,7 @@ TagManager:
   - Chat Manager
   - Normal Chat
   - Stalker Chat
+  - Game Manager
   layers:
   - Default
   - TransparentFX
