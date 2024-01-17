@@ -13,14 +13,14 @@ public class SoundManager : MonoBehaviour
         soundTrigger = GetComponent<Collider>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         source.Play();
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Exit");
         source.Stop();
     }
-
 }
