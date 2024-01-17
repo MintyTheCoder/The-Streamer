@@ -45,15 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorObject: {fileID: 0}
-  onPlayerWin:
-    m_PersistentCalls:
-      m_Calls: []
-  onPlayerLoss:
-    m_PersistentCalls:
-      m_Calls: []
+  gameOverScreen: {fileID: 0}
   doesIntruderSpawn: 0
   intruderSpawnDelay: 0
   intruderYOffset: 0
   timeBeforeSpawn: 0
   intruderPrefab: {fileID: 0}
   spawnables: []
+  dangerObject: {fileID: 0}

@@ -29,8 +29,7 @@ using UnityEditor;
 public class GameManager : MonoBehaviour
 {
     private DoorController _doorController;
-    private GameObject dangerGameObject;
-    private List<Spawnable> originalSpawnables;
+
 
     public static bool IsGameOver {get; set;}
     public static bool HasPlayerWon { get; set;}
@@ -44,11 +43,13 @@ public class GameManager : MonoBehaviour
     [Header("Intruder Event Settings")]
 
     [SerializeField] bool doesIntruderSpawn;
+
     [SerializeField] float intruderSpawnDelay;
     [SerializeField] float intruderYOffset;
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
     [SerializeField] List<Spawnable> spawnables;
+    [SerializeField] GameObject dangerObject;
 
     [Serializable]
     public struct Spawnable
@@ -61,8 +62,6 @@ public class GameManager : MonoBehaviour
     {
         PlayerSaveU.SaveData();
         _doorController = doorObject.GetComponent<DoorController>();
-        originalSpawnables = spawnables;
-        dangerGameObject = originalSpawnables[0].GameObject;
     }
 
     void Start()
@@ -112,7 +111,7 @@ public class GameManager : MonoBehaviour
     private void IntruderEndGame()
     {
         Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
-        Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + intruderYOffset, dangerGameObject.transform.position.z);
+        Vector3 dangerZone = new Vector3(dangerObject.transform.position.x, dangerObject.transform.position.y + intruderYOffset, dangerObject.transform.position.z);
         if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
         {
             Debug.Log("You DIEEEDDDDD");
@@ -171,7 +170,7 @@ public class GameManager : MonoBehaviour
             Instantiate(intruderPrefab, new Vector3(randomObject.transform.position.x, randomObject.transform.position.y + intruderYOffset, randomObject.transform.position.z), Quaternion.identity);
 
             Vector3 intruderPosition = GameObject.FindWithTag("Intruder").transform.position;
-            Vector3 dangerZone = new Vector3(dangerGameObject.transform.position.x, dangerGameObject.transform.position.y + yOffset, dangerGameObject.transform.position.z);
+            Vector3 dangerZone = new Vector3(dangerObject.transform.position.x, dangerObject.transform.position.y + yOffset, dangerObject.transform.position.z);
             if (dangerZone == intruderPosition && _doorController.IsDoorClosed == false)
             {
                 Invoke(nameof(IntruderEndGame), 3);
