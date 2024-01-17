@@ -213,7 +213,7 @@ public class ChatInfo : MonoBehaviour
 
     public ArrayList messages = new ArrayList() { "Hi", "Hello", "Good Evening", "Ahhh that was a scary vid", "W jumpscare"};
 
-    public ArrayList stalkerUsernames = new ArrayList() { "DarkQuan88", "EvilQuan45", "NightStalker32" };
+    public ArrayList stalkerUsernames = new ArrayList() { "DarkQuan88", "EvilQuan45", "NightStalker32", "YourBestFriend"};
 
     public ArrayList stalkerMessages = new ArrayList () {"You suck at this game",
         "I'm gonna find you",
