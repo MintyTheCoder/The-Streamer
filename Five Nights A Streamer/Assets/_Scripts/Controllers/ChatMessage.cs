@@ -97,6 +97,8 @@ public class ChatMessage : MonoBehaviour
             spawnables[10].Weight += deleteMax;
             spawnables[11].Weight += deleteMax;
             spawnables[12].Weight += deleteMax;
+
+            gameManager.intruderSpawnDelay -= 2;
         }
 
         else if(gameObject.tag == "Stalker Chat")
@@ -115,6 +117,8 @@ public class ChatMessage : MonoBehaviour
             spawnables[10].Weight -= deleteMax;
             spawnables[11].Weight -= deleteMax;
             spawnables[12].Weight -= deleteMax;
+
+            gameManager.intruderSpawnDelay += 2;
         }
     }
 
@@ -152,6 +156,7 @@ public class ChatMessage : MonoBehaviour
             spawnables[10].Weight += banMax;
             spawnables[11].Weight += banMax;
             spawnables[12].Weight += banMax;
+            gameManager.intruderSpawnDelay -= 3;
         }
 
         else if (gameObject.tag == "Stalker Chat")
@@ -170,6 +175,8 @@ public class ChatMessage : MonoBehaviour
             spawnables[10].Weight -= banMax;
             spawnables[11].Weight -= banMax;
             spawnables[12].Weight -= banMax;
+
+            gameManager.intruderSpawnDelay += 3;
         }
     }
 }

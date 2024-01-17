@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] bool doesIntruderSpawn;
 
-    [SerializeField] float intruderSpawnDelay;
+    public float intruderSpawnDelay;
     [SerializeField] float intruderYOffset;
     [SerializeField] float timeBeforeSpawn;
     [SerializeField] GameObject intruderPrefab;
