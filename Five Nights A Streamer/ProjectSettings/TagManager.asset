@@ -12,6 +12,7 @@ TagManager:
   - Normal Chat
   - Stalker Chat
   - Game Manager
+  - Teleport
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Non Physics Hand
   - Interactive
   - 
-  - 
+  - Teleport
   - 
   - 
   - 
