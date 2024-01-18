@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.TestTools;
 using System.ComponentModel;
+using System.Collections;
+using System;
 
 /// <summary>
 /// Class that contains the methods to control the main and settings menus. This also creates the inital save file and reads other json files.
@@ -14,6 +16,13 @@ public class UIManager : MonoBehaviour
 {
     [Header("Buttons")]
     [SerializeField] Button playButton;
+
+    [Header("Menus")]
+    [SerializeField] GameObject loadingScreen;
+    [SerializeField] GameObject titleScreen;
+
+    [Header("Sliders")]
+    [SerializeField] Slider progressBar;
     
     void Awake()
     {
@@ -28,7 +37,23 @@ public class UIManager : MonoBehaviour
 
     public void LoadLatestScene()
     {
-        SceneManager.LoadScene(PlayerSaveU.LoadSave().Night);
+        titleScreen.SetActive(false);
+        loadingScreen.SetActive(true);
+
+        // Run async operation
+        StartCoroutine(LoadLevelAsync(PlayerSaveU.LoadSave().Night));
+    }
+
+    private IEnumerator LoadLevelAsync(string sceneName)
+    {
+        UnityEngine.AsyncOperation loadOperation = SceneManager.LoadSceneAsync(sceneName);
+        
+        while (!loadOperation.isDone)
+        {
+            float progressValue = Mathf.Clamp01(loadOperation.progress / 0.9f);
+            progressBar.value = progressValue;
+            yield return null;
+        }
     }
 
     public void QuitGame()
@@ -43,19 +68,12 @@ public class UIManager : MonoBehaviour
         {
             // Creating player save
             PlayerSaveData _data = new PlayerSaveData();
-            //_data.Night = "Night 1";
             _data.Night = "Night 1";
             _data.IsGameComplete = false;
 
             string json = JsonUtility.ToJson(_data);
             Debug.Log(json);
             File.WriteAllText(PlayerSaveU.path, json);
-        }
-
-        if (!File.Exists(Application.persistentDataPath + "/ChatInfoCopy.json"))
-        {
-            // Making the chat different across machines
-            File.Copy(Application.dataPath + "/_Scripts/ChatInfo.json", Application.persistentDataPath + "/ChatInfoCopy.json");
         }
     }
 

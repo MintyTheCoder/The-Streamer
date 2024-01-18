@@ -8,20 +8,31 @@ using UnityEngine.SceneManagement;
 
 public class FadeController : MonoBehaviour
 {
+
+    public static FadeController _instance;
     public static bool StartSceneSwitch { private get; set; }
     public static bool StartMenuSwitch { private get; set; }
     [SerializeField] Animator anim;
     [SerializeField] TextMeshProUGUI nightText;
     private int levelToLoad;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
-        StartSceneSwitch = false;
-        nightText.text = SceneManager.GetActiveScene().name;
+        Debug.Log("Here");
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-    
+
     void Update()
     {
+
         if (StartSceneSwitch == true)
         {
             FadeToNextLevel();
@@ -29,7 +40,25 @@ public class FadeController : MonoBehaviour
 
         if (StartMenuSwitch == true)
         {
-            FadeToMenu();
+            FadeToLevel(0);
+        }
+
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("On scene loaded method");
+        Debug.Log("HELLLLLLLLLLLLLLLOOOOOOOOOOOOOO");
+        if (SceneManager.GetActiveScene().name == "Start Menu")
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+            StartSceneSwitch = false;
+            StartMenuSwitch = false;
+            nightText.text = SceneManager.GetActiveScene().name;
         }
     }
 
@@ -40,17 +69,14 @@ public class FadeController : MonoBehaviour
 
     private void FadeToLevel (int levelIndex)
     {
+        Debug.Log("Fade Started");
         levelToLoad = levelIndex;
         anim.SetTrigger("FadeOut");
     }
 
-    private void FadeToMenu()
-    {
-        FadeToLevel(0);
-    }
-
     public void OnFadeComplete()
     {
+        Debug.Log("On Fade Compelete");
         SceneManager.LoadScene(levelToLoad);
     }
 

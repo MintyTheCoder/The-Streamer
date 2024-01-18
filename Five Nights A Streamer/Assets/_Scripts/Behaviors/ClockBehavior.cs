@@ -7,7 +7,7 @@ using UnityEngine.VFX;
 
 public class ClockBehavior : MonoBehaviour
 {
-    private int time = 6;
+    private int time = 5;
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
 

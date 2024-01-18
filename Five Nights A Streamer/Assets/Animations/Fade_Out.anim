@@ -261,7 +261,7 @@ AnimationClip:
   - time: 3
     functionName: OnFadeComplete
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: ae80b45e464ad4a4e8532164e884fa7a, type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
