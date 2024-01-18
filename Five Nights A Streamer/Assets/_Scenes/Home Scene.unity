@@ -1284,7 +1284,7 @@ Transform:
   m_GameObject: {fileID: 113689406}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.299, y: -1.864, z: 3}
+  m_LocalPosition: {x: -1.299, y: 1.217, z: 3}
   m_LocalScale: {x: 0.26523814, y: 1, z: 0.2853702}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4745,7 +4745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398547981709466319, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.9
+      value: 65.315
       objectReference: {fileID: 0}
     - target: {fileID: 6398547981709466319, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4753,7 +4753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6398547981709466319, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.07
+      value: -16.212
       objectReference: {fileID: 0}
     - target: {fileID: 6398547981709466319, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4789,12 +4789,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6454122915705583938, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 393105357}
-    - targetCorrespondingSourceObject: {fileID: 6454122915705583938, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 393105358}
-    - targetCorrespondingSourceObject: {fileID: 6454122915705583938, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 393105365}
   m_SourcePrefab: {fileID: 100100000, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
 --- !u!1 &393105356 stripped
@@ -4802,48 +4796,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6454122915705583938, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
   m_PrefabInstance: {fileID: 393105355}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &393105357
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393105356}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.9988251, z: 1}
-  m_Center: {x: 0, y: -0.04515457, z: 0}
---- !u!65 &393105358
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393105356}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.4470396, z: 1}
-  m_Center: {x: 0, y: 1.4589953, z: 0}
 --- !u!114 &393105362 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3338539211535258202, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
@@ -18706,7 +18658,7 @@ Transform:
   m_GameObject: {fileID: 1652085775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.299, y: -1.864, z: 9.51}
+  m_LocalPosition: {x: -1.299, y: 1.2170004, z: 9.51}
   m_LocalScale: {x: 0.26523814, y: 1, z: 0.2853702}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19951,7 +19903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 928276339787918757, guid: de6b7773b023ed443b4d03292d61246e, type: 3}
       propertyPath: spawnables.Array.data[12].Weight
-      value: 10000000
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 928276339787918757, guid: de6b7773b023ed443b4d03292d61246e, type: 3}
       propertyPath: spawnables.Array.data[0].GameObject
