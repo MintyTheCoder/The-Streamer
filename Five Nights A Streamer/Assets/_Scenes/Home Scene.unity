@@ -4709,6 +4709,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9090929546992204888, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
+      propertyPath: m_IsTrackedAction.m_Reference
+      value: 
+      objectReference: {fileID: 840156964685210860, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 9090929546992204888, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
+      propertyPath: m_IsTrackedAction.m_UseReference
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090929546992204888, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_SingletonActionBindings.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090929546992204888, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: c0980c82-4b2e-4528-89bf-ef720f9eeab5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090929546992204888, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9090929546992204888, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
+      propertyPath: m_IsTrackedAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Is Tracked
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
