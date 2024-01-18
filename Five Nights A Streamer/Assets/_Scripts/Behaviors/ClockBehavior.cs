@@ -8,21 +8,16 @@ using UnityEngine.VFX;
 public class ClockBehavior : MonoBehaviour
 {
     private int time = 5;
+    private AudioSource sound;
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
-
 
     // Start is called before the first frame update
     void Start()
     {
         clockTime.text = time + ":00 PM";
         StartCoroutine(IncrementClock());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        sound = GetComponent<AudioSource>();
     }
 
     IEnumerator IncrementClock()
@@ -30,15 +25,18 @@ public class ClockBehavior : MonoBehaviour
         while (GameManager.IsGameOver == false)
         {    
             time++;
-            clockTime.text = time + ":00 PM";
             
             if (time >= 12)
             {
+                clockTime.text = time + ":00 AM";
                 Debug.Log("Clock got here");
+                sound.Play();
                 GameManager.IsGameOver = true;
-                GameManager.HasPlayerWon = true;  
+                GameManager.HasPlayerWon = true;
                 yield break;  // Exit the coroutine
             }
+
+            clockTime.text = time + ":00 PM";
             yield return new WaitForSeconds(delay);
         }
     }
