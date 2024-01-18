@@ -9,6 +9,7 @@ using System.Collections.Generic;
 
 public class ChatManager : MonoBehaviour
 {
+    //public static ChatManager _instance;
     public GameObject chatMessagePrefab;
     public Transform chatPanel; // The parent transform for chat messages
     [SerializeField] float spawnDelay;
@@ -23,6 +24,18 @@ public class ChatManager : MonoBehaviour
 
     public ArrayList usernames, messages, stalkerUsernames, stalkerMessages;
 
+    /*private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }*/
     void Start()
     {
         chatInfo = GetComponent<ChatInfo>();
