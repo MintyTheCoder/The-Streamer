@@ -8,7 +8,7 @@ using UnityEngine.VFX;
 public class ClockBehavior : MonoBehaviour
 {
     private int time = 5;
-    private AudioSource sound;
+    [SerializeField] AudioSource sound;
     [SerializeField] TextMeshProUGUI clockTime;
     [SerializeField] float delay = 120f;
 
@@ -17,7 +17,6 @@ public class ClockBehavior : MonoBehaviour
     {
         clockTime.text = time + ":00 PM";
         StartCoroutine(IncrementClock());
-        sound = GetComponent<AudioSource>();
     }
 
     IEnumerator IncrementClock()

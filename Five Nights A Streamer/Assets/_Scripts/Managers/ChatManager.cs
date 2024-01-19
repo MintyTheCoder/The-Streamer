@@ -43,7 +43,7 @@ public class ChatManager : MonoBehaviour
         messages = chatInfo.messages;
         stalkerUsernames = chatInfo.stalkerUsernames;
         stalkerMessages = chatInfo.stalkerMessages;
-        spawnPosition = chatPanel.transform.position + new Vector3(0 , -0.95f, -0.55f);
+        spawnPosition = chatPanel.transform.position + new Vector3(0 , -0.75f, -0.55f);
         AddChatMessage(GetRandomUsername(), GetRandomMessage());
         messageFreq = UnityEngine.Random.Range((int)messageFreqRange.x, (int)messageFreqRange.y);
     }
