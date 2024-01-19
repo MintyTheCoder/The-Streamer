@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEditor.Rendering;
@@ -10,11 +11,9 @@ public class FadeController : MonoBehaviour
 {
 
     public static FadeController _instance;
-    public static bool StartSceneSwitch { private get; set; }
-    public static bool StartMenuSwitch { private get; set; }
-    [SerializeField] Animator anim;
+    [SerializeField] static Animator anim;
     [SerializeField] TextMeshProUGUI nightText;
-    private int levelToLoad;
+    private static int levelToLoad;
 
     void Awake()
     {
@@ -28,56 +27,63 @@ public class FadeController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        anim = GameObject.Find("SceneFade").GetComponent<Animator>();
+        nightText.text = SceneManager.GetActiveScene().name;
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void Update()
     {
-
-        if (StartSceneSwitch == true)
-        {
-            FadeToNextLevel();
-        }
-
-        if (StartMenuSwitch == true)
-        {
-            FadeToLevel(0);
-        }
-
+        Debug.Log(levelToLoad);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Debug.Log("On scene loaded method");
-        Debug.Log("HELLLLLLLLLLLLLLLOOOOOOOOOOOOOO");
-        if (SceneManager.GetActiveScene().name == "Start Menu")
+        if (scene.name == "Start Menu")
         {
             gameObject.SetActive(false);
         }
         else
         {
             gameObject.SetActive(true);
-            StartSceneSwitch = false;
-            StartMenuSwitch = false;
-            nightText.text = SceneManager.GetActiveScene().name;
+            anim.ResetTrigger("FadeOut");
+            anim.SetTrigger("FadeIn");
         }
     }
 
-    private void FadeToNextLevel()
+    public static void FadeToNextLevel()
     {
         FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    private void FadeToLevel (int levelIndex)
+    public static void FadeToLevel(int levelIndex)
     {
         Debug.Log("Fade Started");
         levelToLoad = levelIndex;
+        anim.ResetTrigger("FadeIn");
         anim.SetTrigger("FadeOut");
     }
 
     public void OnFadeComplete()
     {
-        Debug.Log("On Fade Compelete");
+        // Workaround because unity has a broken method in the SceneManager class
+        string scenePath = SceneUtility.GetScenePathByBuildIndex(levelToLoad);
+        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+
+        nightText.text = sceneName;
         SceneManager.LoadScene(levelToLoad);
     }
+
 
 }

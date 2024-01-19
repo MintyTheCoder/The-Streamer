@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("You won");
             StopAllCoroutines();
             PlayerSaveU.SaveData();
-            FadeController.StartSceneSwitch = true;
+            FadeController.FadeToNextLevel();
         }
         else if (IsGameOver == true && HasPlayerWon == false)
         {
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
 
     private void SwitchToMenu()
     {
-        FadeController.StartMenuSwitch = true;
+        FadeController.FadeToLevel(0);
     }
 
     private void StartIntruderEvent()

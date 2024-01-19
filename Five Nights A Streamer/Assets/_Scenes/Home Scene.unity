@@ -4470,7 +4470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1444654629733891299, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3314433624227375884, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_Layer
@@ -4598,7 +4598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4552993096215830746, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4610217251546257342, guid: 54f0f941d09f4c94c853900d169118cd, type: 3}
       propertyPath: m_Layer
@@ -15077,7 +15077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockTime: {fileID: 621084006}
-  delay: 90
+  delay: 1
 --- !u!82 &1219548086
 AudioSource:
   m_ObjectHideFlags: 0
