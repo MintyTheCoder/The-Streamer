@@ -51,6 +51,7 @@ namespace GameUtils
         public static PlayerSaveData LoadSave()
         {
             string json = File.ReadAllText(path);
+            Debug.Log(path);
             PlayerSaveData _saveData = JsonUtility.FromJson<PlayerSaveData>(json);
             return _saveData;
         }

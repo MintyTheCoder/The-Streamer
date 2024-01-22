@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(PlayerSaveU.LoadSave().Night);
         playButton.GetComponentInChildren<TextMeshProUGUI>().text = PlayerSaveU.LoadSave().Night;
     }
 
@@ -68,11 +69,12 @@ public class UIManager : MonoBehaviour
         {
             // Creating player save
             PlayerSaveData _data = new PlayerSaveData();
-            _data.Night = "Night 1";
+            _data.Night = "Home Scene";
             _data.IsGameComplete = false;
 
             string json = JsonUtility.ToJson(_data);
             Debug.Log(json);
+            Debug.Log("Writing initial save...");
             File.WriteAllText(PlayerSaveU.path, json);
         }
     }
