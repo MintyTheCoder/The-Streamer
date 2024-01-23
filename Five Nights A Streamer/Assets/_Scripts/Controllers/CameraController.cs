@@ -8,11 +8,13 @@ public class CameraController : MonoBehaviour
 
 
     [SerializeField] Camera[] cams;
+    GameObject[] camObjects;
     private int currentCam;
 
     void Start()
     {
         currentCam = 0;
+        cams = GameObject.FindObjectsOfType<Camera>();
     }
 
     void Update()
