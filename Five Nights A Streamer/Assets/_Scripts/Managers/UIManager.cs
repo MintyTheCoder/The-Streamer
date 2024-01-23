@@ -69,7 +69,7 @@ public class UIManager : MonoBehaviour
         {
             // Creating player save
             PlayerSaveData _data = new PlayerSaveData();
-            _data.Night = "Home Scene";
+            _data.Night = "Night 1";
             _data.IsGameComplete = false;
 
             string json = JsonUtility.ToJson(_data);
