@@ -2,14 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
+
 
 /// <summary>
 /// Used to control aspects of the door
 /// </summary>
 /// <remarks>Requires a HingeJoint and XRGrabInteractable component</remarks>
 [RequireComponent(typeof(HingeJoint))]
-[RequireComponent(typeof(XRGrabInteractable))]
+///[RequireComponent(typeof(UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable))]
 public class DoorController : MonoBehaviour
 {
     private HingeJoint hingeJoint;
