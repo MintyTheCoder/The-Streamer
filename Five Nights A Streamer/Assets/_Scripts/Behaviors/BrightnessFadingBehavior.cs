@@ -6,15 +6,25 @@ using TMPro;
 
 public class BrightnessFadingBehavior : MonoBehaviour
 {
-    public Image Image;
+    public Image ImageObj;
     public Slider BrightnessSlider;
 
     //Changing the a value of the image to change the brightness of the scene
     void Update()
     {
-        Image = GetComponent<Image>();
-        var TempColor = Image.color;
-        TempColor.a = BrightnessSlider.value;
-        Image.color = TempColor;
+        ImageObj = GetComponent<Image>();
+        if (ImageObj != null)
+        {
+            var TempColor = ImageObj.color;
+            TempColor.a = BrightnessSlider.value;
+            ImageObj.color = TempColor;
+            if (TempColor.a >= 0.9f)
+            {
+                TempColor.a = 0.9f;
+                ImageObj.color = TempColor;
+            }
+        }
+
+        
     }
 }
