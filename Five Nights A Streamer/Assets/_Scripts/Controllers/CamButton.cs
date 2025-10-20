@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class VRButton : MonoBehaviour
+public class CamButton : MonoBehaviour
 {
     public GameObject button;
     public UnityEvent onPress;
